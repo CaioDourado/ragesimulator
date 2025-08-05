@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://de48a3xgv6d6b"]
+
+[ext_resource type="Script" path="res://Scripts/end_point.gd" id="1_d7frk"]
+[ext_resource type="Texture2D" uid="uid://cp5jw6d5ygxn7" path="res://Assets/Tileset/Tileset32/Objects/Computer.png" id="2_qvpcw"]
+[ext_resource type="AudioStream" uid="uid://22ww7bdqhswb" path="res://Assets/Audio/UI/Type.mp3" id="3_kna0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6rh"]
+size = Vector2(29, 16)
+
+[node name="EndPoint" type="Area2D"]
+position = Vector2(0, -8)
+script = ExtResource("1_d7frk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("2_qvpcw")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_xv6rh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kna0a")
+volume_db = -5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

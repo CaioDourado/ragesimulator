@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5snp0fh22wxj"]
+
+[ext_resource type="Texture2D" uid="uid://dfwr1frwvpbl7" path="res://Assets/Sprites/Holo dust.png" id="1_oq7e1"]
+[ext_resource type="Script" path="res://Scripts/effect.gd" id="1_qa77a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfhjw"]
+atlas = ExtResource("1_oq7e1")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ixq4"]
+atlas = ExtResource("1_oq7e1")
+region = Rect2(1088, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58xkp"]
+atlas = ExtResource("1_oq7e1")
+region = Rect2(1152, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3kqh"]
+atlas = ExtResource("1_oq7e1")
+region = Rect2(1216, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnfs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfhjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ixq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58xkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3kqh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="EffectWalljump" type="Node2D"]
+script = ExtResource("1_qa77a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_wnfs4")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw8ai7i8jawp3"]
+
+[ext_resource type="Texture2D" uid="uid://bghlp656uap1f" path="res://Assets/Tileset/Tileset32/Objects/respawn_plataform.png" id="1_3acv8"]
+[ext_resource type="Shader" uid="uid://ci2k7v3wsif8" path="res://Shader/Hologram.tres" id="1_7pkln"]
+[ext_resource type="Texture2D" uid="uid://bnkd1kci7bkd6" path="res://Assets/Tileset/Tileset32/Objects/respawn_plataform_light.png" id="1_cwibb"]
+[ext_resource type="Script" path="res://Scripts/hologram_effect_individual.gd" id="1_hm1w8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2dmn"]
+shader = ExtResource("1_7pkln")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7usf7"]
+size = Vector2(28, 7)
+
+[node name="StartPoint" type="StaticBody2D" node_paths=PackedStringArray("sprites")]
+position = Vector2(0, -8)
+script = ExtResource("1_hm1w8")
+sprites = [NodePath("texture"), NodePath("texture/Sprite2D2")]
+
+[node name="texture" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("1_3acv8")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="texture"]
+z_index = 3
+texture_filter = 1
+material = SubResource("ShaderMaterial_g2dmn")
+position = Vector2(0, -7)
+texture = ExtResource("1_cwibb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_7usf7")

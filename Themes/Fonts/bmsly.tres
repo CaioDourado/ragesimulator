@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://qvq7qc07x5bs"]
+
+[ext_resource type="FontFile" uid="uid://ddqwvnj0i54gy" path="res://Assets/Fonts/bmsly.TTF" id="1_542ev"]
+
+[resource]
+base_font = ExtResource("1_542ev")

@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bbr61p1pi7lvm"]
+
+[ext_resource type="FontFile" uid="uid://ctgutpnh1dip0" path="res://Assets/Fonts/Gamer.ttf" id="1_i1vtk"]
+
+[resource]
+base_font = ExtResource("1_i1vtk")

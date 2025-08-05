@@ -1,0 +1,682 @@
+[gd_scene load_steps=102 format=3 uid="uid://dminattmci4hi"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qsfdw"]
+[ext_resource type="Texture2D" uid="uid://dpojjvlx05n1l" path="res://Assets/UI/Home/main_menu.png" id="2_ubjnr"]
+[ext_resource type="Texture2D" uid="uid://cnl5sgcp8bk6l" path="res://Assets/UI/Home/main_menu_lights.png" id="3_g16ay"]
+[ext_resource type="Texture2D" uid="uid://cw7228yteipei" path="res://Assets/UI/Home/painel.png" id="3_yd3ko"]
+[ext_resource type="Script" path="res://Scripts/bt_hover_stop_animation.gd" id="4_5w3or"]
+[ext_resource type="Script" path="res://Scripts/active_interval_effect.gd" id="4_wclex"]
+[ext_resource type="Texture2D" uid="uid://bdvclnrvne43n" path="res://Assets/UI/Home/main_menu_cog_icon/cog_1.png" id="4_x3xwt"]
+[ext_resource type="Texture2D" uid="uid://deux6mt7vtequ" path="res://Assets/UI/Home/main_menu_cog_icon/cog_2.png" id="5_t7jdg"]
+[ext_resource type="Texture2D" uid="uid://lngvnnua0y5s" path="res://Assets/UI/Home/main_menu_cog_icon/cog_11.png" id="6_vtrja"]
+[ext_resource type="Texture2D" uid="uid://bkd15s2ivs5n1" path="res://Assets/UI/Home/main_menu_cog_icon/cog_12.png" id="7_uvypf"]
+[ext_resource type="Texture2D" uid="uid://wjphth8vum4v" path="res://Assets/UI/Home/main_menu_cog_icon/cog_13.png" id="8_r8sso"]
+[ext_resource type="Texture2D" uid="uid://t7sihk3ilqaf" path="res://Assets/UI/Home/main_menu_cog_icon/cog_14.png" id="9_prcwx"]
+[ext_resource type="Texture2D" uid="uid://cwyqbxlmtsway" path="res://Assets/UI/Home/main_menu_cog_icon/cog_15.png" id="10_qfxsf"]
+[ext_resource type="Texture2D" uid="uid://c5ix72hs7q4ki" path="res://Assets/UI/Home/main_menu_cog_icon/cog_16.png" id="11_nai1h"]
+[ext_resource type="Texture2D" uid="uid://ciu7bsbqw112v" path="res://Assets/UI/Home/main_menu_cog_icon/cog_17.png" id="12_88b1c"]
+[ext_resource type="Texture2D" uid="uid://do85876tpkskm" path="res://Assets/UI/Home/main_menu_cog_icon/cog_18.png" id="13_ga4ix"]
+[ext_resource type="Texture2D" uid="uid://c4dhkwmy8jolc" path="res://Assets/UI/Home/main_menu_cog_icon/cog_19.png" id="14_l58jy"]
+[ext_resource type="Texture2D" uid="uid://j4h1wkbq7alf" path="res://Assets/UI/Home/main_menu_cog_icon/cog_20.png" id="15_ijqnn"]
+[ext_resource type="Texture2D" uid="uid://dophx5gj032kj" path="res://Assets/UI/Home/main_menu_cog_icon/cog_3.png" id="16_yhic4"]
+[ext_resource type="Texture2D" uid="uid://c08qdrmh6bxbu" path="res://Assets/UI/Home/main_menu_cog_icon/cog_21.png" id="17_rfx4g"]
+[ext_resource type="Texture2D" uid="uid://bbnu6f00a7fhn" path="res://Assets/UI/Home/main_menu_cog_icon/cog_22.png" id="18_6tx7l"]
+[ext_resource type="Texture2D" uid="uid://dyiir84rqd8o6" path="res://Assets/UI/Home/main_menu_cog_icon/cog_23.png" id="19_y41on"]
+[ext_resource type="Texture2D" uid="uid://c81f4bo1kt3df" path="res://Assets/UI/Home/main_menu_cog_icon/cog_4.png" id="20_o1g2x"]
+[ext_resource type="Texture2D" uid="uid://83y54jkyithq" path="res://Assets/UI/Home/main_menu_cog_icon/cog_5.png" id="21_vcqrq"]
+[ext_resource type="Texture2D" uid="uid://dcwn4k48mdn6c" path="res://Assets/UI/Home/main_menu_cog_icon/cog_6.png" id="22_cae7j"]
+[ext_resource type="Texture2D" uid="uid://bwy2n0j3s3fma" path="res://Assets/UI/Home/main_menu_cog_icon/cog_7.png" id="23_llxfu"]
+[ext_resource type="Texture2D" uid="uid://bxv7tatt35dtb" path="res://Assets/UI/Home/main_menu_cog_icon/cog_8.png" id="24_v3tax"]
+[ext_resource type="Texture2D" uid="uid://dbitwlecuc8hn" path="res://Assets/UI/Home/main_menu_cog_icon/cog_9.png" id="25_bfsa7"]
+[ext_resource type="Texture2D" uid="uid://dixqfpjhj17mg" path="res://Assets/UI/Home/main_menu_cog_icon/cog_10.png" id="26_ep0sg"]
+[ext_resource type="Texture2D" uid="uid://dde5nhk0r0mkt" path="res://Assets/UI/Home/main_menu_bt_border.png" id="27_2w0yd"]
+[ext_resource type="Texture2D" uid="uid://dnhg2ifg6o4f4" path="res://Assets/UI/Home/main_menu_bt.png" id="28_u7lyp"]
+[ext_resource type="FontFile" uid="uid://d3tjho06kcvga" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="29_f6j46"]
+[ext_resource type="Texture2D" uid="uid://icgf7ukyl4l3" path="res://Assets/UI/Home/main_menu_play_icon/play_1.png" id="30_inmpr"]
+[ext_resource type="Texture2D" uid="uid://c4xy7d7lwult2" path="res://Assets/UI/Home/main_menu_play_icon/play_2.png" id="31_38b8w"]
+[ext_resource type="Texture2D" uid="uid://cbja37dcage5u" path="res://Assets/UI/Home/main_menu_play_icon/play_11.png" id="32_tn86h"]
+[ext_resource type="Texture2D" uid="uid://b5k54st7vrqfu" path="res://Assets/UI/Home/main_menu_play_icon/play_12.png" id="33_iprsi"]
+[ext_resource type="Texture2D" uid="uid://c80xg7it7usaj" path="res://Assets/UI/Home/main_menu_play_icon/play_13.png" id="34_1mcyj"]
+[ext_resource type="Texture2D" uid="uid://cu4t8je27h0ab" path="res://Assets/UI/Home/main_menu_play_icon/play_14.png" id="35_mjj02"]
+[ext_resource type="Texture2D" uid="uid://cfyxxi1r7k5p2" path="res://Assets/UI/Home/main_menu_play_icon/play_15.png" id="36_yg372"]
+[ext_resource type="Texture2D" uid="uid://bvjswp1nig721" path="res://Assets/UI/Home/main_menu_play_icon/play_16.png" id="37_pc4t8"]
+[ext_resource type="Texture2D" uid="uid://btec8g3weuvjh" path="res://Assets/UI/Home/main_menu_play_icon/play_17.png" id="38_8msyi"]
+[ext_resource type="Texture2D" uid="uid://djm1h48issfby" path="res://Assets/UI/Home/main_menu_play_icon/play_18.png" id="39_xtg83"]
+[ext_resource type="Texture2D" uid="uid://dlkva7v7py58w" path="res://Assets/UI/Home/main_menu_play_icon/play_19.png" id="40_h85n1"]
+[ext_resource type="Texture2D" uid="uid://c3dos26j33ekd" path="res://Assets/UI/Home/main_menu_play_icon/play_20.png" id="41_mmbv5"]
+[ext_resource type="Texture2D" uid="uid://xa5gm67csama" path="res://Assets/UI/Home/main_menu_play_icon/play_3.png" id="42_tc0ye"]
+[ext_resource type="Texture2D" uid="uid://bcy4mn16ahfg4" path="res://Assets/UI/Home/main_menu_play_icon/play_21.png" id="43_lrr7v"]
+[ext_resource type="Texture2D" uid="uid://dv8pmm8vs1vum" path="res://Assets/UI/Home/main_menu_play_icon/play_22.png" id="44_cb51l"]
+[ext_resource type="Texture2D" uid="uid://ffvicjonifdg" path="res://Assets/UI/Home/main_menu_play_icon/play_23.png" id="45_5s8q3"]
+[ext_resource type="Texture2D" uid="uid://bap0pum0223ya" path="res://Assets/UI/Home/main_menu_play_icon/play_4.png" id="46_k87ep"]
+[ext_resource type="Texture2D" uid="uid://s133avtluly8" path="res://Assets/UI/Home/main_menu_play_icon/play_5.png" id="47_q3q4p"]
+[ext_resource type="Texture2D" uid="uid://bb61t2on456gs" path="res://Assets/UI/Home/main_menu_play_icon/play_6.png" id="48_tn0e7"]
+[ext_resource type="Texture2D" uid="uid://hv5q3wknl4lm" path="res://Assets/UI/Home/main_menu_play_icon/play_7.png" id="49_dlkw7"]
+[ext_resource type="Texture2D" uid="uid://ck50d3n3uedty" path="res://Assets/UI/Home/main_menu_play_icon/play_8.png" id="50_quovx"]
+[ext_resource type="Texture2D" uid="uid://bpxold1lurcqd" path="res://Assets/UI/Home/main_menu_play_icon/play_9.png" id="51_edoat"]
+[ext_resource type="Texture2D" uid="uid://dh3mdx2edd4e" path="res://Assets/UI/Home/main_menu_play_icon/play_10.png" id="52_prjge"]
+[ext_resource type="Texture2D" uid="uid://bi7ohnl124f21" path="res://Assets/UI/Home/main_menu_stages_icon/stages_1.png" id="54_mp05y"]
+[ext_resource type="Texture2D" uid="uid://by8htn5xdajjg" path="res://Assets/UI/Home/main_menu_stages_icon/stages_2.png" id="55_yu5sp"]
+[ext_resource type="Texture2D" uid="uid://dpyj6wcbcpwad" path="res://Assets/UI/Home/main_menu_stages_icon/stages_11.png" id="56_1yt33"]
+[ext_resource type="Texture2D" uid="uid://bpaecv2k0ybxt" path="res://Assets/UI/Home/main_menu_stages_icon/stages_12.png" id="57_6kjp6"]
+[ext_resource type="Texture2D" uid="uid://68ajs1hme3hc" path="res://Assets/UI/Home/main_menu_stages_icon/stages_13.png" id="58_fy8nk"]
+[ext_resource type="Texture2D" uid="uid://bfwfafa8lb5fc" path="res://Assets/UI/Home/main_menu_stages_icon/stages_14.png" id="59_otu35"]
+[ext_resource type="Texture2D" uid="uid://ceeqbqhowvr8h" path="res://Assets/UI/Home/main_menu_stages_icon/stages_15.png" id="60_7htho"]
+[ext_resource type="Texture2D" uid="uid://bily2lwfuwybw" path="res://Assets/UI/Home/main_menu_stages_icon/stages_16.png" id="61_61lv3"]
+[ext_resource type="Texture2D" uid="uid://cric2s1febh4x" path="res://Assets/UI/Home/main_menu_stages_icon/stages_17.png" id="62_f7glv"]
+[ext_resource type="Texture2D" uid="uid://dtsvat4irodgl" path="res://Assets/UI/Home/main_menu_stages_icon/stages_18.png" id="63_c8q8h"]
+[ext_resource type="Texture2D" uid="uid://cwa4ursnry4u4" path="res://Assets/UI/Home/main_menu_stages_icon/stages_19.png" id="64_37s2g"]
+[ext_resource type="Texture2D" uid="uid://ch2bswofmwjap" path="res://Assets/UI/Home/main_menu_stages_icon/stages_20.png" id="65_0umb6"]
+[ext_resource type="Texture2D" uid="uid://dsx0jxjr7rbe7" path="res://Assets/UI/Home/main_menu_stages_icon/stages_3.png" id="66_y2o3e"]
+[ext_resource type="Texture2D" uid="uid://lkr0u41eltnf" path="res://Assets/UI/Home/main_menu_stages_icon/stages_21.png" id="67_kwc1k"]
+[ext_resource type="Texture2D" uid="uid://ded1v80a85dkb" path="res://Assets/UI/Home/main_menu_stages_icon/stages_22.png" id="68_xltmf"]
+[ext_resource type="Texture2D" uid="uid://c0pmtxxhiw48x" path="res://Assets/UI/Home/main_menu_stages_icon/stages_23.png" id="69_0qj1k"]
+[ext_resource type="Texture2D" uid="uid://2mli2mv8ujrm" path="res://Assets/UI/Home/main_menu_stages_icon/stages_4.png" id="70_hbtd1"]
+[ext_resource type="Texture2D" uid="uid://d4l5sua3i3o5" path="res://Assets/UI/Home/main_menu_stages_icon/stages_5.png" id="71_a8syc"]
+[ext_resource type="Texture2D" uid="uid://cgc3hh3isg8sr" path="res://Assets/UI/Home/main_menu_stages_icon/stages_6.png" id="72_u6xpa"]
+[ext_resource type="Texture2D" uid="uid://d4joglu4d6q8f" path="res://Assets/UI/Home/main_menu_stages_icon/stages_7.png" id="73_cdql4"]
+[ext_resource type="Texture2D" uid="uid://cly6asdx13tes" path="res://Assets/UI/Home/main_menu_stages_icon/stages_8.png" id="74_ifvro"]
+[ext_resource type="Texture2D" uid="uid://dg7eii2q4itvb" path="res://Assets/UI/Home/main_menu_stages_icon/stages_9.png" id="75_55hpn"]
+[ext_resource type="Texture2D" uid="uid://bc3osfyufqrso" path="res://Assets/UI/Home/main_menu_stages_icon/stages_10.png" id="76_aqwsq"]
+[ext_resource type="Texture2D" uid="uid://c6t8ue2g2i5vb" path="res://Assets/UI/Home/main_menu_minion/minion_1.png" id="77_3jlp6"]
+[ext_resource type="Texture2D" uid="uid://gqsctxvtu4a0" path="res://Assets/UI/Home/main_menu_minion/minion_2.png" id="78_rt341"]
+[ext_resource type="Texture2D" uid="uid://vlb387qjramw" path="res://Assets/UI/Home/main_menu_minion/minion_3.png" id="79_prnqv"]
+[ext_resource type="Texture2D" uid="uid://b6568drkcrxat" path="res://Assets/UI/Home/main_menu_minion/minion_4.png" id="80_hwlaj"]
+[ext_resource type="Texture2D" uid="uid://bnj2kxscg3k34" path="res://Assets/UI/Home/minions/minion_fox.png" id="83_krlx6"]
+[ext_resource type="Texture2D" uid="uid://5mt31bh4wtjs" path="res://Assets/UI/Home/bolha2.png" id="83_xhnou"]
+[ext_resource type="Texture2D" uid="uid://cmnq03lyufla8" path="res://Assets/UI/Home/minions/minion_silhuete.png" id="84_ggfkg"]
+[ext_resource type="Texture2D" uid="uid://b65w21aqg0ueo" path="res://Assets/UI/Home/minions/minion_thief.png" id="85_073oy"]
+[ext_resource type="Texture2D" uid="uid://3pvc81tg4tif" path="res://Assets/UI/Home/minions/minion_fish.png" id="86_t1coj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6r6h"]
+texture = ExtResource("2_ubjnr")
+region_rect = Rect2(0, 0, 540, 270)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24fve"]
+texture = ExtResource("3_g16ay")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0hxux"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6xk3i"]
+blend_mode = 1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_4kjo7"]
+frames = 23
+pause = true
+speed_scale = 8.0
+frame_0/texture = ExtResource("4_x3xwt")
+frame_1/texture = ExtResource("5_t7jdg")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("16_yhic4")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("20_o1g2x")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("21_vcqrq")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("22_cae7j")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("23_llxfu")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("24_v3tax")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("25_bfsa7")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("26_ep0sg")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("6_vtrja")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("7_uvypf")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("8_r8sso")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("9_prcwx")
+frame_13/duration = 1.0
+frame_14/texture = ExtResource("10_qfxsf")
+frame_14/duration = 1.0
+frame_15/texture = ExtResource("11_nai1h")
+frame_15/duration = 1.0
+frame_16/texture = ExtResource("12_88b1c")
+frame_16/duration = 1.0
+frame_17/texture = ExtResource("13_ga4ix")
+frame_17/duration = 1.0
+frame_18/texture = ExtResource("14_l58jy")
+frame_18/duration = 1.0
+frame_19/texture = ExtResource("15_ijqnn")
+frame_19/duration = 1.0
+frame_20/texture = ExtResource("17_rfx4g")
+frame_20/duration = 1.0
+frame_21/texture = ExtResource("18_6tx7l")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("19_y41on")
+frame_22/duration = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xj6sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ybbbm"]
+font = ExtResource("29_f6j46")
+font_size = 36
+outline_size = 10
+outline_color = Color(1.05888e-06, 0.476674, 0.635499, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_881c8"]
+blend_mode = 1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kknsu"]
+frames = 23
+speed_scale = 8.0
+frame_0/texture = ExtResource("30_inmpr")
+frame_1/texture = ExtResource("31_38b8w")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("42_tc0ye")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("46_k87ep")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("47_q3q4p")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("48_tn0e7")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("49_dlkw7")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("50_quovx")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("51_edoat")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("52_prjge")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("32_tn86h")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("33_iprsi")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("34_1mcyj")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("35_mjj02")
+frame_13/duration = 1.0
+frame_14/texture = ExtResource("36_yg372")
+frame_14/duration = 1.0
+frame_15/texture = ExtResource("37_pc4t8")
+frame_15/duration = 1.0
+frame_16/texture = ExtResource("38_8msyi")
+frame_16/duration = 1.0
+frame_17/texture = ExtResource("39_xtg83")
+frame_17/duration = 1.0
+frame_18/texture = ExtResource("40_h85n1")
+frame_18/duration = 1.0
+frame_19/texture = ExtResource("41_mmbv5")
+frame_19/duration = 1.0
+frame_20/texture = ExtResource("43_lrr7v")
+frame_20/duration = 1.0
+frame_21/texture = ExtResource("44_cb51l")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("45_5s8q3")
+frame_22/duration = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rgpon"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mf2tu"]
+blend_mode = 1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2u202"]
+frames = 23
+pause = true
+speed_scale = 8.0
+frame_0/texture = ExtResource("54_mp05y")
+frame_1/texture = ExtResource("55_yu5sp")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("66_y2o3e")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("70_hbtd1")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("71_a8syc")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("72_u6xpa")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("73_cdql4")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("74_ifvro")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("75_55hpn")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("76_aqwsq")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("56_1yt33")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("57_6kjp6")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("58_fy8nk")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("59_otu35")
+frame_13/duration = 1.0
+frame_14/texture = ExtResource("60_7htho")
+frame_14/duration = 1.0
+frame_15/texture = ExtResource("61_61lv3")
+frame_15/duration = 1.0
+frame_16/texture = ExtResource("62_f7glv")
+frame_16/duration = 1.0
+frame_17/texture = ExtResource("63_c8q8h")
+frame_17/duration = 1.0
+frame_18/texture = ExtResource("64_37s2g")
+frame_18/duration = 1.0
+frame_19/texture = ExtResource("65_0umb6")
+frame_19/duration = 1.0
+frame_20/texture = ExtResource("67_kwc1k")
+frame_20/duration = 1.0
+frame_21/texture = ExtResource("68_xltmf")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("69_0qj1k")
+frame_22/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_aevvx"]
+frames = 4
+speed_scale = 7.0
+frame_0/texture = ExtResource("77_3jlp6")
+frame_1/texture = ExtResource("78_rt341")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("79_prnqv")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("80_hwlaj")
+frame_3/duration = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cuts5"]
+blend_mode = 1
+
+[node name="Home" type="Node2D" node_paths=PackedStringArray("textures", "labels")]
+script = ExtResource("1_qsfdw")
+start_delay = 0.5
+textures = [NodePath("CanvasLayer/Control/Background/Painel/BtConfig/Texture"), NodePath("CanvasLayer/Control/Background/Painel/BtJogar/Texture"), NodePath("CanvasLayer/Control/Background/Painel/BtFases/Texture")]
+labels = [NodePath("CanvasLayer/Control/Background/Painel/BtConfig/Icon"), NodePath("CanvasLayer/Control/Background/Painel/BtJogar/Icon"), NodePath("CanvasLayer/Control/Background/Painel/BtFases/Icon")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r6r6h")
+
+[node name="Lights" type="Panel" parent="CanvasLayer/Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_24fve")
+script = ExtResource("4_wclex")
+
+[node name="Painel" type="TextureRect" parent="CanvasLayer/Control/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -483.5
+offset_top = -232.0
+offset_right = 483.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_yd3ko")
+
+[node name="BtConfig" type="Button" parent="CanvasLayer/Control/Background/Painel"]
+layout_mode = 0
+offset_left = 104.5
+offset_top = 16.0
+offset_right = 325.5
+offset_bottom = 149.0
+mouse_default_cursor_shape = 2
+flat = true
+script = ExtResource("4_5w3or")
+
+[node name="Borda" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtConfig"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_2w0yd")
+
+[node name="Texture" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtConfig"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+material = SubResource("CanvasItemMaterial_0hxux")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_u7lyp")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtConfig"]
+material = SubResource("CanvasItemMaterial_6xk3i")
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 127.0
+texture = SubResource("AnimatedTexture_4kjo7")
+stretch_mode = 4
+
+[node name="Titulo" type="Label" parent="CanvasLayer/Control/Background/Painel/BtConfig"]
+visible = false
+material = SubResource("CanvasItemMaterial_xj6sn")
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -23.5
+offset_right = 7.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "COnfig"
+label_settings = SubResource("LabelSettings_ybbbm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtJogar" type="Button" parent="CanvasLayer/Control/Background/Painel"]
+layout_mode = 0
+offset_left = 373.5
+offset_top = 13.0
+offset_right = 598.5
+offset_bottom = 149.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Borda" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtJogar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_2w0yd")
+
+[node name="Texture" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtJogar"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_u7lyp")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtJogar"]
+material = SubResource("CanvasItemMaterial_881c8")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -71.0
+offset_right = 68.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_kknsu")
+stretch_mode = 4
+
+[node name="Titulo" type="Label" parent="CanvasLayer/Control/Background/Painel/BtJogar"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -23.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jogar"
+label_settings = SubResource("LabelSettings_ybbbm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtFases" type="Button" parent="CanvasLayer/Control/Background/Painel"]
+layout_mode = 0
+offset_left = 640.5
+offset_top = 12.0
+offset_right = 865.5
+offset_bottom = 148.0
+mouse_default_cursor_shape = 2
+flat = true
+script = ExtResource("4_5w3or")
+
+[node name="Borda" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtFases"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_2w0yd")
+
+[node name="Texture" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtFases"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+material = SubResource("CanvasItemMaterial_rgpon")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_u7lyp")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/Background/Painel/BtFases"]
+material = SubResource("CanvasItemMaterial_mf2tu")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -64.0
+offset_right = 69.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_2u202")
+stretch_mode = 4
+
+[node name="Titulo" type="Label" parent="CanvasLayer/Control/Background/Painel/BtFases"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -23.5
+offset_right = -11.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fases"
+label_settings = SubResource("LabelSettings_ybbbm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minion" type="TextureRect" parent="CanvasLayer/Control/Background"]
+modulate = Color(0.868926, 0.785932, 0.573908, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -160.0
+offset_right = 73.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_aevvx")
+stretch_mode = 4
+
+[node name="ParticlePosition" type="Control" parent="CanvasLayer/Control/Background/Minion"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -25.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Control/Background/Minion/ParticlePosition"]
+modulate = Color(0.784888, 0.799955, 0.430998, 1)
+material = SubResource("CanvasItemMaterial_cuts5")
+amount = 2
+lifetime = 2.1
+texture = ExtResource("83_xhnou")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 70.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="Minions" type="Control" parent="CanvasLayer/Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 137.0
+offset_bottom = -331.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Background/Minions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Coluna1" type="Control" parent="CanvasLayer/Control/Background/Minions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MinionSilhueta" type="TextureRect" parent="CanvasLayer/Control/Background/Minions/GridContainer/Coluna1"]
+modulate = Color(0.2, 0.2, 0.2, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -124.0
+offset_right = 76.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("84_ggfkg")
+stretch_mode = 4
+
+[node name="Coluna2" type="Control" parent="CanvasLayer/Control/Background/Minions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MinionFox" type="TextureRect" parent="CanvasLayer/Control/Background/Minions/GridContainer/Coluna2"]
+modulate = Color(0.299547, 0.299547, 0.299547, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -127.0
+offset_right = 69.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("83_krlx6")
+stretch_mode = 4
+
+[node name="Coluna3" type="Control" parent="CanvasLayer/Control/Background/Minions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Coluna4" type="Control" parent="CanvasLayer/Control/Background/Minions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MinionThief" type="TextureRect" parent="CanvasLayer/Control/Background/Minions/GridContainer/Coluna4"]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -137.0
+offset_right = 57.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("85_073oy")
+stretch_mode = 4
+
+[node name="Coluna5" type="Control" parent="CanvasLayer/Control/Background/Minions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MinionFish" type="TextureRect" parent="CanvasLayer/Control/Background/Minions/GridContainer/Coluna5"]
+modulate = Color(0.2, 0.2, 0.2, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.5
+offset_top = -136.0
+offset_right = 44.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("86_t1coj")
+stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+bus = &"SFX"

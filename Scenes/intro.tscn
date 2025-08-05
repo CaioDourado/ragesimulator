@@ -1,0 +1,281 @@
+[gd_scene load_steps=35 format=3 uid="uid://deunnb6gqx1wb"]
+
+[ext_resource type="Texture2D" uid="uid://ih7iih12s715" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00001.png" id="1_h4eyb"]
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_k06c1"]
+[ext_resource type="Texture2D" uid="uid://cuky6h5t2fkrt" path="res://Assets/UI/Intro/Fundo grid.png" id="1_nr0e1"]
+[ext_resource type="Shader" path="res://Shader/background_scroll_shader.gdshader" id="1_xetrc"]
+[ext_resource type="Texture2D" uid="uid://ct7re8v601lc0" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00002.png" id="2_s5dwt"]
+[ext_resource type="Texture2D" uid="uid://cn0s4ov5fx81l" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00003.png" id="3_smup3"]
+[ext_resource type="Texture2D" uid="uid://dy0agk5kygdwn" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00004.png" id="4_uf6ts"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="5_swgy7"]
+[ext_resource type="Texture2D" uid="uid://dmo12yaumsss1" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00005.png" id="5_ugo87"]
+[ext_resource type="Texture2D" uid="uid://bkx0n14cxtfst" path="res://Assets/UI/Intro/lasers.png" id="6_cnwj8"]
+[ext_resource type="Texture2D" uid="uid://3n0q8k5trmk" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00006.png" id="6_ieoyo"]
+[ext_resource type="Texture2D" uid="uid://b4cx65rfa6p18" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00007.png" id="7_r3ev3"]
+[ext_resource type="Texture2D" uid="uid://dxa87ir3nb1jj" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00008.png" id="8_qhk0f"]
+[ext_resource type="Texture2D" uid="uid://dkd16bpbqeelm" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00009.png" id="9_c21dh"]
+[ext_resource type="Texture2D" uid="uid://c73t6xyhw2g2f" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00010.png" id="10_prp0w"]
+[ext_resource type="Texture2D" uid="uid://bxu081vykmtu4" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00011.png" id="11_gyq6k"]
+[ext_resource type="Texture2D" uid="uid://csu0cq2x21fxn" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00012.png" id="12_551gf"]
+[ext_resource type="Texture2D" uid="uid://doshatb8mwrvd" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00013.png" id="13_r0tyh"]
+[ext_resource type="Texture2D" uid="uid://dqsfqscyacyhd" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00014.png" id="14_k5lrd"]
+[ext_resource type="Texture2D" uid="uid://bd5anrmj5hmq2" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00015.png" id="15_dgt8y"]
+[ext_resource type="Texture2D" uid="uid://dx2lxnaqdrsnu" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00016.png" id="16_2al27"]
+[ext_resource type="Texture2D" uid="uid://ceh5eqhytfxki" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00017.png" id="17_5syu6"]
+[ext_resource type="Texture2D" uid="uid://bd1gjnl7ixy44" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00018.png" id="18_4vpy5"]
+[ext_resource type="Texture2D" uid="uid://bnqfhod2uysgj" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00019.png" id="19_mb65x"]
+[ext_resource type="Texture2D" uid="uid://be82o76waxdvs" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00020.png" id="20_q3lkp"]
+[ext_resource type="Texture2D" uid="uid://cj8d56ignhx2a" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00021.png" id="21_ymelq"]
+[ext_resource type="Texture2D" uid="uid://dse3insl08st" path="res://Assets/UI/Intro/RAGE SIMULATOR (anim)_00022.png" id="22_dtkm0"]
+[ext_resource type="AudioStream" uid="uid://b2f0mye2fwmxp" path="res://Assets/Audio/UI/RAGE SIMULATOR.wav" id="24_xnnsd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sg0qs"]
+shader = ExtResource("1_xetrc")
+shader_parameter/speed = 0.005
+
+[sub_resource type="LabelSettings" id="LabelSettings_11v8q"]
+font = ExtResource("5_swgy7")
+font_size = 22
+
+[sub_resource type="Animation" id="Animation_olg8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Logo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h4eyb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/PressStart:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Logo/Lasers:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(290, 27)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Logo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cpbkg"]
+resource_name = "intro"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Logo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("1_h4eyb"), ExtResource("2_s5dwt"), ExtResource("3_smup3"), ExtResource("4_uf6ts"), ExtResource("5_ugo87"), ExtResource("6_ieoyo"), ExtResource("7_r3ev3"), ExtResource("8_qhk0f"), ExtResource("9_c21dh"), ExtResource("10_prp0w"), ExtResource("11_gyq6k"), ExtResource("12_551gf"), ExtResource("13_r0tyh"), ExtResource("14_k5lrd"), ExtResource("15_dgt8y"), ExtResource("16_2al27"), ExtResource("17_5syu6"), ExtResource("18_4vpy5"), ExtResource("19_mb65x"), ExtResource("20_q3lkp"), ExtResource("21_ymelq"), ExtResource("22_dtkm0")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.33333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/PressStart:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Logo/Lasers:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.03333, 1.63333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-431, 27), Vector2(290, 27), Vector2(760, 27), Vector2(1569, 27)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"playLogoHBT"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_cg37q"]
+resource_name = "pulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Logo:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjht7"]
+_data = {
+"RESET": SubResource("Animation_olg8j"),
+"intro": SubResource("Animation_cpbkg"),
+"pulse": SubResource("Animation_cg37q")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_k06c1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0509804, 0.0941176, 0.145098, 1)
+
+[node name="Grade" type="TextureRect" parent="CanvasLayer/Control"]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sg0qs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nr0e1")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Logo" type="TextureRect" parent="CanvasLayer/Control"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -602.0
+offset_top = -351.0
+offset_right = 602.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(602, 301)
+texture = ExtResource("1_h4eyb")
+expand_mode = 1
+
+[node name="Lasers" type="TextureRect" parent="CanvasLayer/Control/Logo"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = 27.0
+offset_right = -182.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(65, 322)
+texture = ExtResource("6_cnwj8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PressStart" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = 86.0
+offset_right = 147.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Touch to Start"
+label_settings = SubResource("LabelSettings_11v8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_vjht7")
+}
+autoplay = "intro"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("24_xnnsd")
+bus = &"SFX"

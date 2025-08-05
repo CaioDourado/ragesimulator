@@ -1,0 +1,227 @@
+[gd_scene load_steps=21 format=3 uid="uid://nbf7ob3t5lra"]
+
+[ext_resource type="Script" path="res://Scripts/stages.gd" id="1_53wp2"]
+[ext_resource type="Texture2D" uid="uid://c5mdaejb3x5x" path="res://Assets/ui/Device/Panel.png" id="1_ut5u2"]
+[ext_resource type="Texture2D" uid="uid://bjopjjais1jhw" path="res://Assets/ui/Device/screen.png" id="2_31mlt"]
+[ext_resource type="Texture2D" uid="uid://bhrtm1fyxoi8x" path="res://Assets/ui/Device/grade.png" id="3_mjlqg"]
+[ext_resource type="Texture2D" uid="uid://cs4iu8koepgxn" path="res://Assets/ui/Device/bt_back.png" id="4_krkbc"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/pixel1.tres" id="5_5srr0"]
+[ext_resource type="Texture2D" uid="uid://cr44erlgqbhla" path="res://Assets/ui/Device/title.png" id="5_yw04i"]
+[ext_resource type="Texture2D" uid="uid://byymcgdeg8xoo" path="res://Assets/ui/Device/bt_play.png" id="7_edrqw"]
+[ext_resource type="Texture2D" uid="uid://eshjbf8varfl" path="res://Assets/ui/Device/progress.png" id="8_8ly84"]
+[ext_resource type="Texture2D" uid="uid://ccbbpnr2mwxhj" path="res://Assets/ui/Device/lights.png" id="9_2apl3"]
+[ext_resource type="Texture2D" uid="uid://dshk31si1tbhe" path="res://Assets/ui/Device/rager.png" id="10_2w0rs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5j1fk"]
+texture = ExtResource("1_ut5u2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrh41"]
+bg_color = Color(0.0509804, 0.0941176, 0.145098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cyvvg"]
+texture = ExtResource("3_mjlqg")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqpgh"]
+texture = ExtResource("2_31mlt")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 384, 192)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dplni"]
+font = ExtResource("5_5srr0")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8f0r"]
+atlas = ExtResource("4_krkbc")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmjnr"]
+atlas = ExtResource("4_krkbc")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tt8n"]
+atlas = ExtResource("7_edrqw")
+region = Rect2(0, 0, 53, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0ays"]
+atlas = ExtResource("7_edrqw")
+region = Rect2(53, 0, 53, 50)
+
+[node name="Stages" type="Node2D"]
+script = ExtResource("1_53wp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Device" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5j1fk")
+
+[node name="ScreenBackground" type="Panel" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 112.0
+offset_right = -168.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrh41")
+
+[node name="ScreenMask" type="Panel" parent="CanvasLayer/Device/ScreenBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grade" type="Panel" parent="CanvasLayer/Device/ScreenBackground/ScreenMask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cyvvg")
+
+[node name="BtStages" type="Control" parent="CanvasLayer/Device/ScreenBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="CanvasLayer/Device/ScreenBackground/BtStages"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 60
+columns = 5
+
+[node name="Screen" type="Panel" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 104.0
+offset_right = -160.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqpgh")
+
+[node name="TitleImg" type="TextureRect" parent="CanvasLayer/Device/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.5
+offset_top = -90.0
+offset_right = 233.5
+offset_bottom = 11.0
+grow_horizontal = 2
+texture = ExtResource("5_yw04i")
+
+[node name="Title" type="Label" parent="CanvasLayer/Device/Screen/TitleImg"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_dplni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtBack" type="TextureButton" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 38.0
+offset_right = -69.0
+offset_bottom = 80.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_g8f0r")
+texture_pressed = SubResource("AtlasTexture_wmjnr")
+
+[node name="BtPlay" type="TextureButton" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -234.0
+offset_right = -87.0
+offset_bottom = -184.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.3, 2.3)
+texture_normal = SubResource("AtlasTexture_8tt8n")
+texture_pressed = SubResource("AtlasTexture_d0ays")
+
+[node name="Progress" type="TextureRect" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -202.0
+offset_right = 99.0
+offset_bottom = 129.0
+grow_vertical = 2
+texture = ExtResource("8_8ly84")
+
+[node name="Lights" type="TextureRect" parent="CanvasLayer/Device"]
+layout_mode = 1
+offset_left = 129.0
+offset_top = 65.0
+offset_right = 223.0
+offset_bottom = 99.0
+texture = ExtResource("9_2apl3")
+
+[node name="Rager" type="TextureRect" parent="CanvasLayer/Device"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -106.0
+offset_right = 104.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_2w0rs")
+
+[connection signal="pressed" from="CanvasLayer/Device/BtBack" to="." method="_on_bt_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Device/BtPlay" to="." method="_on_bt_play_pressed"]

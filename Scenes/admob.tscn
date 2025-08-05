@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://4uro0l4udh2e"]
+
+[ext_resource type="Script" path="res://Scripts/ad_mob_manager.gd" id="1_loee4"]
+[ext_resource type="Script" path="res://addons/AdmobPlugin/Admob.gd" id="2_rnejl"]
+
+[node name="AdMob" type="Node2D"]
+script = ExtResource("1_loee4")
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource("2_rnejl")
+is_real = true
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+real_application_id = "ca-app-pub-5504982656310459~8048865071"
+real_rewarded_id = "ca-app-pub-5504982656310459/8922569836"
+
+[node name="AdTimeoutTimer" type="Timer" parent="."]
+
+[connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]
+[connection signal="rewarded_ad_dismissed_full_screen_content" from="Admob" to="." method="_on_admob_rewarded_ad_dismissed_full_screen_content"]
+[connection signal="rewarded_ad_user_earned_reward" from="Admob" to="." method="_on_admob_rewarded_ad_user_earned_reward"]

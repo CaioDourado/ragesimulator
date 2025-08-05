@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=4 uid="uid://ega37s452dau"]
+
+[ext_resource type="PackedScene" uid="uid://fasx3nu4k1do" path="res://Scenes/TutorialTemplateNew.tscn" id="1_s1v14"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Content" parent="." instance=ExtResource("1_s1v14")]
+
+[node name="TileMapLayer" parent="Content" index="2"]
+tile_map_data = PackedByteArray("AAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAACAAAAAAACAAAAAAABAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAIAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAD//wIAAAACAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAEAAAD//wEAAAACAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAAAAAABAAAAAAABAAAAAAAAAAAAAAAFAAAAAAACAAAAAAAEAAAAAAABAAAAAAAFAAEAAAACAAEAAAAFAAIAAAACAAIAAAAEAAIAAAABAAIAAAAEAAEAAAABAAEAAAA=")
+
+[node name="Label" parent="Content" index="11"]
+text = "tutorial_2"
+
+[editable path="Content"]
+[editable path="Content/UI"]
+[editable path="Content/Buttons"]

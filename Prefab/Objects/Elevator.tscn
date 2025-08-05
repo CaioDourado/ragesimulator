@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx672yb35stxb"]
+
+[ext_resource type="Script" path="res://Scripts/plataform_movement.gd" id="1_wojjc"]
+[ext_resource type="Texture2D" uid="uid://drxuhq6tus0yk" path="res://Assets/Tileset/Tileset32/Objects/elevador.png" id="1_ydwgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6e84"]
+size = Vector2(64, 10)
+
+[node name="Elevator" type="Node2D"]
+script = ExtResource("1_wojjc")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+z_index = 3
+position = Vector2(0, -16)
+texture = ExtResource("1_ydwgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_q6e84")

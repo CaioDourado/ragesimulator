@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://byijvniu0vu4d"]
+
+[ext_resource type="Texture2D" uid="uid://djdgrwxk5ndjk" path="res://Assets/UI/Device/square_stage.png" id="1_0sg13"]
+[ext_resource type="Script" path="res://Scripts/bt_stage.gd" id="2_afrrl"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="2_j6eqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdmfp"]
+atlas = ExtResource("1_0sg13")
+region = Rect2(29, 0, 29, 38)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w75sw"]
+font = ExtResource("2_j6eqd")
+font_color = Color(0.623529, 0.933333, 1, 1)
+
+[node name="BtStage" type="TextureButton"]
+custom_minimum_size = Vector2(63, 88)
+offset_right = 63.0
+offset_bottom = 88.0
+pivot_offset = Vector2(31, 44)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_cdmfp")
+stretch_mode = 4
+script = ExtResource("2_afrrl")
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 25.0
+offset_right = -31.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "01"
+label_settings = SubResource("LabelSettings_w75sw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

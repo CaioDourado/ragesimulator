@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://dg12jr50wj1hb"]
+
+[ext_resource type="Script" path="res://Scripts/Tools/esteira.gd" id="1_8satf"]
+[ext_resource type="Texture2D" uid="uid://qj18d1y645qh" path="res://Assets/Tileset/Tileset32/Objects/esteiras.png" id="1_i30dg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjwvi"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqv46"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojyal"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qb27"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nubha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjwvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqv46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojyal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qb27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3vlg"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fodg4"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tes3o"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc10w"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ke8y2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3vlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fodg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tes3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc10w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt88q"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30h01"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk2i2"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42d0q"]
+atlas = ExtResource("1_i30dg")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eswr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt88q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30h01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk2i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42d0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq3qc"]
+size = Vector2(96, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrbb"]
+size = Vector2(96, 8)
+
+[node name="Belt" type="StaticBody2D"]
+script = ExtResource("1_8satf")
+
+[node name="Left" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nubha")
+autoplay = "default"
+frame = 3
+frame_progress = 0.940473
+
+[node name="Right" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_ke8y2")
+autoplay = "default"
+frame = 3
+frame_progress = 0.137946
+
+[node name="CenterHolder" type="Sprite2D" parent="."]
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="Template" type="AnimatedSprite2D" parent="CenterHolder"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1eswr")
+autoplay = "default"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(32, 4)
+shape = SubResource("RectangleShape2D_nq3qc")
+
+[node name="BeltMove" type="StaticBody2D" parent="."]
+constant_linear_velocity = Vector2(100, 0)
+
+[node name="ForceCollider" type="CollisionShape2D" parent="BeltMove"]
+position = Vector2(32, -12)
+shape = SubResource("RectangleShape2D_yfrbb")
+debug_color = Color(0.95854, 0, 0.526581, 0.42)

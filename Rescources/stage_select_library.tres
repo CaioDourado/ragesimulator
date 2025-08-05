@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="StageSelectLibrary" load_steps=20 format=3 uid="uid://bmcusyef2dkhd"]
+
+[ext_resource type="Script" path="res://Scripts/ChapterLibrary.gd" id="1_uftco"]
+[ext_resource type="Script" path="res://Scripts/StageLibrary.gd" id="2_a63bn"]
+[ext_resource type="Script" path="res://Scripts/StageSelectLibrary.gd" id="2_vqpms"]
+[ext_resource type="PackedScene" uid="uid://c1dlds57hmhhh" path="res://Scenes/Stages/Tutorial/tutorial1.tscn" id="4_sc3tn"]
+[ext_resource type="PackedScene" uid="uid://ega37s452dau" path="res://Scenes/Stages/Tutorial/tutorial2.tscn" id="5_8petu"]
+[ext_resource type="PackedScene" uid="uid://cmocc7bmlxx8o" path="res://Scenes/Stages/Tutorial/tutorial3.tscn" id="6_5v3e1"]
+[ext_resource type="PackedScene" uid="uid://b25a6ao3e5j1n" path="res://Scenes/Stages/Tutorial/tutorial4.tscn" id="7_78pln"]
+[ext_resource type="PackedScene" uid="uid://b5gknhncfvyvg" path="res://Scenes/Stages/Chapter1/Stage1.tscn" id="8_8adg3"]
+[ext_resource type="PackedScene" uid="uid://bxg4tywto4kmw" path="res://Scenes/Stages/Tutorial/tutorial5.tscn" id="8_sp6om"]
+[ext_resource type="PackedScene" uid="uid://byq2rtsavsp8s" path="res://Scenes/Stages/Chapter1/Stage2.tscn" id="9_rp1qc"]
+
+[sub_resource type="Resource" id="Resource_hiu71"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("4_sc3tn")
+open = true
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 0
+tutorial = true
+
+[sub_resource type="Resource" id="Resource_ynb2h"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("5_8petu")
+open = false
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 0
+tutorial = true
+
+[sub_resource type="Resource" id="Resource_n75tm"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("6_5v3e1")
+open = false
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 0
+tutorial = true
+
+[sub_resource type="Resource" id="Resource_3dmkk"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("7_78pln")
+open = false
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 0
+tutorial = true
+
+[sub_resource type="Resource" id="Resource_0mouu"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("8_sp6om")
+open = false
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 1
+tutorial = true
+
+[sub_resource type="Resource" id="Resource_b2x16"]
+script = ExtResource("1_uftco")
+name = "help_tutorial"
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_hiu71"), SubResource("Resource_ynb2h"), SubResource("Resource_n75tm"), SubResource("Resource_3dmkk"), SubResource("Resource_0mouu")])
+
+[sub_resource type="Resource" id="Resource_iowrr"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("8_8adg3")
+open = false
+quest_time = 60.0
+quest_deaths = 10
+quest_gears = 2
+tutorial = false
+
+[sub_resource type="Resource" id="Resource_uy7nl"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("9_rp1qc")
+open = false
+quest_time = 0.0
+quest_deaths = 0
+quest_gears = 0
+tutorial = false
+
+[sub_resource type="Resource" id="Resource_uq1mc"]
+script = ExtResource("1_uftco")
+name = "stage_1"
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_iowrr"), SubResource("Resource_uy7nl")])
+
+[resource]
+script = ExtResource("2_vqpms")
+chapters = Array[ExtResource("1_uftco")]([SubResource("Resource_b2x16"), SubResource("Resource_uq1mc")])

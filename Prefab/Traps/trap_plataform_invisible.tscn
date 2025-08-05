@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://3jittmd1qgo"]
+
+[ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_invisible.gd" id="1_rmbhb"]
+[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/TilesetDanger.png" id="2_6jou5"]
+[ext_resource type="Shader" uid="uid://c7k6vmr26vrfo" path="res://Shader/Dissolve.tres" id="2_df24l"]
+
+[sub_resource type="Gradient" id="Gradient_5eelw"]
+interpolation_mode = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wswkd"]
+gradient = SubResource("Gradient_5eelw")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ge84v"]
+shader = ExtResource("2_df24l")
+shader_parameter/ColorParameter = Color(0.073523, 0.722229, 0.923573, 1)
+shader_parameter/DissolveValue = 0.0
+shader_parameter/Noise = SubResource("GradientTexture2D_wswkd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox4h7"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3tfa"]
+size = Vector2(28, 36)
+
+[node name="TrapPlataformInvisible" type="Area2D"]
+script = ExtResource("1_rmbhb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SpriteRenderer" type="Sprite2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_ge84v")
+texture = ExtResource("2_6jou5")
+region_enabled = true
+region_rect = Rect2(96, 96, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_ox4h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_o3tfa")
+debug_color = Color(0.78648, 0.382964, 0.531637, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

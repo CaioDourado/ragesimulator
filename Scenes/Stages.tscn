@@ -1,0 +1,549 @@
+[gd_scene load_steps=43 format=3 uid="uid://nbf7ob3t5lra"]
+
+[ext_resource type="Script" path="res://Scripts/stages.gd" id="1_53wp2"]
+[ext_resource type="Texture2D" uid="uid://c5mdaejb3x5x" path="res://Assets/UI/Device/Panel.png" id="1_ut5u2"]
+[ext_resource type="Texture2D" uid="uid://bhrtm1fyxoi8x" path="res://Assets/UI/Device/grade.png" id="3_mjlqg"]
+[ext_resource type="Texture2D" uid="uid://cs4iu8koepgxn" path="res://Assets/UI/Device/bt_back.png" id="4_krkbc"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="5_5srr0"]
+[ext_resource type="Texture2D" uid="uid://dkgqfimvnl1fl" path="res://Assets/UI/Prancha/checkbox.png" id="5_ibeck"]
+[ext_resource type="Texture2D" uid="uid://cqq3bxvbgoiik" path="res://Assets/UI/left_scroll.png" id="5_xm7vf"]
+[ext_resource type="Texture2D" uid="uid://cr44erlgqbhla" path="res://Assets/UI/Device/title.png" id="5_yw04i"]
+[ext_resource type="Texture2D" uid="uid://dqhjdob75t535" path="res://Assets/UI/right_scroll.png" id="6_184kt"]
+[ext_resource type="Texture2D" uid="uid://763t5djp4bkc" path="res://Assets/UI/Prancha/check.png" id="6_f11gg"]
+[ext_resource type="Texture2D" uid="uid://byymcgdeg8xoo" path="res://Assets/UI/Device/bt_play.png" id="7_edrqw"]
+[ext_resource type="Texture2D" uid="uid://itq5740y7gi7" path="res://Assets/UI/Device/screen_old.png" id="7_fxcnt"]
+[ext_resource type="Texture2D" uid="uid://eshjbf8varfl" path="res://Assets/UI/Device/progress.png" id="8_8ly84"]
+[ext_resource type="Texture2D" uid="uid://daq0krsmggyu3" path="res://Assets/UI/Prancha/clock_icon.png" id="9_k3nqe"]
+[ext_resource type="Texture2D" uid="uid://dshk31si1tbhe" path="res://Assets/UI/Device/rager.png" id="10_2w0rs"]
+[ext_resource type="FontVariation" uid="uid://brs8u105g6f1t" path="res://Themes/Fonts/lana.tres" id="10_enq6w"]
+[ext_resource type="Texture2D" uid="uid://dyxdl8ivhjc5d" path="res://Assets/UI/Prancha/deaths_icon.png" id="10_f3wha"]
+[ext_resource type="FontFile" uid="uid://ctgutpnh1dip0" path="res://Assets/Fonts/Gamer.ttf" id="11_3je0c"]
+[ext_resource type="Texture2D" uid="uid://bj5vhd1ftg43s" path="res://Assets/UI/Prancha/gear_icon.png" id="12_n6q5c"]
+[ext_resource type="Texture2D" uid="uid://bb68vmfxhesta" path="res://Assets/UI/Device/device_light.png" id="19_kchm7"]
+[ext_resource type="Texture2D" uid="uid://ctct10aa38fe3" path="res://Assets/UI/Device/device_light_top.png" id="20_cmry5"]
+[ext_resource type="Texture2D" uid="uid://br5gcndrhd31u" path="res://Assets/UI/luzes.png" id="20_ig6tg"]
+[ext_resource type="Script" path="res://Scripts/sprite_switch.gd" id="20_lnhlb"]
+[ext_resource type="Texture2D" uid="uid://bk0nni1jfvih" path="res://Assets/UI/luzes_on.png" id="21_ir2el"]
+[ext_resource type="Texture2D" uid="uid://dx7muf66o3l36" path="res://Assets/UI/Device/device_light_on.png" id="21_r3mo3"]
+[ext_resource type="Script" path="res://Scripts/active_interval_effect.gd" id="22_8l85x"]
+[ext_resource type="Texture2D" uid="uid://b68nfnm26y36w" path="res://Assets/UI/Device/device_light_on_top.png" id="23_jua5e"]
+[ext_resource type="Texture2D" uid="uid://daftqvggasw0m" path="res://Assets/UI/Device/stages_details.png" id="23_ndgh8"]
+[ext_resource type="Texture2D" uid="uid://cb87pugyjmvm0" path="res://Assets/UI/Device/stage_details_minion.png" id="24_khm1w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5j1fk"]
+texture = ExtResource("1_ut5u2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrh41"]
+bg_color = Color(0.0509804, 0.0941176, 0.145098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cyvvg"]
+texture = ExtResource("3_mjlqg")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hknw"]
+font = ExtResource("5_5srr0")
+font_size = 24
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqpgh"]
+texture = ExtResource("7_fxcnt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dplni"]
+font = ExtResource("11_3je0c")
+font_size = 48
+font_color = Color(0.623529, 0.933333, 1, 1)
+outline_size = 5
+outline_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_krhb8"]
+font = ExtResource("10_enq6w")
+font_size = 33
+font_color = Color(0.262745, 0.870588, 1, 1)
+outline_color = Color(0.623529, 0.933333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_msdhs"]
+font = ExtResource("10_enq6w")
+font_size = 33
+font_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k83at"]
+font = ExtResource("10_enq6w")
+font_size = 33
+font_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8f0r"]
+atlas = ExtResource("4_krkbc")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmjnr"]
+atlas = ExtResource("4_krkbc")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tt8n"]
+atlas = ExtResource("7_edrqw")
+region = Rect2(0, 0, 53, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0ays"]
+atlas = ExtResource("7_edrqw")
+region = Rect2(53, 0, 53, 50)
+
+[node name="Stages" type="Node2D" node_paths=PackedStringArray("lights")]
+script = ExtResource("1_53wp2")
+lights = [NodePath("CanvasLayer/Control/Device/Progress/Light1"), NodePath("CanvasLayer/Control/Device/Progress/Light2"), NodePath("CanvasLayer/Control/Device/Progress/Light3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Device" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5j1fk")
+
+[node name="ScreenBackground" type="Panel" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 127.0
+offset_top = 118.0
+offset_right = -174.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrh41")
+
+[node name="ScreenMask" type="Panel" parent="CanvasLayer/Control/Device/ScreenBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grade" type="Panel" parent="CanvasLayer/Control/Device/ScreenBackground/ScreenMask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cyvvg")
+
+[node name="BtStages" type="Control" parent="CanvasLayer/Control/Device/ScreenBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="CanvasLayer/Control/Device/ScreenBackground/BtStages"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 50
+columns = 5
+
+[node name="TotalChecks" type="Label" parent="CanvasLayer/Control/Device/ScreenBackground"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_top = 50.0
+offset_right = -35.0
+offset_bottom = 81.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_0hknw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Check" type="TextureRect" parent="CanvasLayer/Control/Device/ScreenBackground/TotalChecks"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -13.5
+offset_right = -7.0
+offset_bottom = 14.5
+grow_vertical = 2
+texture = ExtResource("5_ibeck")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Device/ScreenBackground/TotalChecks/Check"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_f11gg")
+
+[node name="Screen" type="Panel" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 104.0
+offset_right = -160.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqpgh")
+
+[node name="BtLeft" type="TextureButton" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -43.0
+offset_right = 106.0
+offset_bottom = 40.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_xm7vf")
+stretch_mode = 0
+
+[node name="BtRight" type="TextureButton" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -43.0
+offset_right = -56.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_184kt")
+stretch_mode = 0
+
+[node name="TitleImg" type="TextureRect" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -269.5
+offset_top = -98.0
+offset_right = 269.5
+offset_bottom = 17.0
+grow_horizontal = 2
+texture = ExtResource("5_yw04i")
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Device/Screen/TitleImg"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_dplni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClockIcon" type="TextureRect" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -98.0
+offset_right = 96.0
+offset_bottom = -50.0
+grow_vertical = 0
+texture = ExtResource("9_k3nqe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Device/Screen/ClockIcon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -12.0
+offset_right = 177.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_krhb8")
+vertical_alignment = 1
+
+[node name="DeathsIcon" type="TextureRect" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -98.0
+offset_right = -16.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_f3wha")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Device/Screen/DeathsIcon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -12.0
+offset_right = 196.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_msdhs")
+vertical_alignment = 1
+
+[node name="GearsIcon" type="TextureRect" parent="CanvasLayer/Control/Device/Screen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -98.0
+offset_right = -122.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("12_n6q5c")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Device/Screen/GearsIcon"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -12.0
+offset_right = 87.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0/0"
+label_settings = SubResource("LabelSettings_k83at")
+vertical_alignment = 1
+
+[node name="BtBack" type="TextureButton" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 38.0
+offset_right = -69.0
+offset_bottom = 80.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_g8f0r")
+texture_pressed = SubResource("AtlasTexture_wmjnr")
+
+[node name="BtPlay" type="TextureButton" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -234.0
+offset_right = -87.0
+offset_bottom = -184.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.3, 2.3)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_8tt8n")
+texture_pressed = SubResource("AtlasTexture_d0ays")
+
+[node name="Progress" type="TextureRect" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -202.0
+offset_right = 99.0
+offset_bottom = 129.0
+grow_vertical = 2
+texture = ExtResource("8_8ly84")
+stretch_mode = 4
+
+[node name="Light1" type="TextureRect" parent="CanvasLayer/Control/Device/Progress"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -118.0
+offset_right = 13.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("19_kchm7")
+stretch_mode = 4
+script = ExtResource("20_lnhlb")
+texture_main = ExtResource("19_kchm7")
+texture_switch = ExtResource("21_r3mo3")
+on_time = 1.5
+start_delay = 0.5
+
+[node name="Light2" type="TextureRect" parent="CanvasLayer/Control/Device/Progress"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -61.5
+offset_right = 13.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_kchm7")
+stretch_mode = 4
+script = ExtResource("20_lnhlb")
+texture_main = ExtResource("19_kchm7")
+texture_switch = ExtResource("21_r3mo3")
+on_time = 1.5
+start_delay = 1.0
+
+[node name="Light3" type="TextureRect" parent="CanvasLayer/Control/Device/Progress"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 13.0
+offset_bottom = 108.0
+grow_horizontal = 2
+texture = ExtResource("20_cmry5")
+stretch_mode = 4
+script = ExtResource("20_lnhlb")
+texture_main = ExtResource("20_cmry5")
+texture_switch = ExtResource("23_jua5e")
+on_time = 1.5
+start_delay = 1.5
+
+[node name="Rager" type="TextureRect" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -98.0
+offset_right = 100.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_2w0rs")
+stretch_mode = 5
+
+[node name="Lights" type="TextureRect" parent="CanvasLayer/Control/Device"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 59.0
+offset_right = 269.0
+offset_bottom = 96.0
+texture = ExtResource("20_ig6tg")
+stretch_mode = 5
+
+[node name="LightsEffect" type="TextureRect" parent="CanvasLayer/Control/Device/Lights"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_ir2el")
+stretch_mode = 5
+script = ExtResource("22_8l85x")
+
+[node name="Details" type="TextureRect" parent="CanvasLayer/Control/Device"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -180.0
+offset_right = -18.0
+offset_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("23_ndgh8")
+stretch_mode = 4
+
+[node name="Minion" type="TextureRect" parent="CanvasLayer/Control/Device/Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 49.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_khm1w")
+stretch_mode = 5
+script = ExtResource("22_8l85x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="pressed" from="CanvasLayer/Control/Device/Screen/BtLeft" to="." method="_on_bt_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Device/Screen/BtRight" to="." method="_on_bt_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Device/BtBack" to="." method="_on_bt_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Device/BtPlay" to="." method="_on_bt_play_pressed"]

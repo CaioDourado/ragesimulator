@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b04o156jylne1"]
+
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="1_3ej4i"]
+[ext_resource type="Texture2D" uid="uid://l3h6y2yyd6gl" path="res://Assets/UI/buttons.png" id="1_sooe4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ad7or"]
+texture = ExtResource("1_sooe4")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(64, 0, 32, 32)
+
+[resource]
+Button/colors/font_color = Color(0.266576, 0.266575, 0.266575, 1)
+Button/fonts/font = ExtResource("1_3ej4i")
+Button/styles/normal = SubResource("StyleBoxTexture_ad7or")

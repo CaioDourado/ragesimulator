@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="StageSelectLibrary" load_steps=18 format=3 uid="uid://bmcusyef2dkhd"]
+
+[ext_resource type="Script" path="res://Scripts/ChapterLibrary.gd" id="1_uftco"]
+[ext_resource type="Script" path="res://Scripts/StageLibrary.gd" id="2_a63bn"]
+[ext_resource type="Script" path="res://Scripts/StageSelectLibrary.gd" id="2_vqpms"]
+[ext_resource type="Script" path="res://Scripts/QuestLibrary.gd" id="3_e5dja"]
+[ext_resource type="PackedScene" uid="uid://c1dlds57hmhhh" path="res://Scenes/Stages/Tutorial/tutorial1.tscn" id="4_sc3tn"]
+[ext_resource type="PackedScene" uid="uid://ega37s452dau" path="res://Scenes/Stages/Tutorial/tutorial2.tscn" id="5_8petu"]
+[ext_resource type="PackedScene" uid="uid://cmocc7bmlxx8o" path="res://Scenes/Stages/Tutorial/tutorial3.tscn" id="6_5v3e1"]
+[ext_resource type="PackedScene" uid="uid://b25a6ao3e5j1n" path="res://Scenes/Stages/Tutorial/tutorial4.tscn" id="7_78pln"]
+[ext_resource type="PackedScene" uid="uid://d06k1g8lnbeeh" path="res://Scenes/Stages/Tutorial/tutorial5.tscn" id="8_sp6om"]
+
+[sub_resource type="Resource" id="Resource_hiu71"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("4_sc3tn")
+open = true
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_ynb2h"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("5_8petu")
+open = false
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_n75tm"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("6_5v3e1")
+open = false
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_3dmkk"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("7_78pln")
+open = false
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_0mouu"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("8_sp6om")
+open = false
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_b2x16"]
+script = ExtResource("1_uftco")
+name = "Tutorial"
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_hiu71"), SubResource("Resource_ynb2h"), SubResource("Resource_n75tm"), SubResource("Resource_3dmkk"), SubResource("Resource_0mouu")])
+
+[sub_resource type="Resource" id="Resource_w6xee"]
+script = ExtResource("2_a63bn")
+open = false
+quests = Array[ExtResource("3_e5dja")]([])
+time = 0.0
+deaths = 0
+
+[sub_resource type="Resource" id="Resource_uq1mc"]
+script = ExtResource("1_uftco")
+name = "Capitulo 1: Fabrica"
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_w6xee")])
+
+[resource]
+script = ExtResource("2_vqpms")
+chapters = Array[ExtResource("1_uftco")]([SubResource("Resource_b2x16"), SubResource("Resource_uq1mc")])

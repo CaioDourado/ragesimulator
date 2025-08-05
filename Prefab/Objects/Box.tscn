@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctabc3ktvhqg2"]
+
+[ext_resource type="Script" path="res://Scripts/objetc.gd" id="1_h3boh"]
+[ext_resource type="Texture2D" uid="uid://bexxjo82u7tuo" path="res://Assets/Tileset/Tileset32/Objects/caixa.png" id="1_swchm"]
+[ext_resource type="Script" path="res://Scripts/objetct_impact.gd" id="3_l15wq"]
+[ext_resource type="AudioStream" uid="uid://co8d82fpprxbw" path="res://Assets/Audio/SFX/box_drop.mp3" id="4_w7s4c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m3dbb"]
+bounce = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oea4"]
+size = Vector2(28, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mu2x"]
+size = Vector2(24, 4)
+
+[node name="Box" type="RigidBody2D" node_paths=PackedStringArray("collider")]
+physics_material_override = SubResource("PhysicsMaterial_m3dbb")
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_h3boh")
+lifetime = 6.0
+collider = NodePath("Collider")
+
+[node name="SpriteRender" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_swchm")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3oea4")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_l15wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6mu2x")
+debug_color = Color(0.926347, 0.183372, 0.504128, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_w7s4c")
+attenuation = 15.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

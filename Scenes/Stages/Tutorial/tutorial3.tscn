@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=4 uid="uid://cmocc7bmlxx8o"]
+
+[ext_resource type="PackedScene" uid="uid://fasx3nu4k1do" path="res://Scenes/TutorialTemplateNew.tscn" id="1_j8pu3"]
+[ext_resource type="PackedScene" uid="uid://dd7mv0ykvciqo" path="res://Prefab/Traps/trap_ground_fall.tscn" id="2_pr4i5"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Content" parent="." instance=ExtResource("1_j8pu3")]
+
+[node name="TileMapLayer" parent="Content" index="2"]
+tile_map_data = PackedByteArray("AAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAACAAAAAAABAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAIAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAD//wIAAAABAAIAAAABAAIAAAABAAIAAAABAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAAAAAABAAAAAAABAAAAAAABAAAAAAAFAAAAAAACAAAAAAAEAAAAAAABAAAAAAAFAAEAAAACAAEAAAAFAAIAAAACAAIAAAAEAAIAAAABAAIAAAAEAAEAAAABAAEAAAA=")
+
+[node name="TrapGroundFall" parent="Content/InteractMap" index="0" instance=ExtResource("2_pr4i5")]
+
+[node name="TileMapLayer" parent="Content/InteractMap/TrapGroundFall/Area2D" index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAAAAAEAAQABAAEAAAAAAAIAAQABAAIAAAA=")
+
+[node name="Label" parent="Content" index="11"]
+text = "tutorial_3"
+
+[editable path="Content"]
+[editable path="Content/InteractMap/TrapGroundFall"]
+[editable path="Content/UI"]
+[editable path="Content/Buttons"]

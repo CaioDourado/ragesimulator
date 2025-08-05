@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://brs8u105g6f1t"]
+
+[ext_resource type="FontFile" uid="uid://c8us0q77bes67" path="res://Assets/Fonts/lana.ttf" id="1_dn43y"]
+
+[resource]
+base_font = ExtResource("1_dn43y")

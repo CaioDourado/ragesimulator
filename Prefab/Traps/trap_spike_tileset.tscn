@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://hd8elpoqrm0p"]
+
+[ext_resource type="Script" path="res://Scripts/Traps/trap_spike_tileset.gd" id="1_f4b14"]
+[ext_resource type="Texture2D" uid="uid://d1hnkqnocgwy2" path="res://Assets/Tileset/Tileset1/tileset2.png" id="1_mvl6r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbjn8"]
+texture = ExtResource("1_mvl6r")
+0:0/0 = 0
+1:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vyxky"]
+sources/0 = SubResource("TileSetAtlasSource_jbjn8")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llccr"]
+size = Vector2(32, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sngpw"]
+size = Vector2(32, 8)
+
+[node name="TrapSpikeTileset" type="Node2D"]
+script = ExtResource("1_f4b14")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_vyxky")
+
+[node name="ColliderMove" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColliderMove"]
+position = Vector2(0, -19.5)
+shape = SubResource("RectangleShape2D_llccr")
+
+[node name="Collider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_sngpw")
+debug_color = Color(0.777041, 0.383541, 0.567838, 0.42)
+
+[connection signal="body_entered" from="ColliderMove" to="." method="_on_collider_move_body_entered"]
+[connection signal="body_entered" from="Collider" to="." method="_on_collider_body_entered"]

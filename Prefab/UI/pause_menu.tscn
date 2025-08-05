@@ -1,0 +1,1182 @@
+[gd_scene load_steps=46 format=3 uid="uid://0kljeeoqbjqs"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_hx8xv"]
+[ext_resource type="Texture2D" uid="uid://bg4t8exw7r4eq" path="res://Assets/UI/Prancha/base.png" id="3_gc6i4"]
+[ext_resource type="Texture2D" uid="uid://cphxgnlvrlay0" path="res://Assets/UI/Prancha/bt_play.png" id="4_0gg12"]
+[ext_resource type="Texture2D" uid="uid://cc0k0mdmbvpal" path="res://Assets/UI/Prancha/bt_replay.png" id="5_ku7lc"]
+[ext_resource type="Texture2D" uid="uid://c56orq5ya403o" path="res://Assets/UI/Prancha/preacher.png" id="6_4au53"]
+[ext_resource type="Texture2D" uid="uid://c4pygr62wten" path="res://Assets/UI/Prancha/bt_stages.png" id="6_sckjy"]
+[ext_resource type="FontVariation" uid="uid://qvq7qc07x5bs" path="res://Themes/Fonts/bmsly.tres" id="7_7i3d2"]
+[ext_resource type="Texture2D" uid="uid://daq0krsmggyu3" path="res://Assets/UI/Prancha/clock_icon.png" id="8_ki212"]
+[ext_resource type="FontVariation" uid="uid://brs8u105g6f1t" path="res://Themes/Fonts/lana.tres" id="9_4jvc2"]
+[ext_resource type="Texture2D" uid="uid://bj5vhd1ftg43s" path="res://Assets/UI/Prancha/gear_icon.png" id="9_qsh5h"]
+[ext_resource type="Texture2D" uid="uid://dkgqfimvnl1fl" path="res://Assets/UI/Prancha/checkbox.png" id="10_nb2ul"]
+[ext_resource type="Texture2D" uid="uid://dyxdl8ivhjc5d" path="res://Assets/UI/Prancha/deaths_icon.png" id="10_ttbja"]
+[ext_resource type="Texture2D" uid="uid://d20v28ar2p8cn" path="res://Assets/UI/Prancha/config.png" id="11_itxfl"]
+[ext_resource type="Texture2D" uid="uid://dlgno8qf5rsmq" path="res://Assets/UI/Prancha/pen.png" id="12_ddw83"]
+[ext_resource type="Texture2D" uid="uid://dm4tc2y4ajx5w" path="res://Assets/UI/Prancha/bt_config.png" id="12_sfd3t"]
+[ext_resource type="Texture2D" uid="uid://ckkdao3c7r38" path="res://Assets/UI/Prancha/Loading/loading1.png" id="13_y6fkb"]
+[ext_resource type="Texture2D" uid="uid://jnnmu81dqumi" path="res://Assets/UI/Prancha/Loading/loading2.png" id="14_1u0rs"]
+[ext_resource type="Texture2D" uid="uid://dpaipwok7q3gb" path="res://Assets/UI/Prancha/Loading/loading3.png" id="15_g1wok"]
+[ext_resource type="Texture2D" uid="uid://fbbvi3xqjeth" path="res://Assets/UI/Prancha/Loading/loading4.png" id="16_cxv4v"]
+[ext_resource type="Texture2D" uid="uid://c7ctdbm4vvvph" path="res://Assets/UI/Prancha/Loading/loading5.png" id="17_uvttp"]
+[ext_resource type="Texture2D" uid="uid://uih38nk863gk" path="res://Assets/UI/Prancha/Loading/loading6.png" id="18_iy5kr"]
+[ext_resource type="Texture2D" uid="uid://df10htic0lp6u" path="res://Assets/UI/Prancha/Loading/loading7.png" id="19_y7e16"]
+[ext_resource type="Texture2D" uid="uid://bqggm0ixrxa47" path="res://Assets/UI/Prancha/Loading/loading8.png" id="20_i21kd"]
+[ext_resource type="Texture2D" uid="uid://xyhfi8o3n5h6" path="res://Assets/UI/Settings/sfx_icon.png" id="23_ly26p"]
+[ext_resource type="Theme" uid="uid://d1e7hg7e63sbv" path="res://Themes/slider_theme.tres" id="23_unigh"]
+[ext_resource type="Texture2D" uid="uid://b0hp3xo71co13" path="res://Assets/UI/Settings/music_icon.png" id="24_jy42h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixmb0"]
+atlas = ExtResource("4_0gg12")
+region = Rect2(0, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxlrq"]
+atlas = ExtResource("4_0gg12")
+region = Rect2(31, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjgtx"]
+atlas = ExtResource("5_ku7lc")
+region = Rect2(0, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbtgy"]
+atlas = ExtResource("5_ku7lc")
+region = Rect2(31, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83b5f"]
+atlas = ExtResource("6_sckjy")
+region = Rect2(0, 0, 31, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6psne"]
+atlas = ExtResource("6_sckjy")
+region = Rect2(31, 0, 31, 33)
+
+[sub_resource type="LabelSettings" id="LabelSettings_33r51"]
+font = ExtResource("7_7i3d2")
+font_size = 18
+font_color = Color(0.337255, 0.976471, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrarl"]
+font = ExtResource("7_7i3d2")
+font_size = 22
+font_color = Color(0.623529, 0.933333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fev7v"]
+font = ExtResource("9_4jvc2")
+font_size = 18
+font_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyo6l"]
+font = ExtResource("9_4jvc2")
+font_size = 18
+font_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7r4o"]
+font = ExtResource("9_4jvc2")
+font_size = 18
+font_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_siafj"]
+frames = 8
+speed_scale = 10.0
+frame_0/texture = ExtResource("13_y6fkb")
+frame_1/texture = ExtResource("14_1u0rs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("15_g1wok")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("16_cxv4v")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("17_uvttp")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("18_iy5kr")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("19_y7e16")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("20_i21kd")
+frame_7/duration = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5rja"]
+atlas = ExtResource("12_sfd3t")
+region = Rect2(0, 0, 30, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh2wa"]
+atlas = ExtResource("12_sfd3t")
+region = Rect2(30, 0, 30, 44)
+
+[sub_resource type="Animation" id="Animation_5oedq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ClipBoard:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/ClipBoard:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/ClipBoard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 78.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/ClipBoard:anchors_preset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/ClipBoard:layout_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/ClipBoard/Screen/Loading:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Label:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Checkbox:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Label:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Checkbox:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon:self_modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/Label:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/TextureRect:self_modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ColorRect/ClipBoard/Screen/TitleScreen:self_modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ColorRect/ClipBoard/Screen/TitleScreen:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fv6i4"]
+resource_name = "close"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/ClipBoard:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/ClipBoard:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/ClipBoard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(408, 78.5), Vector2(684, 78.5)]
+}
+
+[sub_resource type="Animation" id="Animation_eqx2o"]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ClipBoard:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Checkbox:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Label:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Checkbox:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/Label:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/TextureRect:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColorRect/ClipBoard/Screen/TitleScreen:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gy1kh"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.784314)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/ClipBoard:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect/ClipBoard:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect/ClipBoard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(132, 78.5), Vector2(408, 78.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect/ClipBoard:anchors_preset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect/ClipBoard:layout_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect/ClipBoard/Screen/Loading:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Label:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/ClockIcon/Checkbox:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Label:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/GearIcon/Checkbox:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.766667, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon:self_modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.666667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/Label:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.766667, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ColorRect/ClipBoard/Screen/GridContainer/DeathIcon/TextureRect:self_modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.866667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ColorRect/ClipBoard/Screen/TitleScreen:self_modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.333333, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhoqb"]
+_data = {
+"RESET": SubResource("Animation_5oedq"),
+"close": SubResource("Animation_fv6i4"),
+"idle": SubResource("Animation_eqx2o"),
+"open": SubResource("Animation_gy1kh")
+}
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_hx8xv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="ClipBoard" type="TextureRect" parent="ColorRect"]
+z_index = 3
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -273.5
+offset_right = 187.0
+offset_bottom = 273.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gc6i4")
+
+[node name="BtResume" type="TextureButton" parent="ColorRect/ClipBoard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -109.5
+offset_right = -44.0
+offset_bottom = -29.5
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_ixmb0")
+texture_pressed = SubResource("AtlasTexture_hxlrq")
+stretch_mode = 5
+
+[node name="BtRestart" type="TextureButton" parent="ColorRect/ClipBoard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -109.5
+offset_right = 40.0
+offset_bottom = -29.5
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_vjgtx")
+texture_pressed = SubResource("AtlasTexture_xbtgy")
+stretch_mode = 5
+
+[node name="BtQuit" type="TextureButton" parent="ColorRect/ClipBoard"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -109.5
+offset_right = 124.0
+offset_bottom = -29.5
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_83b5f")
+texture_pressed = SubResource("AtlasTexture_6psne")
+stretch_mode = 5
+
+[node name="Title" type="TextureRect" parent="ColorRect/ClipBoard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.0
+offset_top = -44.0
+offset_right = 102.0
+offset_bottom = 74.0
+grow_horizontal = 2
+texture = ExtResource("6_4au53")
+
+[node name="Text" type="Label" parent="ColorRect/ClipBoard/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 55.0
+offset_right = -21.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help_tutorial"
+label_settings = SubResource("LabelSettings_33r51")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Screen" type="Control" parent="ColorRect/ClipBoard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 75.0
+offset_right = -39.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleScreen" type="Label" parent="ColorRect/ClipBoard/Screen"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "pause_tasks"
+label_settings = SubResource("LabelSettings_yrarl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/ClipBoard/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -82.0
+offset_right = 84.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 40
+columns = 3
+
+[node name="ClockIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("8_ki212")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 13.0
+offset_right = 31.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "00:15:00"
+label_settings = SubResource("LabelSettings_fev7v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_nb2ul")
+
+[node name="GearIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("9_qsh5h")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = 13.0
+offset_right = 24.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/3	"
+label_settings = SubResource("LabelSettings_uyo6l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_nb2ul")
+
+[node name="DeathIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("10_ttbja")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 13.0
+offset_right = 28.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "50"
+label_settings = SubResource("LabelSettings_h7r4o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_nb2ul")
+
+[node name="Loading" type="TextureRect" parent="ColorRect/ClipBoard/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_siafj")
+
+[node name="ConfigRect" type="TextureRect" parent="ColorRect/ClipBoard"]
+z_index = 1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -195.5
+offset_right = 1.0
+offset_bottom = 190.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("11_itxfl")
+
+[node name="ConfigButton" type="TextureButton" parent="ColorRect/ClipBoard/ConfigRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -57.5
+offset_right = 52.0
+offset_bottom = 30.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_p5rja")
+texture_pressed = SubResource("AtlasTexture_eh2wa")
+stretch_mode = 4
+
+[node name="SliderSFX" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = 87.0
+offset_right = -32.5
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_unigh")
+min_value = -10.0
+max_value = 6.0
+value = 6.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderSFX"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -51.5
+offset_right = 20.0
+offset_bottom = -11.5
+grow_horizontal = 2
+texture = ExtResource("23_ly26p")
+
+[node name="SliderMusic" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 29.5
+offset_top = 88.0
+offset_right = 45.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_unigh")
+min_value = -10.0
+max_value = 6.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderMusic"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -52.5
+offset_right = 20.0
+offset_bottom = -12.5
+grow_horizontal = 2
+texture = ExtResource("24_jy42h")
+
+[node name="Pen" type="TextureRect" parent="ColorRect/ClipBoard"]
+z_index = 1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -213.5
+offset_right = 12.0
+offset_bottom = 189.5
+grow_vertical = 2
+texture = ExtResource("12_ddw83")
+stretch_mode = 5
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhoqb")
+}
+
+[connection signal="pressed" from="ColorRect/ClipBoard/BtResume" to="." method="_on_bt_resume_pressed"]
+[connection signal="pressed" from="ColorRect/ClipBoard/BtRestart" to="." method="_on_bt_restart_pressed"]
+[connection signal="pressed" from="ColorRect/ClipBoard/BtQuit" to="." method="_on_bt_quit_pressed"]
+[connection signal="pressed" from="ColorRect/ClipBoard/ConfigRect/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="value_changed" from="ColorRect/ClipBoard/ConfigRect/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="ColorRect/ClipBoard/ConfigRect/SliderMusic" to="." method="_on_slider_music_value_changed"]

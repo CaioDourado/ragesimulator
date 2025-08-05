@@ -1,0 +1,671 @@
+[gd_scene load_steps=36 format=3 uid="uid://fsgupwvrmm0t"]
+
+[ext_resource type="Script" path="res://Scripts/SettingsMenu.gd" id="1_8w3ea"]
+[ext_resource type="Texture2D" uid="uid://d4gul6nt3n36i" path="res://Assets/UI/Config/config_base.png" id="1_cyona"]
+[ext_resource type="Texture2D" uid="uid://cs4iu8koepgxn" path="res://Assets/UI/Device/bt_back.png" id="2_0fsai"]
+[ext_resource type="Texture2D" uid="uid://c666vbfco7qqr" path="res://Assets/UI/Config/config_detalis.png" id="3_vw817"]
+[ext_resource type="Texture2D" uid="uid://x0ca4yrqes86" path="res://Assets/UI/Config/config_screen.png" id="4_joqug"]
+[ext_resource type="Texture2D" uid="uid://bccdxqddiorgn" path="res://Assets/UI/Config/config_title.png" id="5_oyy65"]
+[ext_resource type="FontFile" uid="uid://d3tjho06kcvga" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="6_8icmc"]
+[ext_resource type="FontFile" uid="uid://ctgutpnh1dip0" path="res://Assets/Fonts/Gamer.ttf" id="6_mekqv"]
+[ext_resource type="Script" path="res://Scripts/UiSelectOptions.gd" id="7_62y5w"]
+[ext_resource type="Texture2D" uid="uid://ymlug3ylvt0k" path="res://Assets/UI/Config/bt_config.png" id="8_2evmd"]
+[ext_resource type="Texture2D" uid="uid://6u5ad72paaut" path="res://Assets/UI/Config/bt_config_hover.png" id="9_60bnl"]
+[ext_resource type="Texture2D" uid="uid://kcvieppnspcw" path="res://Assets/UI/Config/bt_config_selected.png" id="9_h3hfq"]
+[ext_resource type="AudioStream" uid="uid://x0t7da20bx2y" path="res://Assets/Audio/UI/Touch1.mp3" id="9_mogc1"]
+[ext_resource type="Texture2D" uid="uid://xyhfi8o3n5h6" path="res://Assets/UI/Settings/sfx_icon.png" id="11_5unhc"]
+[ext_resource type="Texture2D" uid="uid://b0hp3xo71co13" path="res://Assets/UI/Settings/music_icon.png" id="12_3loqt"]
+[ext_resource type="Theme" uid="uid://d1e7hg7e63sbv" path="res://Themes/slider_theme.tres" id="12_q8u5l"]
+[ext_resource type="Texture2D" uid="uid://br5gcndrhd31u" path="res://Assets/UI/luzes.png" id="14_cdag6"]
+[ext_resource type="Texture2D" uid="uid://bk0nni1jfvih" path="res://Assets/UI/luzes_on.png" id="15_5h6hj"]
+[ext_resource type="AudioStream" uid="uid://c61inlll38h1p" path="res://Assets/Audio/UI/Touch9.mp3" id="15_oph5t"]
+[ext_resource type="Script" path="res://Scripts/active_interval_effect.gd" id="16_hxgnf"]
+[ext_resource type="Texture2D" uid="uid://dshk31si1tbhe" path="res://Assets/UI/Device/rager.png" id="17_fxmyc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7d3r"]
+texture = ExtResource("1_cyona")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwimi"]
+atlas = ExtResource("2_0fsai")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlapl"]
+atlas = ExtResource("2_0fsai")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="LabelSettings" id="LabelSettings_huk1v"]
+font = ExtResource("6_mekqv")
+font_size = 64
+font_color = Color(0.623529, 0.933333, 1, 1)
+outline_size = 5
+outline_color = Color(0.262745, 0.870588, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jakhn"]
+font = ExtResource("6_mekqv")
+font_size = 48
+font_color = Color(0.0509804, 0.0941176, 0.145098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j315t"]
+font = ExtResource("6_mekqv")
+font_size = 48
+font_color = Color(0.623529, 0.933333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddnnt"]
+font = ExtResource("6_mekqv")
+font_size = 48
+font_color = Color(0.623529, 0.933333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6fiw"]
+font = ExtResource("6_mekqv")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_jp8wh"]
+font = ExtResource("6_mekqv")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_is7x3"]
+font = ExtResource("6_mekqv")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7jyu"]
+font = ExtResource("6_mekqv")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlf7o"]
+font = ExtResource("6_8icmc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_eb20q"]
+font = ExtResource("6_8icmc")
+font_color = Color(0.0509804, 0.0941176, 0.145098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebelp"]
+font = ExtResource("6_8icmc")
+font_color = Color(0.623529, 0.933333, 1, 1)
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_8w3ea")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f7d3r")
+
+[node name="Details" type="TextureRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -137.0
+offset_right = -7.0
+offset_bottom = 138.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_vw817")
+
+[node name="BtBack" type="TextureButton" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 38.0
+offset_right = -69.0
+offset_bottom = 80.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_jwimi")
+texture_pressed = SubResource("AtlasTexture_nlapl")
+stretch_mode = 4
+
+[node name="Tela" type="TextureRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 99.0
+offset_right = -137.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_joqug")
+
+[node name="Titulo" type="TextureRect" parent="CanvasLayer/Control/Panel/Tela"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_top = -94.0
+offset_right = 260.5
+offset_bottom = 17.0
+grow_horizontal = 2
+texture = ExtResource("5_oyy65")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/Tela/Titulo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 17.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "config_title"
+label_settings = SubResource("LabelSettings_huk1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel/Tela"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Control" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.49
+
+[node name="Options" type="Panel" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left" node_paths=PackedStringArray("audio_player")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_62y5w")
+audio_player = NodePath("../../../../../../AudioStreamPlayer")
+sound = ExtResource("9_mogc1")
+textures = Array[Texture2D]([ExtResource("8_2evmd"), ExtResource("9_h3hfq")])
+colors = Array[Color]([Color(0.623529, 0.933333, 1, 1), Color(0.0509804, 0.0941176, 0.145098, 1)])
+context_parent_path = NodePath("../../Right/ContextOptions")
+disable_context = false
+
+[node name="BtSound" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -128.5
+offset_right = 175.0
+offset_bottom = -58.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_h3hfq")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options/BtSound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "config_sound"
+label_settings = SubResource("LabelSettings_jakhn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtLanguage" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -34.5
+offset_right = 175.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options/BtLanguage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "config_language"
+label_settings = SubResource("LabelSettings_j315t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtReset" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 60.5
+offset_right = 175.0
+offset_bottom = 130.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Left/Options/BtReset"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "config_reset_data"
+label_settings = SubResource("LabelSettings_ddnnt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Control" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContextOptions" type="Panel" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContextSound" type="Control" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SliderSFX" type="VSlider" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -85.0
+offset_right = -33.5
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_q8u5l")
+min_value = -10.0
+max_value = 6.0
+
+[node name="Label" type="TextureRect" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound/SliderSFX"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.0
+offset_top = -41.0
+offset_right = 13.0
+offset_bottom = -15.0
+grow_horizontal = 2
+texture = ExtResource("11_5unhc")
+
+[node name="SliderMusic" type="VSlider" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.5
+offset_top = -86.5
+offset_right = 51.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_q8u5l")
+min_value = -10.0
+max_value = 6.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound/SliderMusic"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.0
+offset_top = -40.5
+offset_right = 13.0
+offset_bottom = -14.5
+grow_horizontal = 2
+texture = ExtResource("12_3loqt")
+
+[node name="ContextLanguage" type="Control" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions" node_paths=PackedStringArray("audio_player")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_62y5w")
+audio_player = NodePath("../../../../../../../AudioStreamPlayer")
+sound = ExtResource("15_oph5t")
+textures = Array[Texture2D]([ExtResource("8_2evmd"), ExtResource("9_h3hfq")])
+colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
+
+[node name="pt_BR" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -112.0
+offset_right = 115.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_h3hfq")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/pt_BR"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Português"
+label_settings = SubResource("LabelSettings_o6fiw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="en" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -52.0
+offset_right = 115.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/en"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "English"
+label_settings = SubResource("LabelSettings_jp8wh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="es" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 8.0
+offset_right = 115.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/es"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Español"
+label_settings = SubResource("LabelSettings_is7x3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="de" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 68.0
+offset_right = 115.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/de"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Deutsch"
+label_settings = SubResource("LabelSettings_j7jyu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContextReset" type="Control" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -90.0
+offset_right = -17.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "config_reset_confirm"
+label_settings = SubResource("LabelSettings_rlf7o")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BtNao" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -22.5
+offset_right = 67.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_h3hfq")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset/BtNao"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help_no"
+label_settings = SubResource("LabelSettings_eb20q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtSim" type="TextureButton" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = 32.5
+offset_right = 67.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_2evmd")
+texture_hover = ExtResource("9_60bnl")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset/BtSim"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "help_yes"
+label_settings = SubResource("LabelSettings_ebelp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lights" type="TextureRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+offset_left = 90.0
+offset_top = 55.0
+offset_right = 269.0
+offset_bottom = 92.0
+texture = ExtResource("14_cdag6")
+stretch_mode = 5
+
+[node name="LightsEffect" type="TextureRect" parent="CanvasLayer/Control/Panel/Lights"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_5h6hj")
+stretch_mode = 5
+script = ExtResource("16_hxgnf")
+
+[node name="RagerIcon" type="TextureRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -98.0
+offset_right = 100.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("17_fxmyc")
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/BtBack" to="." method="_on_bt_back_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextSound/SliderMusic" to="." method="_on_slider_music_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/pt_BR" to="." method="_on_bt_portugues_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/en" to="." method="_on_bt_ingles_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/es" to="." method="_on_bt_espanhol_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextLanguage/de" to="." method="_on_bt_alemao_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset/BtNao" to="." method="_on_bt_nao_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/Tela/HBoxContainer/Right/ContextOptions/ContextReset/BtSim" to="." method="_on_bt_sim_pressed"]

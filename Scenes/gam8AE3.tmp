@@ -1,0 +1,211 @@
+[gd_scene load_steps=21 format=4 uid="uid://dd06t2yvbvxp8"]
+
+[ext_resource type="Texture2D" uid="uid://ik27wtfkspnh" path="res://Assets/Tileset/Tileset1/tileset1.png" id="1_3tkbb"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="1_6dhw5"]
+[ext_resource type="Texture2D" uid="uid://deh8oytush5sw" path="res://Assets/Tileset/Tileset1/Background/sky.png" id="1_k66me"]
+[ext_resource type="Texture2D" uid="uid://kt0ca2wqqppa" path="res://Assets/Tileset/Tileset1/Background/builds3.png" id="2_1gimm"]
+[ext_resource type="Texture2D" uid="uid://2l3f2iryc4du" path="res://Assets/Tileset/Tileset1/Background/builds2.png" id="3_dw6pf"]
+[ext_resource type="PackedScene" uid="uid://dvfujldy0af7h" path="res://Prefab/trap_ground_fall_2x.tscn" id="4_eii25"]
+[ext_resource type="Texture2D" uid="uid://d05shp8ymyftt" path="res://Assets/Tileset/Tileset1/Background/builds1.png" id="4_n2c1x"]
+[ext_resource type="Texture2D" uid="uid://wb4i7ovt8use" path="res://Assets/Tileset/Tileset1/Background/post.png" id="5_h6xqo"]
+[ext_resource type="Texture2D" uid="uid://bc8gmkupmo8il" path="res://Assets/Tileset/Tileset1/Background/reflex.png" id="6_yswbn"]
+[ext_resource type="Texture2D" uid="uid://dc5rt3u81liy7" path="res://Assets/Tileset/Tileset1/Background/wall.png" id="7_ixd1e"]
+[ext_resource type="PackedScene" uid="uid://22ncdicx0u55" path="res://Prefab/bino.tscn" id="10_dvmf6"]
+[ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_fall.gd" id="12_lonon"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="13_0wbgn"]
+[ext_resource type="Script" path="res://Scripts/Traps/plataform_fall.gd" id="13_x0bd6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0eoca"]
+texture = ExtResource("1_3tkbb")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_fu23p"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0eoca")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq0v"]
+size = Vector2(16, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1371v"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7usf7"]
+size = Vector2(16, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv6rh"]
+size = Vector2(16, 2)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-72, -47)
+zoom = Vector2(5, 5)
+limit_top = -110
+limit_bottom = 10
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("1_6dhw5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="07" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/07"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_k66me")
+
+[node name="06" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.95, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/06"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_1gimm")
+
+[node name="05" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/05"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_dw6pf")
+
+[node name="04" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.85, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/04"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("4_n2c1x")
+
+[node name="03" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/03"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_h6xqo")
+
+[node name="02" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/02"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_yswbn")
+
+[node name="01" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/01"]
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_ixd1e")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD6/wAAAAAAAAAAAAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAACAAAAAAAFAAEAAAACAAIAAAAEAAEAAAABAAIAAAADAAEAAAABAAIAAAAAAAEAAAABAAIAAAD//wEAAAABAAIAAAD+/wEAAAABAAIAAAD9/wEAAAABAAIAAAD8/wEAAAABAAIAAAD7/wEAAAABAAIAAAD6/wEAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_fu23p")
+
+[node name="InteractMap" type="Node2D" parent="."]
+
+[node name="TrapGroundFall" parent="InteractMap" instance=ExtResource("4_eii25")]
+position = Vector2(16, 0)
+
+[node name="TrapPlataformFall" type="Area2D" parent="InteractMap"]
+position = Vector2(-16, -32)
+script = ExtResource("12_lonon")
+
+[node name="Collider" type="CollisionShape2D" parent="InteractMap/TrapPlataformFall"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_qyq0v")
+debug_color = Color(0.944793, 5.39064e-06, 0.595439, 0.42)
+
+[node name="Plataform" type="RigidBody2D" parent="InteractMap/TrapPlataformFall"]
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_x0bd6")
+
+[node name="Collider" type="CollisionShape2D" parent="InteractMap/TrapPlataformFall/Plataform"]
+shape = SubResource("RectangleShape2D_1371v")
+
+[node name="SpriteRenderer" type="Sprite2D" parent="InteractMap/TrapPlataformFall/Plataform"]
+texture = ExtResource("1_3tkbb")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="StartRespawn" type="StaticBody2D" parent="."]
+position = Vector2(-72, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRespawn"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_7usf7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StartRespawn"]
+texture_filter = 1
+texture = ExtResource("1_3tkbb")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="EndPoint" type="Area2D" parent="."]
+position = Vector2(72, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="EndPoint"]
+texture_filter = 1
+texture = ExtResource("1_3tkbb")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_xv6rh")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("13_0wbgn")
+player = ExtResource("10_dvmf6")
+
+[connection signal="body_entered" from="InteractMap/TrapPlataformFall" to="InteractMap/TrapPlataformFall" method="_on_body_entered"]
+[connection signal="body_entered" from="InteractMap/TrapPlataformFall/Plataform" to="InteractMap/TrapPlataformFall/Plataform" method="_on_body_entered"]

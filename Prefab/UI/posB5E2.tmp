@@ -1,0 +1,397 @@
+[gd_scene load_steps=29 format=3 uid="uid://c7u6cc2igai50"]
+
+[ext_resource type="Script" path="res://Scripts/pos_game_ui.gd" id="1_hoc7e"]
+[ext_resource type="Shader" path="res://Shader/background_scroll_shader.gdshader" id="2_l0djf"]
+[ext_resource type="FontVariation" uid="uid://bbr61p1pi7lvm" path="res://Themes/Fonts/gamer.tres" id="2_s2x74"]
+[ext_resource type="Texture2D" uid="uid://bo7uk32gwpb0i" path="res://Assets/ui/grid_new.png" id="3_nbw6l"]
+[ext_resource type="Texture2D" uid="uid://dkgqfimvnl1fl" path="res://Assets/ui/Prancha/checkbox.png" id="5_hgjqy"]
+[ext_resource type="Texture2D" uid="uid://763t5djp4bkc" path="res://Assets/ui/Prancha/check.png" id="6_cn48q"]
+[ext_resource type="Texture2D" uid="uid://daq0krsmggyu3" path="res://Assets/ui/Prancha/clock_icon.png" id="7_m5x5h"]
+[ext_resource type="Texture2D" uid="uid://bj5vhd1ftg43s" path="res://Assets/ui/Prancha/gear_icon.png" id="8_fnuxh"]
+[ext_resource type="Texture2D" uid="uid://dyxdl8ivhjc5d" path="res://Assets/ui/Prancha/deaths_icon.png" id="9_bdf34"]
+[ext_resource type="Texture2D" uid="uid://li5pndo7uekb" path="res://Assets/ui/PosGame/BottomBar.png" id="10_4r1ys"]
+[ext_resource type="Texture2D" uid="uid://6jipvlgwieca" path="res://Assets/ui/PosGame/capsulebase.png" id="11_4wg34"]
+[ext_resource type="Texture2D" uid="uid://cnfse0k5118ar" path="res://Assets/ui/PosGame/capsuleglass.png" id="12_71wfc"]
+[ext_resource type="Texture2D" uid="uid://5588q7vgdhny" path="res://Assets/Sprites/minion.png" id="13_f2cem"]
+[ext_resource type="Texture2D" uid="uid://bhx1134vjpixy" path="res://Assets/ui/PosGame/holoforte.png" id="14_7detc"]
+[ext_resource type="Texture2D" uid="uid://ckkdao3c7r38" path="res://Assets/ui/Prancha/Loading/loading1.png" id="15_dbnn0"]
+[ext_resource type="Texture2D" uid="uid://jnnmu81dqumi" path="res://Assets/ui/Prancha/Loading/loading2.png" id="16_e8tj0"]
+[ext_resource type="Texture2D" uid="uid://dpaipwok7q3gb" path="res://Assets/ui/Prancha/Loading/loading3.png" id="17_tlg5y"]
+[ext_resource type="Texture2D" uid="uid://fbbvi3xqjeth" path="res://Assets/ui/Prancha/Loading/loading4.png" id="18_tq4ew"]
+[ext_resource type="Texture2D" uid="uid://c7ctdbm4vvvph" path="res://Assets/ui/Prancha/Loading/loading5.png" id="19_3u2au"]
+[ext_resource type="Texture2D" uid="uid://uih38nk863gk" path="res://Assets/ui/Prancha/Loading/loading6.png" id="20_0hhj7"]
+[ext_resource type="Texture2D" uid="uid://df10htic0lp6u" path="res://Assets/ui/Prancha/Loading/loading7.png" id="21_2a4i5"]
+[ext_resource type="Texture2D" uid="uid://bqggm0ixrxa47" path="res://Assets/ui/Prancha/Loading/loading8.png" id="22_8a5ed"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h28up"]
+shader = ExtResource("2_l0djf")
+shader_parameter/speed = 0.05
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd1on"]
+font = ExtResource("2_s2x74")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lgq2"]
+atlas = ExtResource("13_f2cem")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nenai"]
+font = ExtResource("2_s2x74")
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tvf5c"]
+frames = 8
+speed_scale = 8.0
+frame_0/texture = ExtResource("15_dbnn0")
+frame_1/texture = ExtResource("16_e8tj0")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("17_tlg5y")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("18_tq4ew")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("19_3u2au")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("20_0hhj7")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("21_2a4i5")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("22_8a5ed")
+frame_7/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2uu5"]
+line_spacing = -40.0
+font = ExtResource("2_s2x74")
+font_size = 140
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PosGameUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hoc7e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_top = 176.0
+offset_right = 1152.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.024, 0.055, 0.09, 1)
+
+[node name="BgGrade" type="TextureRect" parent="Control/BackgroundColor"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_h28up")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nbw6l")
+stretch_mode = 1
+
+[node name="Container" type="TextureRect" parent="Control"]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/Container"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/Container/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 151.0
+offset_right = 19.0
+offset_bottom = 270.0
+grow_horizontal = 2
+
+[node name="TimeCheckbox" type="TextureRect" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="TimeChecker" type="TextureRect" parent="Control/Container/Control/Control/TimeCheckbox"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(34, 25)
+texture = ExtResource("6_cn48q")
+
+[node name="TimeIcon" type="TextureRect" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("7_m5x5h")
+stretch_mode = 5
+
+[node name="TimeText" type="Label" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/Container/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 270.0
+offset_right = 19.0
+offset_bottom = 389.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/Control/Control2/TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+texture = ExtResource("6_cn48q")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("8_fnuxh")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "3/3"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="Control/Container/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 389.0
+offset_right = 19.0
+offset_bottom = 508.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/Control/Control3/TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+texture = ExtResource("6_cn48q")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("9_bdf34")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "5000/5"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="BottomBar" type="TextureRect" parent="Control/Container"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 524.0
+offset_top = -186.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_4r1ys")
+
+[node name="Capsule" type="TextureRect" parent="Control/Container"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = 19.0
+offset_right = -177.0
+offset_bottom = 169.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("11_4wg34")
+
+[node name="Glass" type="TextureRect" parent="Control/Container/Capsule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -731.0
+offset_right = 81.0
+offset_bottom = -449.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_71wfc")
+
+[node name="Player" type="TextureRect" parent="Control/Container/Capsule"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.045
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = -62.25
+offset_right = 36.0
+offset_bottom = 15.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_6lgq2")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/Capsule"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = -343.0
+offset_right = 81.0
+offset_bottom = 13.0
+grow_horizontal = 2
+texture = ExtResource("14_7detc")
+
+[node name="Congratulations" type="Label" parent="Control/Container/Capsule"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = -257.0
+offset_right = 138.0
+offset_bottom = -102.0
+grow_horizontal = 2
+text = "CONGRATULATIONS
+SPECIMEN #145"
+label_settings = SubResource("LabelSettings_nenai")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Loading" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_tvf5c")
+
+[node name="SimulationComplete" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -182.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_t2uu5")
+horizontal_alignment = 1
+vertical_alignment = 1

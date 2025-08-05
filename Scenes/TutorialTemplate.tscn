@@ -1,0 +1,163 @@
+[gd_scene load_steps=17 format=4 uid="uid://1gvrwow63m7o"]
+
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="1_i0txx"]
+[ext_resource type="Texture2D" uid="uid://b1nfishj588cr" path="res://Assets/Tileset/Tutorial/tileset1.png" id="2_3jlxc"]
+[ext_resource type="Texture2D" uid="uid://bfehpnkrpv8n4" path="res://Assets/Tileset/Tutorial/tileset.png" id="4_qrjwl"]
+[ext_resource type="Texture2D" uid="uid://ik27wtfkspnh" path="res://Assets/Tileset/Tileset1/tileset1.png" id="9_wgwgy"]
+[ext_resource type="PackedScene" uid="uid://bvs38xsly8s" path="res://Prefab/UI/ad_continue.tscn" id="11_14lg2"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="11_rny5p"]
+[ext_resource type="PackedScene" uid="uid://dw8ai7i8jawp3" path="res://Prefab/start_point.tscn" id="13_ccvhu"]
+[ext_resource type="PackedScene" uid="uid://de48a3xgv6d6b" path="res://Prefab/end_point.tscn" id="14_e44nu"]
+[ext_resource type="PackedScene" uid="uid://cl03eetjjdi4p" path="res://Prefab/UI/stage_ui.tscn" id="15_o4l4c"]
+[ext_resource type="PackedScene" uid="uid://0kljeeoqbjqs" path="res://Prefab/UI/pause_menu.tscn" id="16_2hrld"]
+[ext_resource type="PackedScene" uid="uid://dipgs1b44d5lr" path="res://Prefab/UI/buttons_ui.tscn" id="17_it1l2"]
+[ext_resource type="PackedScene" uid="uid://c7u6cc2igai50" path="res://Prefab/UI/pos_game_ui.tscn" id="18_rakib"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0eoca"]
+texture = ExtResource("9_wgwgy")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ogg"]
+texture = ExtResource("4_qrjwl")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_fu23p"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0eoca")
+sources/1 = SubResource("TileSetAtlasSource_w1ogg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1o3a1"]
+font = ExtResource("11_rny5p")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Content" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-72, -47)
+zoom = Vector2(3.5, 3.5)
+limit_top = -110
+limit_bottom = 10
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("1_i0txx")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="01" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(563.2, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/01"]
+texture_filter = 1
+position = Vector2(0, -45)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_3jlxc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD6/wAAAQAAAAAAAAD7/wAAAQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD+/wAAAQABAAAAAAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAAAAAEAAQABAAIAAAD//wEAAQABAAIAAAD+/wEAAQABAAIAAAD9/wEAAQABAAIAAAD8/wEAAQABAAIAAAD7/wEAAQABAAIAAAD6/wEAAQAAAAIAAAABAAEAAQABAAIAAAACAAAAAQACAAAAAAACAAEAAQACAAIAAAABAAAAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_fu23p")
+
+[node name="InteractMap" type="Node2D" parent="."]
+
+[node name="StartPoint" parent="." instance=ExtResource("13_ccvhu")]
+position = Vector2(-72, -8)
+
+[node name="EndPoint" parent="." instance=ExtResource("14_e44nu")]
+position = Vector2(24, -8)
+
+[node name="UI" parent="." instance=ExtResource("15_o4l4c")]
+
+[node name="Counter" parent="UI/Control/Life" index="0"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Timer" parent="UI/Control" index="1"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Counter" parent="UI/Control/Gears" index="0"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_2hrld")]
+
+[node name="Buttons" parent="." instance=ExtResource("17_it1l2")]
+
+[node name="PosGameUI" parent="." instance=ExtResource("18_rakib")]
+
+[node name="AdContinue" parent="." instance=ExtResource("11_14lg2")]
+
+[node name="Tutorial" type="Label" parent="."]
+texture_filter = 1
+offset_left = -97.0
+offset_top = -40.0
+offset_right = 414.0
+offset_bottom = -9.0
+scale = Vector2(0.3, 0.3)
+label_settings = SubResource("LabelSettings_1o3a1")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[editable path="UI"]

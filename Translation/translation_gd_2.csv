@@ -1,0 +1,26 @@
+,en,pt_BR,es,de
+config_title,SETTINGS,CONFIGURAÇÕES,CONFIGURACIÓN,EINSTELLUNGEN
+config_sound,Sound,Som,Sonido,Ton
+config_language,Language,Idioma,Idioma,Sprache
+config_reset_data,Reset Data,Redefinir Save,Restablecer datos,Speicherstand zurücksetzen
+config_reset_confirm,Do you really want to reset your save ?,Deseja realmente redefinir o seu save ?,¿Realmente deseas restablecer tu progreso?,Möchtest du deinen Spielstand wirklich zurücksetzen?
+pause_tasks,Tasks,Tarefas,Tareas,Aufgaben
+simulation_complete,SIMULATION\nCOMPLETE,SIMULAÇÃO\nCOMPLETA,SIMULACIÓN\nCOMPLETA,SIMULATION\nABGESCHLOSSEN
+congratulations_specimen,CONGRATULATIONS\nSPECIMEN,PARABÉNS\nESPÉCIME,FELICITACIONES\nESPECIMEN,GLÜCKWUNSCH\nEXEMPLAR
+help_yes,Yes,Sim,Sí,Ja
+help_no,No,Não,No,Nein
+help_skip,Skip,Pular,Omitir,Überspringen
+help_tutorial,TUTORIAL,TUTORIAL,TUTORIAL,TUTORIAL
+help_capitulo,Chapter,Capítulo,Capítulo,Kapitel
+help_giveup,Give Up,Desistir,Rendirse,Aufgeben
+help_restart,Restart,Reiniciar,Reiniciar,Neustarten
+stage_1,Factory,Fábrica,Fábrica,Fabrik
+tutorial_1,Walk to the computer,Ande até o computador,Camina hasta la computadora,Geh zum Computer
+tutorial_2,Watch out for holes,Cuidado com buracos,Cuidado con los agujeros,Vorsicht vor Löchern
+tutorial_3,Watch out for traps,Cuidado com armadilhas,Cuidado con las trampas,Vorsicht vor Fallen
+tutorial_4,Clocks are checkpoints,Relógios são checkpoints,Los relojes son puntos de control,Uhren sind Kontrollpunkte
+tutorial_5,Grab keys to open doors,Pegue chaves para abrir portas,Toma llaves para abrir puertas,"Nimm Schlüssel, um Türen zu öffnen"
+tutorial_5_2,Grab gears to earn more points,Pegue engrenagens para ganhar mais pontos,Toma engranajes para ganar más puntos,Sammle Zahnräder für mehr Punkte
+continue,Continue,Continuar,Continuar,Weitermachen
+continue_no_more_specimens,No More Specimens,Sem mais\nespécimes,No hay más\nespecímenes,Keine weiteren\nExemplare
+continue_failed,Simulation\nFailed,Falha na\nSimulação,Simulación\nFallida,Simulation\nFehlgeschlagen

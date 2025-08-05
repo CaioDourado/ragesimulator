@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=4 uid="uid://fasx3nu4k1do"]
+
+[ext_resource type="Texture2D" uid="uid://c2t8hqcymxqj" path="res://Assets/Tileset/Tileset32/TilesetTutorial.png" id="1_7q50e"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="1_mbjcf"]
+[ext_resource type="PackedScene" uid="uid://dw8ai7i8jawp3" path="res://Prefab/start_point.tscn" id="2_6g67h"]
+[ext_resource type="Texture2D" uid="uid://5lmyyop2lrvr" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxTutorial.png" id="2_ha255"]
+[ext_resource type="PackedScene" uid="uid://de48a3xgv6d6b" path="res://Prefab/end_point.tscn" id="3_br6g4"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="4_kgjf7"]
+[ext_resource type="PackedScene" uid="uid://c7u6cc2igai50" path="res://Prefab/UI/pos_game_ui.tscn" id="5_2c0rh"]
+[ext_resource type="PackedScene" uid="uid://cl03eetjjdi4p" path="res://Prefab/UI/stage_ui.tscn" id="5_8jatl"]
+[ext_resource type="PackedScene" uid="uid://0kljeeoqbjqs" path="res://Prefab/UI/pause_menu.tscn" id="6_gqh2l"]
+[ext_resource type="PackedScene" uid="uid://dipgs1b44d5lr" path="res://Prefab/UI/buttons_ui.tscn" id="7_s8pbs"]
+[ext_resource type="PackedScene" uid="uid://bvs38xsly8s" path="res://Prefab/UI/ad_continue.tscn" id="8_pp8n1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4haj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l77oh"]
+texture = ExtResource("1_7q50e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_pkv7f"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_l77oh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_myefi"]
+font = ExtResource("4_kgjf7")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Content" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1080, 0)
+
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, -96)
+texture = ExtResource("2_ha255")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2.85, 2.85)
+limit_top = -196
+limit_bottom = 20
+script = ExtResource("1_mbjcf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["Parede"]]
+z_index = 1
+material = SubResource("ShaderMaterial_m4haj")
+tile_map_data = PackedByteArray("AAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAACAAAAAAABAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAIAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAD//wIAAAABAAIAAAABAAIAAAABAAIAAAABAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAAAAAABAAAAAAABAAAAAAABAAAAAAAFAAAAAAACAAAAAAAEAAAAAAABAAAAAAAFAAEAAAACAAEAAAAFAAIAAAACAAIAAAAEAAIAAAABAAIAAAAEAAEAAAABAAEAAAAAAAAAAAABAAAAAAAAAAIAAAABAAIAAAAAAAEAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_pkv7f")
+
+[node name="InteractMap" type="Node2D" parent="."]
+
+[node name="StartPoint" parent="." instance=ExtResource("2_6g67h")]
+position = Vector2(-80, -7)
+desativar = true
+
+[node name="EndPoint" parent="." instance=ExtResource("3_br6g4")]
+position = Vector2(112, -8)
+
+[node name="UI" parent="." instance=ExtResource("5_8jatl")]
+desativar = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_gqh2l")]
+
+[node name="Buttons" parent="." instance=ExtResource("7_s8pbs")]
+desativar = true
+
+[node name="PosGameUI" parent="." instance=ExtResource("5_2c0rh")]
+
+[node name="AdContinue" parent="." instance=ExtResource("8_pp8n1")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -192.0
+offset_top = -96.0
+offset_right = 216.0
+offset_bottom = -64.0
+text = "tutorial_1"
+label_settings = SubResource("LabelSettings_myefi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="UI"]
+[editable path="Buttons"]

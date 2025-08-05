@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6hs1kd4s3n6l"]
+
+[ext_resource type="Script" path="res://Scripts/check_point.gd" id="1_2hh5c"]
+[ext_resource type="Texture2D" uid="uid://c12fjofhkfrcs" path="res://Assets/Tileset/objects.png" id="1_50rs2"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="3_28hmb"]
+[ext_resource type="Texture2D" uid="uid://8s7y7omttoja" path="res://Assets/Tileset/Tileset32/Objects/checkpoint_plataform.png" id="4_pon6j"]
+[ext_resource type="Shader" uid="uid://ci2k7v3wsif8" path="res://Shader/Hologram.tres" id="5_effb4"]
+[ext_resource type="Texture2D" uid="uid://bnkd1kci7bkd6" path="res://Assets/Tileset/Tileset32/Objects/respawn_plataform_light.png" id="5_m3eqp"]
+[ext_resource type="Texture2D" uid="uid://ciecl5boaciis" path="res://Assets/Tileset/Tileset32/Objects/clock_icon.png" id="7_jut1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73aao"]
+size = Vector2(28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty2uc"]
+atlas = ExtResource("1_50rs2")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dse2n"]
+atlas = ExtResource("1_50rs2")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1kxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty2uc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dse2n")
+}],
+"loop": true,
+"name": &"used",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dshkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t06df"]
+font = ExtResource("3_28hmb")
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vw7x4"]
+shader = ExtResource("5_effb4")
+
+[node name="check_point" type="Area2D"]
+script = ExtResource("1_2hh5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_73aao")
+
+[node name="Animator" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_g1kxa")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -8)
+
+[node name="Timer" type="Label" parent="."]
+material = SubResource("ShaderMaterial_dshkl")
+offset_left = -28.0
+offset_top = -42.0
+offset_right = 116.0
+offset_bottom = -11.0
+scale = Vector2(0.4, 0.4)
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_t06df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("4_pon6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_vw7x4")
+position = Vector2(0, -20)
+texture = ExtResource("5_m3eqp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -20)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_jut1r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

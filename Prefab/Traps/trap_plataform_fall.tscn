@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwvw6u3rn5wea"]
+
+[ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_fall.gd" id="1_afy2u"]
+[ext_resource type="Script" path="res://Scripts/Traps/plataform_fall.gd" id="2_fmxas"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="3_rq5up"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq0v"]
+size = Vector2(28, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1371v"]
+size = Vector2(32, 32)
+
+[node name="TrapPlataformFall" type="Area2D"]
+script = ExtResource("1_afy2u")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_qyq0v")
+debug_color = Color(0.944793, 5.39064e-06, 0.595439, 0.42)
+
+[node name="texture" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("2_fmxas")
+
+[node name="sprite" type="Sprite2D" parent="texture"]
+texture_filter = 1
+use_parent_material = true
+texture = ExtResource("3_rq5up")
+region_enabled = true
+region_rect = Rect2(96, 96, 32, 32)
+
+[node name="Collider" type="CollisionShape2D" parent="texture"]
+shape = SubResource("RectangleShape2D_1371v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="texture" to="texture" method="_on_body_entered"]

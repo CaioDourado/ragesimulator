@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://u7whxkknudpi"]
+
+[ext_resource type="Script" path="res://Scripts/effect.gd" id="1_4igty"]
+[ext_resource type="Texture2D" uid="uid://dfwr1frwvpbl7" path="res://Assets/Sprites/Holo dust.png" id="1_cpu4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n40ad"]
+atlas = ExtResource("1_cpu4a")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_debjr"]
+atlas = ExtResource("1_cpu4a")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fkq3"]
+atlas = ExtResource("1_cpu4a")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jvdm"]
+atlas = ExtResource("1_cpu4a")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j6fw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_debjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fkq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jvdm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="EffectLanding" type="Node2D"]
+script = ExtResource("1_4igty")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_7j6fw")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

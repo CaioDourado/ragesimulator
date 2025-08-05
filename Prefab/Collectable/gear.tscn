@@ -1,0 +1,142 @@
+[gd_scene load_steps=22 format=3 uid="uid://d3y3s7vkgjb8c"]
+
+[ext_resource type="Script" path="res://Scripts/gear.gd" id="1_rlnmr"]
+[ext_resource type="Texture2D" uid="uid://p3qcgi6gukmx" path="res://Assets/UI/Ingame/R_fill_2.png" id="2_ik7i5"]
+[ext_resource type="Texture2D" uid="uid://xadt2ny7e82u" path="res://Assets/Tileset/Tileset32/Objects/R_anim_3.png" id="3_q1rgc"]
+[ext_resource type="AudioStream" uid="uid://tpvdi6jrceh3" path="res://Assets/Audio/SFX/item.mp3" id="4_pn4qp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ovcu"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_bqdu3"]
+offsets = PackedFloat32Array(0, 0.722304, 1)
+colors = PackedColorArray(0.172549, 0.768627, 0.87451, 1, 0.597886, 0.88756, 0.939016, 0.485968, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyjo"]
+size = Vector2(22, 23)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8sk5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ycci"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j0y2"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl00u"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6wrf"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjmbm"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjn71"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dai31"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sahtb"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgo8x"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eprq"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7siu7"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0cjy"]
+atlas = ExtResource("3_q1rgc")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4kqi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ycci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j0y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl00u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6wrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjmbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjn71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dai31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sahtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgo8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eprq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7siu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0cjy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Gear" type="Area2D"]
+script = ExtResource("1_rlnmr")
+icon = ExtResource("2_ik7i5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_3ovcu")
+amount = 10
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(0, 0)
+scale_amount_max = 2.0
+color = Color(0.192157, 0.815686, 0.917647, 1)
+color_ramp = SubResource("Gradient_bqdu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vtyjo")
+
+[node name="SpriteRenderer" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_8sk5x")
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_q4kqi")
+autoplay = "default"
+frame_progress = 0.0670942
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pn4qp")
+volume_db = -7.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2f0mye2fwmxp"
+path="res://.godot/imported/RAGE SIMULATOR.wav-ca098b28a406917f93516445b065bad6.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/UI/RAGE SIMULATOR.wav"
+dest_files=["res://.godot/imported/RAGE SIMULATOR.wav-ca098b28a406917f93516445b065bad6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

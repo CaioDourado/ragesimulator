@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfiwssxnmxaok"]
+
+[ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_move.gd" id="1_4yq3d"]
+[ext_resource type="Texture2D" uid="uid://ik27wtfkspnh" path="res://Assets/Tileset/Tileset1/tileset1.png" id="1_bednb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r53eg"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_237yk"]
+size = Vector2(16, 16)
+
+[node name="TrapPlataformMove" type="Node2D"]
+script = ExtResource("1_4yq3d")
+side = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bednb")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_r53eg")
+debug_color = Color(0.791801, 0.375938, 0.540301, 0.42)
+
+[node name="AnimatableBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_237yk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

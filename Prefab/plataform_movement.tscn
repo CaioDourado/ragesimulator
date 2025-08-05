@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4gkteui13j3l"]
+
+[ext_resource type="Script" path="res://Scripts/plataform_movement.gd" id="1_yc2qx"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="2_wyh07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4dy7"]
+size = Vector2(26, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpmmh"]
+size = Vector2(32, 32)
+
+[node name="PlataformMovement" type="Node2D"]
+script = ExtResource("1_yc2qx")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_wyh07")
+region_enabled = true
+region_rect = Rect2(96, 96, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_u4dy7")
+debug_color = Color(0.780492, 0.380338, 0.567742, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_tpmmh")

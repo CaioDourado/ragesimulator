@@ -1,0 +1,595 @@
+[gd_scene load_steps=49 format=3 uid="uid://c7u6cc2igai50"]
+
+[ext_resource type="Script" path="res://Scripts/pos_game_ui.gd" id="1_hoc7e"]
+[ext_resource type="Shader" path="res://Shader/background_scroll_shader.gdshader" id="2_l0djf"]
+[ext_resource type="FontVariation" uid="uid://bbr61p1pi7lvm" path="res://Themes/Fonts/gamer.tres" id="2_s2x74"]
+[ext_resource type="Texture2D" uid="uid://bo7uk32gwpb0i" path="res://Assets/UI/grid_new.png" id="3_nbw6l"]
+[ext_resource type="Texture2D" uid="uid://dkgqfimvnl1fl" path="res://Assets/UI/Prancha/checkbox.png" id="5_hgjqy"]
+[ext_resource type="Texture2D" uid="uid://763t5djp4bkc" path="res://Assets/UI/Prancha/check.png" id="6_cn48q"]
+[ext_resource type="Texture2D" uid="uid://daq0krsmggyu3" path="res://Assets/UI/Prancha/clock_icon.png" id="7_m5x5h"]
+[ext_resource type="Texture2D" uid="uid://bj5vhd1ftg43s" path="res://Assets/UI/Prancha/gear_icon.png" id="8_fnuxh"]
+[ext_resource type="Texture2D" uid="uid://dyxdl8ivhjc5d" path="res://Assets/UI/Prancha/deaths_icon.png" id="9_bdf34"]
+[ext_resource type="Texture2D" uid="uid://li5pndo7uekb" path="res://Assets/UI/PosGame/BottomBar.png" id="10_4r1ys"]
+[ext_resource type="Texture2D" uid="uid://6jipvlgwieca" path="res://Assets/UI/PosGame/capsulebase.png" id="11_4wg34"]
+[ext_resource type="Texture2D" uid="uid://b2ubi6ed3xax2" path="res://Assets/UI/PosGame/btcontrol.png" id="11_482fe"]
+[ext_resource type="Texture2D" uid="uid://c1ap6w7rarmpv" path="res://Assets/UI/buttons3.png" id="11_r0rsm"]
+[ext_resource type="Texture2D" uid="uid://cnfse0k5118ar" path="res://Assets/UI/PosGame/capsuleglass.png" id="12_71wfc"]
+[ext_resource type="Texture2D" uid="uid://5588q7vgdhny" path="res://Assets/Sprites/minion.png" id="13_f2cem"]
+[ext_resource type="Texture2D" uid="uid://dfcdphm6y0omp" path="res://Assets/UI/PosGame/liquid/liquid1.png" id="13_jxsee"]
+[ext_resource type="Texture2D" uid="uid://bhx1134vjpixy" path="res://Assets/UI/PosGame/holoforte.png" id="14_7detc"]
+[ext_resource type="Texture2D" uid="uid://ckkdao3c7r38" path="res://Assets/UI/Prancha/Loading/loading1.png" id="15_dbnn0"]
+[ext_resource type="Texture2D" uid="uid://jnnmu81dqumi" path="res://Assets/UI/Prancha/Loading/loading2.png" id="16_e8tj0"]
+[ext_resource type="Texture2D" uid="uid://dpaipwok7q3gb" path="res://Assets/UI/Prancha/Loading/loading3.png" id="17_tlg5y"]
+[ext_resource type="Texture2D" uid="uid://fbbvi3xqjeth" path="res://Assets/UI/Prancha/Loading/loading4.png" id="18_tq4ew"]
+[ext_resource type="Texture2D" uid="uid://c7ctdbm4vvvph" path="res://Assets/UI/Prancha/Loading/loading5.png" id="19_3u2au"]
+[ext_resource type="Texture2D" uid="uid://uih38nk863gk" path="res://Assets/UI/Prancha/Loading/loading6.png" id="20_0hhj7"]
+[ext_resource type="Texture2D" uid="uid://df10htic0lp6u" path="res://Assets/UI/Prancha/Loading/loading7.png" id="21_2a4i5"]
+[ext_resource type="Texture2D" uid="uid://bqggm0ixrxa47" path="res://Assets/UI/Prancha/Loading/loading8.png" id="22_8a5ed"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="26_4h1uu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h28up"]
+shader = ExtResource("2_l0djf")
+shader_parameter/speed = 0.05
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oh4pm"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_adbp7"]
+_data = [Vector2(0, 0), 0.0, 3.27559, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vhrw8"]
+curve = SubResource("Curve_adbp7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8i4r"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(150, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_vhrw8")
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 32
+
+[sub_resource type="Gradient" id="Gradient_s0def"]
+colors = PackedColorArray(1.34766e-06, 0.86218, 0.890369, 1, 0, 0.689, 0.815, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lo6tt"]
+gradient = SubResource("Gradient_s0def")
+width = 10
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rknno"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 98, 0)
+damping_max = 100.0
+scale_min = 0.5
+
+[sub_resource type="Gradient" id="Gradient_n70nl"]
+offsets = PackedFloat32Array(0, 0.991837)
+colors = PackedColorArray(0.464423, 0.891886, 1, 1, 0.212657, 0.784484, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0q5d1"]
+gradient = SubResource("Gradient_n70nl")
+width = 5
+height = 5
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd1on"]
+font = ExtResource("2_s2x74")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i714a"]
+atlas = ExtResource("11_482fe")
+region = Rect2(0, 0, 42, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx7rd"]
+atlas = ExtResource("11_482fe")
+region = Rect2(42, 0, 42, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egg0n"]
+atlas = ExtResource("11_r0rsm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysgdw"]
+atlas = ExtResource("11_r0rsm")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc84j"]
+atlas = ExtResource("11_r0rsm")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or6qh"]
+atlas = ExtResource("11_r0rsm")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lgq2"]
+atlas = ExtResource("13_f2cem")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nenai"]
+font = ExtResource("2_s2x74")
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tvf5c"]
+frames = 8
+speed_scale = 8.0
+frame_0/texture = ExtResource("15_dbnn0")
+frame_1/texture = ExtResource("16_e8tj0")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("17_tlg5y")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("18_tq4ew")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("19_3u2au")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("20_0hhj7")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("21_2a4i5")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("22_8a5ed")
+frame_7/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_t2uu5"]
+line_spacing = -40.0
+font = ExtResource("2_s2x74")
+font_size = 140
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxqdd"]
+texture = ExtResource("5_hgjqy")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="PosGameUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hoc7e")
+typing_speed = null
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_top = 176.0
+offset_right = 1152.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.024, 0.055, 0.09, 1)
+
+[node name="BgGrade" type="TextureRect" parent="Control/BackgroundColor"]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_h28up")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nbw6l")
+stretch_mode = 1
+
+[node name="FogosArtificio" type="GPUParticles2D" parent="Control"]
+material = SubResource("CanvasItemMaterial_oh4pm")
+position = Vector2(887, 462)
+emitting = false
+amount = 1
+sub_emitter = NodePath("GPUParticles2D2")
+process_material = SubResource("ParticleProcessMaterial_f8i4r")
+texture = SubResource("GradientTexture2D_lo6tt")
+trail_enabled = true
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Control/FogosArtificio"]
+position = Vector2(59, 0)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_rknno")
+texture = SubResource("GradientTexture2D_0q5d1")
+
+[node name="Container" type="TextureRect" parent="Control"]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/Container"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/Container/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 151.0
+offset_right = 19.0
+offset_bottom = 270.0
+grow_horizontal = 2
+
+[node name="TimeCheckbox" type="TextureRect" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="TimeChecker" type="TextureRect" parent="Control/Container/Control/Control/TimeCheckbox"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(34, 25)
+texture = ExtResource("6_cn48q")
+
+[node name="TimeIcon" type="TextureRect" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("7_m5x5h")
+stretch_mode = 5
+
+[node name="TimeText" type="Label" parent="Control/Container/Control/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/Container/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 270.0
+offset_right = 19.0
+offset_bottom = 389.0
+grow_horizontal = 2
+
+[node name="GearCheck" type="TextureRect" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="GearChecker" type="TextureRect" parent="Control/Container/Control/Control2/GearCheck"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(34, 25)
+texture = ExtResource("6_cn48q")
+
+[node name="GearIcon" type="TextureRect" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("8_fnuxh")
+stretch_mode = 5
+
+[node name="GearText" type="Label" parent="Control/Container/Control/Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "0"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="Control/Container/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 389.0
+offset_right = 19.0
+offset_bottom = 508.0
+grow_horizontal = 2
+
+[node name="DeathCheck" type="TextureRect" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -29.5
+offset_right = 118.0
+offset_bottom = 30.5
+grow_vertical = 2
+texture = ExtResource("5_hgjqy")
+
+[node name="DeathChecker" type="TextureRect" parent="Control/Container/Control/Control3/DeathCheck"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 12.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 46.0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(34, 25)
+texture = ExtResource("6_cn48q")
+
+[node name="DeathIcon" type="TextureRect" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 197.0
+offset_bottom = 80.0
+texture = ExtResource("9_bdf34")
+stretch_mode = 5
+
+[node name="DeathText" type="Label" parent="Control/Container/Control/Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 86.0
+text = "0"
+label_settings = SubResource("LabelSettings_qd1on")
+vertical_alignment = 1
+
+[node name="BottomBar" type="TextureRect" parent="Control/Container"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+offset_right = 628.0
+offset_bottom = 146.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_4r1ys")
+stretch_mode = 4
+
+[node name="BtNext" type="TextureButton" parent="Control/Container/BottomBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -97.0
+offset_right = -43.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_i714a")
+texture_pressed = SubResource("AtlasTexture_cx7rd")
+stretch_mode = 0
+
+[node name="BtStages" type="TextureButton" parent="Control/Container/BottomBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -97.0
+offset_right = 140.0
+offset_bottom = 3.0
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_egg0n")
+texture_pressed = SubResource("AtlasTexture_ysgdw")
+stretch_mode = 0
+
+[node name="BtRestart" type="TextureButton" parent="Control/Container/BottomBar"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 81.0
+offset_right = 256.0
+offset_bottom = 181.0
+texture_normal = SubResource("AtlasTexture_mc84j")
+texture_pressed = SubResource("AtlasTexture_or6qh")
+stretch_mode = 0
+
+[node name="Capsule" type="TextureRect" parent="Control/Container"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -439.0
+offset_top = -34.0
+offset_right = -234.0
+offset_bottom = 90.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("11_4wg34")
+
+[node name="Glass" type="TextureRect" parent="Control/Container/Capsule"]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -1146.0
+offset_right = 74.5
+offset_bottom = -535.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_71wfc")
+stretch_mode = 4
+
+[node name="Liquid" type="TextureRect" parent="Control/Container/Capsule/Glass"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = 603.0
+offset_right = 158.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("13_jxsee")
+expand_mode = 4
+stretch_mode = 4
+flip_v = true
+
+[node name="Player" type="TextureRect" parent="Control/Container/Capsule"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.045
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = -567.25
+offset_right = 36.0
+offset_bottom = -490.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_6lgq2")
+
+[node name="Holofort" type="TextureRect" parent="Control/Container/Capsule"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = -343.0
+offset_right = 81.0
+offset_bottom = 13.0
+grow_horizontal = 2
+texture = ExtResource("14_7detc")
+
+[node name="Congratulations" type="Label" parent="Control/Container/Capsule"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = -257.0
+offset_right = 138.0
+offset_bottom = -102.0
+grow_horizontal = 2
+text = "CONGRATULATIONS
+SPECIMEN #145"
+label_settings = SubResource("LabelSettings_nenai")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Loading" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_tvf5c")
+
+[node name="SimulationComplete" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -182.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_t2uu5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtJump" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.623529, 0.933333, 1, 1)
+theme_override_fonts/font = ExtResource("26_4h1uu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_gxqdd")
+text = "Pular"
+
+[connection signal="pressed" from="Control/Container/BottomBar/BtNext" to="." method="_on_bt_next_pressed"]
+[connection signal="pressed" from="Control/Container/BottomBar/BtStages" to="." method="_on_bt_stages_pressed"]
+[connection signal="pressed" from="Control/Container/BottomBar/BtRestart" to="." method="_on_bt_restart_pressed"]
+[connection signal="pressed" from="Control/BtJump" to="." method="_on_bt_jump_pressed"]

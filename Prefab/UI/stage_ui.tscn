@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl03eetjjdi4p"]
+
+[ext_resource type="Script" path="res://Scripts/stage_ui.gd" id="1_p70c3"]
+[ext_resource type="Texture2D" uid="uid://p3qcgi6gukmx" path="res://Assets/UI/Ingame/R_fill_2.png" id="2_5xu2x"]
+[ext_resource type="Texture2D" uid="uid://cv6s5s57nufy8" path="res://Assets/UI/Ingame/ui_head.png" id="2_specd"]
+[ext_resource type="FontVariation" uid="uid://c5i1aldcfeb3w" path="res://Themes/Fonts/slik.tres" id="3_my0jd"]
+[ext_resource type="Texture2D" uid="uid://c4h7afc2o5ji1" path="res://Assets/UI/Ingame/ui_timer.png" id="5_6qciy"]
+[ext_resource type="Texture2D" uid="uid://n2hn8ylshei7" path="res://Assets/UI/Ingame/R_2.png" id="5_m2mtc"]
+[ext_resource type="FontFile" uid="uid://d3tjho06kcvga" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="6_31ep7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70k1c"]
+font = ExtResource("6_31ep7")
+font_size = 24
+
+[node name="UI" type="CanvasLayer"]
+layer = 8
+script = ExtResource("1_p70c3")
+gears_fill = ExtResource("2_5xu2x")
+
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Life" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 40.0
+offset_right = 67.0
+offset_bottom = 72.0
+texture = ExtResource("2_specd")
+stretch_mode = 5
+
+[node name="Counter" type="Label" parent="Control/Life"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -19.0
+offset_right = 110.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_my0jd")
+theme_override_font_sizes/font_size = 28
+text = "x5"
+
+[node name="Gears" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 86.0
+offset_right = 223.0
+offset_bottom = 118.0
+
+[node name="R_0" type="TextureRect" parent="Control/Gears"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+texture = ExtResource("5_m2mtc")
+stretch_mode = 4
+
+[node name="R_1" type="TextureRect" parent="Control/Gears"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 64.0
+offset_bottom = 32.0
+texture = ExtResource("5_m2mtc")
+stretch_mode = 4
+
+[node name="R_2" type="TextureRect" parent="Control/Gears"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 96.0
+offset_bottom = 32.0
+texture = ExtResource("5_m2mtc")
+stretch_mode = 4
+
+[node name="Counter" type="Label" parent="Control/Gears"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = -2.0
+offset_right = 155.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_my0jd")
+theme_override_font_sizes/font_size = 28
+text = "x0"
+
+[node name="KeyPosition" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 133.0
+offset_right = 271.0
+offset_bottom = 181.0
+
+[node name="FPS" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -40.0
+offset_right = 44.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "FPS: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clock" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 90.0
+offset_bottom = 88.0
+grow_horizontal = 2
+texture = ExtResource("5_6qciy")
+stretch_mode = 4
+
+[node name="Timer" type="Label" parent="Control/Clock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 49.0
+offset_right = -6.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_70k1c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"UI"

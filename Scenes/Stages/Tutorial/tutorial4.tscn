@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=4 uid="uid://b25a6ao3e5j1n"]
+
+[ext_resource type="PackedScene" uid="uid://fasx3nu4k1do" path="res://Scenes/TutorialTemplateNew.tscn" id="1_a2hv7"]
+[ext_resource type="PackedScene" uid="uid://c6hs1kd4s3n6l" path="res://Prefab/check_point.tscn" id="2_y12lo"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Content" parent="." instance=ExtResource("1_a2hv7")]
+
+[node name="TileMapLayer" parent="Content" index="2"]
+tile_map_data = PackedByteArray("AAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAACAAAAAAACAAAAAAABAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAIAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAD//wIAAAACAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAEAAAD//wEAAAACAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAIAAAACAAIAAAADAAEAAAACAAEAAAADAAAAAAACAAAAAAABAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAIAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAACAAAAAAAGAAIAAAABAAIAAAAHAAIAAAABAAIAAAAIAAIAAAACAAIAAAAHAAEAAAABAAEAAAAIAAEAAAACAAEAAAAGAAEAAAABAAEAAAA=")
+
+[node name="EndPoint" parent="Content" index="5"]
+position = Vector2(241, -8)
+
+[node name="Label" parent="Content" index="11"]
+offset_left = -134.098
+offset_right = 273.902
+text = "tutorial_4"
+
+[node name="check_point" parent="Content" instance=ExtResource("2_y12lo")]
+position = Vector2(80.9019, -0.255188)
+
+[editable path="Content"]
+[editable path="Content/UI"]
+[editable path="Content/Buttons"]
