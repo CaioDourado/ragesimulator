@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3w58tkt80j6n" path="res://Scenes/StageTemplateNew.tscn" id="1_jjm12"]
 [ext_resource type="PackedScene" uid="uid://cx672yb35stxb" path="res://Prefab/Objects/Elevator.tscn" id="2_f7opf"]
-[ext_resource type="Texture2D" uid="uid://dtyhnyl68ysoe" path="res://Assets/Tileset/Tileset32/TilesetItern.png" id="2_iphx5"]
+[ext_resource type="Texture2D" uid="uid://dtyhnyl68ysoe" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetItern.png" id="2_iphx5"]
 [ext_resource type="PackedScene" uid="uid://d3y3s7vkgjb8c" path="res://Prefab/Collectable/gear.tscn" id="3_pdcn1"]
 [ext_resource type="Script" path="res://Scripts/hologram_effect.gd" id="3_v5cxu"]
 [ext_resource type="PackedScene" uid="uid://ctabc3ktvhqg2" path="res://Prefab/Objects/Box.tscn" id="4_cpn26"]

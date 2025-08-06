@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjawkxx0wq4r5"]
 
-[ext_resource type="Texture2D" uid="uid://dew5y22uqspk8" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxF5.png" id="1_ter8k"]
-[ext_resource type="Texture2D" uid="uid://5lmyyop2lrvr" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxTutorial.png" id="2_jgmbq"]
-[ext_resource type="Texture2D" uid="uid://qex5bh4n4qss" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxF4.png" id="2_owqd2"]
-[ext_resource type="Texture2D" uid="uid://istrauenc3h7" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxF3.png" id="3_o04a2"]
-[ext_resource type="Texture2D" uid="uid://dld2v454vl4n2" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxF2.png" id="4_u02ig"]
-[ext_resource type="Texture2D" uid="uid://dlvpsvdhffjjv" path="res://Assets/Tileset/Tileset32/Parallax/ParallaxF1.png" id="5_w62tk"]
+[ext_resource type="Texture2D" uid="uid://dew5y22uqspk8" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF5.png" id="1_ter8k"]
+[ext_resource type="Texture2D" uid="uid://5lmyyop2lrvr" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_0/ParallaxTutorial.png" id="2_jgmbq"]
+[ext_resource type="Texture2D" uid="uid://qex5bh4n4qss" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF4.png" id="2_owqd2"]
+[ext_resource type="Texture2D" uid="uid://istrauenc3h7" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF3.png" id="3_o04a2"]
+[ext_resource type="Texture2D" uid="uid://dld2v454vl4n2" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF2.png" id="4_u02ig"]
+[ext_resource type="Texture2D" uid="uid://dlvpsvdhffjjv" path="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF1.png" id="5_w62tk"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 

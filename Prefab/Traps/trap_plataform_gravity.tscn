@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://fxyxmhuniiyd"]
 
 [ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_gravity.gd" id="1_ryx6s"]
-[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/TilesetDanger.png" id="2_go5g4"]
+[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png" id="2_go5g4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnpnw"]
 size = Vector2(32, 32)

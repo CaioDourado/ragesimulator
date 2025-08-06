@@ -1,0 +1,54 @@
+[gd_scene load_steps=13 format=4 uid="uid://c7nj4m636vue8"]
+
+[ext_resource type="PackedScene" uid="uid://brc237ptb86bb" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_c0ba7"]
+[ext_resource type="TileSet" uid="uid://bv3geml8dviof" path="res://Tilesets/Chapter_0/background.tres" id="3_vks1t"]
+[ext_resource type="TileSet" uid="uid://bw138n8jwq02x" path="res://Tilesets/Chapter_0/collision.tres" id="4_i6jwe"]
+[ext_resource type="TileSet" uid="uid://by33ph07xye2s" path="res://Tilesets/Chapter_0/foreground.tres" id="5_djii5"]
+[ext_resource type="PackedScene" uid="uid://dw8ai7i8jawp3" path="res://Prefab/start_point.tscn" id="6_hbhb0"]
+[ext_resource type="PackedScene" uid="uid://de48a3xgv6d6b" path="res://Prefab/end_point.tscn" id="7_g61i2"]
+[ext_resource type="PackedScene" uid="uid://bvs38xsly8s" path="res://Prefab/UI/ad_continue.tscn" id="8_8l1x8"]
+[ext_resource type="PackedScene" uid="uid://dipgs1b44d5lr" path="res://Prefab/UI/buttons_ui.tscn" id="9_xbhkg"]
+[ext_resource type="PackedScene" uid="uid://0kljeeoqbjqs" path="res://Prefab/UI/pause_menu.tscn" id="10_xah1s"]
+[ext_resource type="PackedScene" uid="uid://c7u6cc2igai50" path="res://Prefab/UI/pos_game_ui.tscn" id="11_qvjdr"]
+[ext_resource type="PackedScene" uid="uid://cl03eetjjdi4p" path="res://Prefab/UI/stage_ui.tscn" id="12_7hdsy"]
+
+[node name="Content" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_pawlf")]
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2.85, 2.85)
+limit_top = -196
+limit_bottom = 20
+script = ExtResource("2_c0ba7")
+
+[node name="TileMaps" type="Node2D" parent="."]
+
+[node name="background" type="TileMapLayer" parent="TileMaps"]
+tile_set = ExtResource("3_vks1t")
+
+[node name="collision" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAAKAAEAAQACAAEAAAAJAAEAAQABAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAD//wEAAQABAAEAAAD+/wEAAQABAAEAAAD9/wEAAQABAAEAAAD8/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAEAAAA=")
+tile_set = ExtResource("4_i6jwe")
+
+[node name="foreground" type="TileMapLayer" parent="TileMaps"]
+tile_set = ExtResource("5_djii5")
+
+[node name="StartPoint" parent="." instance=ExtResource("6_hbhb0")]
+position = Vector2(-112, -8)
+
+[node name="EndPoint" parent="." instance=ExtResource("7_g61i2")]
+position = Vector2(304, -8)
+
+[node name="AdContinue" parent="." instance=ExtResource("8_8l1x8")]
+
+[node name="Buttons" parent="." instance=ExtResource("9_xbhkg")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_xah1s")]
+
+[node name="PosGameUI" parent="." instance=ExtResource("11_qvjdr")]
+
+[node name="UI" parent="." instance=ExtResource("12_7hdsy")]
+
+[node name="InteractMap" type="Node2D" parent="."]

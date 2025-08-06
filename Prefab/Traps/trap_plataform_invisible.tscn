@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://3jittmd1qgo"]
 
 [ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_invisible.gd" id="1_rmbhb"]
-[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/TilesetDanger.png" id="2_6jou5"]
+[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png" id="2_6jou5"]
 [ext_resource type="Shader" uid="uid://c7k6vmr26vrfo" path="res://Shader/Dissolve.tres" id="2_df24l"]
 
 [sub_resource type="Gradient" id="Gradient_5eelw"]

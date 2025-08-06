@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2t8hqcymxqj"
-path="res://.godot/imported/TilesetTutorial.png-33e87c7cfeada70c22b0e3c3d8236350.ctex"
+uid="uid://6nriql7i7jto"
+path="res://.godot/imported/TilesetDanger.png-ef72d46e05d4fbb4669c2222cef1302f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/Tileset32/TilesetTutorial.png"
-dest_files=["res://.godot/imported/TilesetTutorial.png-33e87c7cfeada70c22b0e3c3d8236350.ctex"]
+source_file="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png"
+dest_files=["res://.godot/imported/TilesetDanger.png-ef72d46e05d4fbb4669c2222cef1302f.ctex"]
 
 [params]
 

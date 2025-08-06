@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5lmyyop2lrvr"
-path="res://.godot/imported/ParallaxTutorial.png-9b4398ba217624419707d7357f6b7554.ctex"
+uid="uid://cedrobhqbf62h"
+path="res://.godot/imported/Parallax3.png-993474cab2178d2a1678201fc05021c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/Tileset32/Parallax/ParallaxTutorial.png"
-dest_files=["res://.godot/imported/ParallaxTutorial.png-9b4398ba217624419707d7357f6b7554.ctex"]
+source_file="res://Assets/Tileset/Tileset32/Parallax/Chapter_0/Parallax3.png"
+dest_files=["res://.godot/imported/Parallax3.png-993474cab2178d2a1678201fc05021c3.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Traps/trap_plataform_fall.gd" id="1_afy2u"]
 [ext_resource type="Script" path="res://Scripts/Traps/plataform_fall.gd" id="2_fmxas"]
-[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="3_rq5up"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetBase.png" id="3_rq5up"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq0v"]
 size = Vector2(28, 56)

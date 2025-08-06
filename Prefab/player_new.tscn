@@ -678,7 +678,8 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_wukrt"]
 resource_name = "walk"
-length = 0.1668
+length = 0.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -686,7 +687,7 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.1667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(512, 0, 32, 32), Rect2(544, 0, 32, 32), Rect2(576, 0, 32, 32), Rect2(608, 0, 32, 32), Rect2(640, 0, 32, 32), Rect2(672, 0, 32, 32)]
@@ -713,7 +714,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.3]
+"values": [0.4]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -758,13 +759,14 @@ _data = {
 script = ExtResource("1_07cfm")
 effects = Array[PackedScene]([ExtResource("2_8gcxk"), ExtResource("3_73u3q"), ExtResource("4_2bp7y"), ExtResource("5_xb42w")])
 MAX_SPEED = 100.0
-MAX_SPEED_RUN = 150.0
+MAX_SPEED_RUN = 155.0
 ACCEL = 300.0
-FRICTION = 1200.0
-JUMP_VELOCITY = -350.0
+FRICTION = 1300.0
+JUMP_VELOCITY = -375.0
 WALL_JUMP_FORCE = Vector2(200, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_g24r4")
 
@@ -787,10 +789,12 @@ wait_time = 0.1
 one_shot = true
 
 [node name="LeftCast" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(0, 4.5)
 target_position = Vector2(-11, 0)
 
 [node name="RightCast" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(0, 4.5)
 target_position = Vector2(10, 0)
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4gkteui13j3l"]
 
 [ext_resource type="Script" path="res://Scripts/plataform_movement.gd" id="1_yc2qx"]
-[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="2_wyh07"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetBase.png" id="2_wyh07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4dy7"]
 size = Vector2(26, 32)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://dd7mv0ykvciqo"]
 
-[ext_resource type="Texture2D" uid="uid://c2t8hqcymxqj" path="res://Assets/Tileset/Tileset32/TilesetTutorial.png" id="1_opih1"]
-[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="1_x033g"]
+[ext_resource type="Texture2D" uid="uid://c2t8hqcymxqj" path="res://Assets/Tileset/Tileset32/Chapter_0/TilesetTutorial.png" id="1_opih1"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetBase.png" id="1_x033g"]
 [ext_resource type="Script" path="res://Scripts/Traps/trap_ground_fall.gd" id="2_2xymj"]
-[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/TilesetDanger.png" id="2_cgda4"]
-[ext_resource type="Texture2D" uid="uid://7i74km86sx3b" path="res://Assets/Tileset/Tileset32/TilesetVigas.png" id="3_u1pdd"]
+[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png" id="2_cgda4"]
+[ext_resource type="Texture2D" uid="uid://7i74km86sx3b" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetVigas.png" id="3_u1pdd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5h8w"]
 texture = ExtResource("1_opih1")

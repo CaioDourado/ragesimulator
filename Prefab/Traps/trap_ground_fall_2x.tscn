@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://dvfujldy0af7h"]
 
 [ext_resource type="Script" path="res://Scripts/hologram_effect_individual.gd" id="1_2b1r8"]
-[ext_resource type="Texture2D" uid="uid://c2t8hqcymxqj" path="res://Assets/Tileset/Tileset32/TilesetTutorial.png" id="1_s3ay8"]
-[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/TilesetBase.png" id="1_yo62s"]
-[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/TilesetDanger.png" id="2_0fk17"]
+[ext_resource type="Texture2D" uid="uid://c2t8hqcymxqj" path="res://Assets/Tileset/Tileset32/Chapter_0/TilesetTutorial.png" id="1_s3ay8"]
+[ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetBase.png" id="1_yo62s"]
+[ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png" id="2_0fk17"]
 [ext_resource type="Script" path="res://Scripts/Traps/trap_ground_fall.gd" id="2_8wqs6"]
-[ext_resource type="Texture2D" uid="uid://7i74km86sx3b" path="res://Assets/Tileset/Tileset32/TilesetVigas.png" id="3_b4tua"]
+[ext_resource type="Texture2D" uid="uid://7i74km86sx3b" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetVigas.png" id="3_b4tua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bn7xg"]
 texture = ExtResource("1_s3ay8")

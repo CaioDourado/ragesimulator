@@ -80,15 +80,15 @@ func _physics_process(delta: float) -> void:
 						slide_jumping = true
 						animator.play("slide_jump_trans")
 						
-				if is_on_floor():
-					if input_dir != 0:
-						running_speed = move_toward(running_speed, MAX_SPEED_RUN, 1000 * delta)
-					else:
-						running_speed = move_toward(running_speed, 0, 2000 * delta)
+				#if is_on_floor():
+				if input_dir != 0:
+					running_speed = move_toward(running_speed, MAX_SPEED_RUN, 1000 * delta)
 				else:
-					running_speed = MAX_SPEED
+					running_speed = move_toward(running_speed, 0, 2000 * delta)
+				#else:
+					#running_speed = MAX_SPEED
 					
-				var speed_limit = running_speed if is_on_floor() else MAX_SPEED
+				var speed_limit = running_speed 
 				if input_dir != 0 and not just_wall_jumped:
 					var accel := ACCEL if is_on_floor() else ACCEL * 0.6
 					velocity.x = move_toward(velocity.x, input_dir * speed_limit, accel * delta)

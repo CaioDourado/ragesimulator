@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlvpsvdhffjjv"
-path="res://.godot/imported/ParallaxF1.png-8aac74418bfb9d2edcf6b50e48898282.ctex"
+path="res://.godot/imported/ParallaxF1.png-69839e90cb0a847ef5c72966d60d9d85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/Tileset32/Parallax/ParallaxF1.png"
-dest_files=["res://.godot/imported/ParallaxF1.png-8aac74418bfb9d2edcf6b50e48898282.ctex"]
+source_file="res://Assets/Tileset/Tileset32/Parallax/Chapter_1/ParallaxF1.png"
+dest_files=["res://.godot/imported/ParallaxF1.png-69839e90cb0a847ef5c72966d60d9d85.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://b5gknhncfvyvg"]
 
 [ext_resource type="PackedScene" uid="uid://3w58tkt80j6n" path="res://Scenes/StageTemplateNew.tscn" id="1_2suiu"]
-[ext_resource type="Texture2D" uid="uid://dtyhnyl68ysoe" path="res://Assets/Tileset/Tileset32/TilesetItern.png" id="2_o8jpa"]
+[ext_resource type="Texture2D" uid="uid://dtyhnyl68ysoe" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetItern.png" id="2_o8jpa"]
 [ext_resource type="PackedScene" uid="uid://dvfujldy0af7h" path="res://Prefab/Traps/trap_ground_fall_2x.tscn" id="2_ravi6"]
 [ext_resource type="PackedScene" uid="uid://cwvw6u3rn5wea" path="res://Prefab/Traps/trap_plataform_fall.tscn" id="3_kfujn"]
 [ext_resource type="PackedScene" uid="uid://c6hs1kd4s3n6l" path="res://Prefab/check_point.tscn" id="4_ngtv8"]
