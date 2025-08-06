@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c7nj4m636vue8"]
 
-[ext_resource type="PackedScene" uid="uid://brc237ptb86bb" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
+[ext_resource type="PackedScene" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_c0ba7"]
 [ext_resource type="TileSet" uid="uid://bv3geml8dviof" path="res://Tilesets/Chapter_0/background.tres" id="3_vks1t"]
 [ext_resource type="TileSet" uid="uid://bw138n8jwq02x" path="res://Tilesets/Chapter_0/collision.tres" id="4_i6jwe"]

@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ega37s452dau" path="res://Scenes/Stages/Tutorial/tutorial2.tscn" id="5_8petu"]
 [ext_resource type="PackedScene" uid="uid://cmocc7bmlxx8o" path="res://Scenes/Stages/Tutorial/tutorial3.tscn" id="6_5v3e1"]
 [ext_resource type="PackedScene" uid="uid://b25a6ao3e5j1n" path="res://Scenes/Stages/Tutorial/tutorial4.tscn" id="7_78pln"]
+[ext_resource type="PackedScene" uid="uid://o3yhafw4iv4f" path="res://Scenes/Stages/Tutorial/tutorial6.tscn" id="8_2v7lr"]
 [ext_resource type="PackedScene" uid="uid://b5gknhncfvyvg" path="res://Scenes/Stages/Chapter1/Stage1.tscn" id="8_8adg3"]
-[ext_resource type="PackedScene" uid="uid://c7nj4m636vue8" path="res://Scenes/Templates/template_tutorial.tscn" id="8_84384"]
 [ext_resource type="PackedScene" uid="uid://bxg4tywto4kmw" path="res://Scenes/Stages/Tutorial/tutorial5.tscn" id="8_sp6om"]
 [ext_resource type="PackedScene" uid="uid://byq2rtsavsp8s" path="res://Scenes/Stages/Chapter1/Stage2.tscn" id="9_rp1qc"]
 
@@ -59,7 +59,7 @@ tutorial = true
 
 [sub_resource type="Resource" id="Resource_cp53q"]
 script = ExtResource("2_a63bn")
-scene = ExtResource("8_84384")
+scene = ExtResource("8_2v7lr")
 open = true
 quest_time = 0.0
 quest_deaths = 0
