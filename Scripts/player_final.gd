@@ -237,10 +237,11 @@ func get_wall_jump_dir() -> int:
 	return 0
 
 func face_wall():
-	if rc_wall_right.is_colliding():
+	if rc_wall_left.is_colliding():
 		side = true
-	elif rc_wall_left.is_colliding():
+	elif rc_wall_right.is_colliding():
 		side = false
+	sprite_render.flip_h = side
 
 func start_wall_jump(direction: int):
 	slide_jumping = true

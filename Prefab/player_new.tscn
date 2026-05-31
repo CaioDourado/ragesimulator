@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://d0ctbpy7kx21g"]
+[gd_scene format=3 uid="uid://d0ctbpy7kx21g"]
 
-[ext_resource type="Script" path="res://Scripts/player_final.gd" id="1_07cfm"]
+[ext_resource type="Script" uid="uid://dvx1ii1a2dexj" path="res://Scripts/player_final.gd" id="1_07cfm"]
 [ext_resource type="Texture2D" uid="uid://boef0j4qrl71c" path="res://Assets/Sprites/player/MinionFinal.png" id="1_vv0fl"]
 [ext_resource type="PackedScene" uid="uid://poxh8u1m5m22" path="res://Prefab/Effects/effect_step.tscn" id="2_8gcxk"]
 [ext_resource type="PackedScene" uid="uid://u7whxkknudpi" path="res://Prefab/Effects/effect_landing.tscn" id="3_73u3q"]
@@ -748,26 +748,26 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6hwcq"]
 _data = {
-"RESET": SubResource("Animation_c3jwb"),
-"break": SubResource("Animation_p0kuj"),
-"break_turn": SubResource("Animation_wsfji"),
-"die": SubResource("Animation_2h64q"),
-"ending": SubResource("Animation_qc4x3"),
-"entrance": SubResource("Animation_43mae"),
-"fall": SubResource("Animation_d7cbo"),
-"fall_front": SubResource("Animation_smj5a"),
-"ground": SubResource("Animation_mw3bh"),
-"idle": SubResource("Animation_lav56"),
-"jump": SubResource("Animation_qpdp7"),
-"jump_front": SubResource("Animation_lng6s"),
-"slide": SubResource("Animation_5ewev"),
-"slide_down": SubResource("Animation_j855v"),
-"slide_jump": SubResource("Animation_sld86"),
-"slide_jump_trans": SubResource("Animation_4j8wd"),
-"walk": SubResource("Animation_wukrt")
+&"RESET": SubResource("Animation_c3jwb"),
+&"break": SubResource("Animation_p0kuj"),
+&"break_turn": SubResource("Animation_wsfji"),
+&"die": SubResource("Animation_2h64q"),
+&"ending": SubResource("Animation_qc4x3"),
+&"entrance": SubResource("Animation_43mae"),
+&"fall": SubResource("Animation_d7cbo"),
+&"fall_front": SubResource("Animation_smj5a"),
+&"ground": SubResource("Animation_mw3bh"),
+&"idle": SubResource("Animation_lav56"),
+&"jump": SubResource("Animation_qpdp7"),
+&"jump_front": SubResource("Animation_lng6s"),
+&"slide": SubResource("Animation_5ewev"),
+&"slide_down": SubResource("Animation_j855v"),
+&"slide_jump": SubResource("Animation_sld86"),
+&"slide_jump_trans": SubResource("Animation_4j8wd"),
+&"walk": SubResource("Animation_wukrt")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1660987983]
 script = ExtResource("1_07cfm")
 effects = Array[PackedScene]([ExtResource("2_8gcxk"), ExtResource("3_73u3q"), ExtResource("4_2bp7y"), ExtResource("5_xb42w")])
 MAX_SPEED = 50.0
@@ -783,35 +783,33 @@ WALL_JUMP_FORCE = Vector2(150, -300)
 GRAVITY = 1000.0
 FALL_GRAVITY_MULT = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=18619189]
 visible = false
 position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_g24r4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982346071]
 texture = ExtResource("1_vv0fl")
 region_enabled = true
 region_rect = Rect2(0, 0, 33, 32)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1410223817]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6hwcq")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=434648652]
+libraries/ = SubResource("AnimationLibrary_6hwcq")
+autoplay = &"idle"
 speed_scale = 0.3
 
-[node name="CoyoteTimer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=479843269]
 wait_time = 0.1
 one_shot = true
 
-[node name="LeftCast" type="RayCast2D" parent="."]
+[node name="LeftCast" type="RayCast2D" parent="." unique_id=1071222764]
 visible = false
 position = Vector2(0, 4.5)
 target_position = Vector2(-11, 0)
 
-[node name="RightCast" type="RayCast2D" parent="."]
+[node name="RightCast" type="RayCast2D" parent="." unique_id=1823117805]
 visible = false
 position = Vector2(0, 4.5)
 target_position = Vector2(10, 0)
