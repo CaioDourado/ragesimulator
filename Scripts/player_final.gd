@@ -31,6 +31,7 @@ var dead: bool = false
 @export var WALL_JUMP_FORCE: Vector2 = Vector2(250, -400)
 @export var WALL_JUMP_CONTROL_LOCK_TIME: float = 0.2
 @export var WALL_JUMP_HOLD_TIME: float = 0.18
+@export var WALL_JUMP_COYOTE_LOCK_TIME: float = 0.14
 
 @export var GRAVITY: float = 1200.0
 @export var FALL_GRAVITY_MULT: float = 2.0
@@ -61,6 +62,8 @@ var is_wall_jumping: bool = false
 var wall_jump_dir: int = 0
 var wall_jump_control_lock_timer: float = 0.0
 var wall_jump_hold_timer: float = 0.0
+var wall_jump_hold_active: bool = false
+var wall_jump_coyote_lock_timer: float = 0.0
 
 # Pulo variável
 var jump_held_time: float = 0.0
@@ -97,9 +100,13 @@ func _physics_process(delta: float) -> void:
 	elif input_dir == 1:
 		side = false
 
-	var touching_wall := (rc_wall_right.is_colliding() or rc_wall_left.is_colliding()) and not is_on_floor()
+	var touching_wall_raw := rc_wall_right.is_colliding() or rc_wall_left.is_colliding()
+	var floor_locked_by_wall_jump := wall_jump_coyote_lock_timer > 0.0 and velocity.y < 0
+	var on_floor := is_on_floor() and not floor_locked_by_wall_jump
+	var touching_wall := touching_wall_raw and not on_floor
 	var wall_sliding := touching_wall and velocity.y > 0
 	wall_jump_control_lock_timer = max(wall_jump_control_lock_timer - delta, 0.0)
+	wall_jump_coyote_lock_timer = max(wall_jump_coyote_lock_timer - delta, 0.0)
 
 	# ------------------
 	# Gravidade
@@ -118,19 +125,21 @@ func _physics_process(delta: float) -> void:
 	# ------------------
 	# Coyote Timer
 	# ------------------
-	if not is_on_floor():
+	if not on_floor:
 		first_on_floor = true
-		if can_coyote and coyote_timer.is_stopped():
-			coyote_timer.start()
-			can_coyote = false
+		#if can_coyote and coyote_timer.is_stopped():
+			#coyote_timer.start()
+			#can_coyote = false
 	else:
 		slide_jumping = false
 		is_wall_jumping = false
 		wall_jump_dir = 0
 		wall_jump_control_lock_timer = 0.0
 		wall_jump_hold_timer = 0.0
-		can_coyote = true
-		coyote_timer.stop()
+		wall_jump_hold_active = false
+		wall_jump_coyote_lock_timer = 0.0
+		#can_coyote = true
+		#coyote_timer.stop()
 		if first_on_floor:
 			first_on_floor = false
 			grounding = true
@@ -149,24 +158,24 @@ func _physics_process(delta: float) -> void:
 	# ------------------
 	if Input.is_action_just_pressed("ui_jump"):
 		var wall_dir := get_wall_jump_dir()
-		if touching_wall and wall_dir != 0:
+		if touching_wall_raw and wall_dir != 0 and not on_floor:
 			start_wall_jump(wall_dir)
-		elif is_on_floor() or not coyote_timer.is_stopped():
+		elif on_floor:
 			# Pulo normal
 			velocity.y = JUMP_VELOCITY
 			is_jumping = true
 			jump_held_time = 0.0
-			coyote_timer.stop()
+			#coyote_timer.stop()
 
 	# ------------------
 	# Movimento horizontal
 	# ------------------
 	var target_speed = MAX_SPEED_RUN
 	if input_dir != 0 and not just_wall_jumped and wall_jump_control_lock_timer <= 0.0:
-		var accel_val = ACCEL if is_on_floor() else AIR_ACCEL
+		var accel_val = ACCEL if on_floor else AIR_ACCEL
 		velocity.x = move_toward(velocity.x, input_dir * target_speed, accel_val * delta)
 	elif not just_wall_jumped and wall_jump_control_lock_timer <= 0.0:
-		var friction_val = FRICTION if is_on_floor() else AIR_FRICTION
+		var friction_val = FRICTION if on_floor else AIR_FRICTION
 		velocity.x = move_toward(velocity.x, 0, friction_val * delta)
 
 	# ------------------
@@ -249,8 +258,10 @@ func start_wall_jump(direction: int):
 	wall_jump_dir = direction
 	wall_jump_control_lock_timer = WALL_JUMP_CONTROL_LOCK_TIME
 	wall_jump_hold_timer = 0.0
+	wall_jump_hold_active = true
+	wall_jump_coyote_lock_timer = WALL_JUMP_COYOTE_LOCK_TIME
 	is_jumping = false
-	coyote_timer.stop()
+	#coyote_timer.stop()
 	animator.play("slide_jump_trans")
 	side = direction < 0
 	velocity.x = WALL_JUMP_START_FORCE.x * direction
@@ -258,13 +269,16 @@ func start_wall_jump(direction: int):
 	just_wall_jumped = true
 
 func update_wall_jump(delta: float):
-	if Input.is_action_pressed("ui_jump") and wall_jump_hold_timer < WALL_JUMP_HOLD_TIME and velocity.y < 0:
+	if not Input.is_action_pressed("ui_jump"):
+		wall_jump_hold_active = false
+
+	if wall_jump_hold_active and wall_jump_hold_timer < WALL_JUMP_HOLD_TIME and velocity.y < 0:
 		wall_jump_hold_timer += delta
 		velocity.x = move_toward(velocity.x, WALL_JUMP_FORCE.x * wall_jump_dir, AIR_ACCEL * delta)
 		velocity.y = min(velocity.y, WALL_JUMP_FORCE.y)
 	else:
 		velocity.y += GRAVITY * (FALL_GRAVITY_MULT if velocity.y > 0 else 1.0) * delta
-		if wall_jump_hold_timer >= WALL_JUMP_HOLD_TIME or velocity.y >= 0:
+		if not wall_jump_hold_active or wall_jump_hold_timer >= WALL_JUMP_HOLD_TIME or velocity.y >= 0:
 			is_wall_jumping = false
 
 # ------------------
