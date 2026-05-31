@@ -473,10 +473,10 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Rect2(2912, 0, 32, 32), Rect2(2944, 0, 32, 32)]
+"values": [Rect2(2976, 0, 32, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -779,7 +779,9 @@ AIR_FRICTION = 3000.0
 JUMP_VELOCITY = -240.0
 MIN_JUMP_TIME = 0.01
 MAX_JUMP_TIME = 0.18
-WALL_JUMP_FORCE = Vector2(150, -300)
+WALL_JUMP_START_FORCE = Vector2(150, -280)
+WALL_JUMP_FORCE = Vector2(150, -240)
+WALL_JUMP_CONTROL_LOCK_TIME = 0.5
 GRAVITY = 1000.0
 FALL_GRAVITY_MULT = 1.0
 
