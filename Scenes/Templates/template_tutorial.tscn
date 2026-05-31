@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7nj4m636vue8"]
+[gd_scene load_steps=14 format=4 uid="uid://c7nj4m636vue8"]
 
-[ext_resource type="PackedScene" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
+[ext_resource type="PackedScene" uid="uid://brc237ptb86bb" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_c0ba7"]
+[ext_resource type="Script" path="res://Scripts/hologram_effect.gd" id="2_tnns5"]
 [ext_resource type="TileSet" uid="uid://bv3geml8dviof" path="res://Tilesets/Chapter_0/background.tres" id="3_vks1t"]
 [ext_resource type="TileSet" uid="uid://bw138n8jwq02x" path="res://Tilesets/Chapter_0/collision.tres" id="4_i6jwe"]
 [ext_resource type="TileSet" uid="uid://by33ph07xye2s" path="res://Tilesets/Chapter_0/foreground.tres" id="5_djii5"]
@@ -16,10 +17,12 @@
 [node name="Content" type="Node2D"]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_pawlf")]
+script = ExtResource("2_tnns5")
+async = true
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(2.85, 2.85)
-limit_top = -196
+limit_top = -1000
 limit_bottom = 20
 script = ExtResource("2_c0ba7")
 
@@ -29,7 +32,8 @@ script = ExtResource("2_c0ba7")
 tile_set = ExtResource("3_vks1t")
 
 [node name="collision" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQACAAAAAAAKAAEAAQACAAEAAAAJAAEAAQABAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAD//wEAAQABAAEAAAD+/wEAAQABAAEAAAD9/wEAAQABAAEAAAD8/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAEAAAA=")
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAAKAAEAAQABAAEAAAAJAAEAAQABAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAD//wEAAQABAAEAAAD+/wEAAQABAAEAAAD9/wEAAQABAAEAAAD8/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAEAAAALAAEAAQABAAEAAAAMAAEAAQABAAEAAAANAAEAAQABAAEAAAAOAAEAAQABAAEAAAAPAAEAAQABAAEAAAAQAAEAAQABAAEAAAARAAEAAQABAAEAAAASAAEAAQABAAEAAAATAAEAAQABAAEAAAAUAAEAAQABAAEAAAAVAAEAAQABAAEAAAAWAAEAAQABAAEAAAAXAAEAAQABAAEAAAAYAAEAAQABAAEAAAAZAAEAAQACAAEAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQABAAAAAAAUAAAAAQABAAAAAAAVAAAAAQABAAAAAAAWAAAAAQABAAAAAAAXAAAAAQABAAAAAAAYAAAAAQABAAAAAAAZAAAAAQACAAAAAAA=")
 tile_set = ExtResource("4_i6jwe")
 
 [node name="foreground" type="TileMapLayer" parent="TileMaps"]
@@ -39,16 +43,21 @@ tile_set = ExtResource("5_djii5")
 position = Vector2(-112, -8)
 
 [node name="EndPoint" parent="." instance=ExtResource("7_g61i2")]
-position = Vector2(304, -8)
+position = Vector2(784, -8)
 
 [node name="AdContinue" parent="." instance=ExtResource("8_8l1x8")]
+visible = false
 
 [node name="Buttons" parent="." instance=ExtResource("9_xbhkg")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_xah1s")]
+visible = false
 
 [node name="PosGameUI" parent="." instance=ExtResource("11_qvjdr")]
+visible = false
 
 [node name="UI" parent="." instance=ExtResource("12_7hdsy")]
+visible = false
 
 [node name="InteractMap" type="Node2D" parent="."]

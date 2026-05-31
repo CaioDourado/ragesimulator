@@ -385,7 +385,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_lav56"]
 resource_name = "idle"
-length = 0.12
+length = 0.38
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -394,10 +394,10 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32)]
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(128, 0, 32, 32), Rect2(160, 0, 32, 32), Rect2(192, 0, 32, 32), Rect2(224, 0, 32, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -678,7 +678,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_wukrt"]
 resource_name = "walk"
-length = 0.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -687,10 +687,10 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.1667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.1667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.3667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Rect2(512, 0, 32, 32), Rect2(544, 0, 32, 32), Rect2(576, 0, 32, 32), Rect2(608, 0, 32, 32), Rect2(640, 0, 32, 32), Rect2(672, 0, 32, 32)]
+"values": [Rect2(512, 0, 32, 32), Rect2(544, 0, 32, 32), Rect2(576, 0, 32, 32), Rect2(608, 0, 32, 32), Rect2(640, 0, 32, 32), Rect2(672, 0, 32, 32), Rect2(512, 0, 32, 32), Rect2(544, 0, 32, 32), Rect2(576, 0, 32, 32), Rect2(608, 0, 32, 32), Rect2(640, 0, 32, 32), Rect2(672, 0, 32, 32), Rect2(704, 0, 32, 32), Rect2(736, 0, 32, 32), Rect2(768, 0, 32, 32), Rect2(800, 0, 32, 32), Rect2(832, 0, 32, 32), Rect2(864, 0, 32, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -723,9 +723,21 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0333333, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.233333, 0.333333, 0.433333, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"effect_step"
+}, {
+"args": [],
+"method": &"effect_step"
+}, {
+"args": [],
+"method": &"effect_step"
+}, {
+"args": [],
+"method": &"effect_step"
+}, {
 "args": [],
 "method": &"effect_step"
 }, {
@@ -758,12 +770,18 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_07cfm")
 effects = Array[PackedScene]([ExtResource("2_8gcxk"), ExtResource("3_73u3q"), ExtResource("4_2bp7y"), ExtResource("5_xb42w")])
-MAX_SPEED = 100.0
-MAX_SPEED_RUN = 155.0
-ACCEL = 300.0
-FRICTION = 1300.0
-JUMP_VELOCITY = -375.0
-WALL_JUMP_FORCE = Vector2(200, -300)
+MAX_SPEED = 50.0
+MAX_SPEED_RUN = 150.0
+ACCEL = 400.0
+FRICTION = 1150.0
+AIR_ACCEL = 400.0
+AIR_FRICTION = 3000.0
+JUMP_VELOCITY = -240.0
+MIN_JUMP_TIME = 0.01
+MAX_JUMP_TIME = 0.18
+WALL_JUMP_FORCE = Vector2(150, -300)
+GRAVITY = 1000.0
+FALL_GRAVITY_MULT = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
