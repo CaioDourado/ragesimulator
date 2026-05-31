@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="StageSelectLibrary" load_steps=22 format=3 uid="uid://bmcusyef2dkhd"]
+[gd_resource type="Resource" script_class="StageSelectLibrary" format=3 uid="uid://bmcusyef2dkhd"]
 
-[ext_resource type="Script" path="res://Scripts/ChapterLibrary.gd" id="1_uftco"]
-[ext_resource type="Script" path="res://Scripts/StageLibrary.gd" id="2_a63bn"]
-[ext_resource type="Script" path="res://Scripts/StageSelectLibrary.gd" id="2_vqpms"]
+[ext_resource type="Script" uid="uid://vwewpq1i8huk" path="res://Scripts/ChapterLibrary.gd" id="1_uftco"]
+[ext_resource type="Script" uid="uid://ckp6gwc6c4p53" path="res://Scripts/StageLibrary.gd" id="2_a63bn"]
+[ext_resource type="Script" uid="uid://cu6yum355qiec" path="res://Scripts/StageSelectLibrary.gd" id="2_vqpms"]
 [ext_resource type="PackedScene" uid="uid://b3xw482a711df" path="res://Scenes/Stages/Tutorial/tutorial_new_1.tscn" id="3_nbpfd"]
 [ext_resource type="PackedScene" uid="uid://dieojp8p6agpj" path="res://Scenes/Stages/Tutorial/tutorial_new_2.tscn" id="4_3nd6p"]
 [ext_resource type="PackedScene" uid="uid://b1bkx0a2fxhe3" path="res://Scenes/Stages/Tutorial/tutorial_new_4.tscn" id="6_b7qm3"]
@@ -14,69 +14,37 @@
 script = ExtResource("2_a63bn")
 scene = ExtResource("3_nbpfd")
 open = true
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
 tutorial = true
 
 [sub_resource type="Resource" id="Resource_swixy"]
 script = ExtResource("2_a63bn")
 scene = ExtResource("4_3nd6p")
 open = true
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
 tutorial = true
 
 [sub_resource type="Resource" id="Resource_r80xc"]
 script = ExtResource("2_a63bn")
 scene = ExtResource("9_bs61q")
 open = true
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
 tutorial = true
 
 [sub_resource type="Resource" id="Resource_timy3"]
 script = ExtResource("2_a63bn")
 scene = ExtResource("6_b7qm3")
 open = true
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
 tutorial = true
 
 [sub_resource type="Resource" id="Resource_d1vxu"]
 script = ExtResource("2_a63bn")
-open = false
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_e6hoq"]
 script = ExtResource("2_a63bn")
-open = false
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_58evb"]
 script = ExtResource("2_a63bn")
-open = false
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_1bhk4"]
 script = ExtResource("2_a63bn")
-open = false
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_b2x16"]
 script = ExtResource("1_uftco")
@@ -86,20 +54,13 @@ stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_0500a"), SubResour
 [sub_resource type="Resource" id="Resource_iowrr"]
 script = ExtResource("2_a63bn")
 scene = ExtResource("8_8adg3")
-open = false
 quest_time = 60.0
 quest_deaths = 10
 quest_gears = 2
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_uy7nl"]
 script = ExtResource("2_a63bn")
 scene = ExtResource("9_rp1qc")
-open = false
-quest_time = 0.0
-quest_deaths = 0
-quest_gears = 0
-tutorial = false
 
 [sub_resource type="Resource" id="Resource_uq1mc"]
 script = ExtResource("1_uftco")
