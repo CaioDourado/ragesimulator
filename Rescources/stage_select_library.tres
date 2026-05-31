@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1bkx0a2fxhe3" path="res://Scenes/Stages/Tutorial/tutorial_new_4.tscn" id="6_b7qm3"]
 [ext_resource type="PackedScene" uid="uid://b5gknhncfvyvg" path="res://Scenes/Stages/Chapter1/Stage1.tscn" id="8_8adg3"]
 [ext_resource type="PackedScene" uid="uid://ctny4d5tmjwoq" path="res://Scenes/Stages/Tutorial/tutorial_new_3.tscn" id="9_bs61q"]
+[ext_resource type="PackedScene" uid="uid://ck3tdt45ag8dp" path="res://Scenes/Stages/Chapter1/Stage3.tscn" id="9_by2iv"]
 [ext_resource type="PackedScene" uid="uid://byq2rtsavsp8s" path="res://Scenes/Stages/Chapter1/Stage2.tscn" id="9_rp1qc"]
 
 [sub_resource type="Resource" id="Resource_0500a"]
@@ -62,10 +63,19 @@ quest_gears = 2
 script = ExtResource("2_a63bn")
 scene = ExtResource("9_rp1qc")
 
+[sub_resource type="Resource" id="Resource_2qeob"]
+script = ExtResource("2_a63bn")
+scene = ExtResource("9_by2iv")
+open = true
+quest_time = 999.0
+quest_deaths = 5
+quest_gears = 3
+metadata/_custom_type_script = "uid://ckp6gwc6c4p53"
+
 [sub_resource type="Resource" id="Resource_uq1mc"]
 script = ExtResource("1_uftco")
 name = "stage_1"
-stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_iowrr"), SubResource("Resource_uy7nl")])
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_iowrr"), SubResource("Resource_uy7nl"), SubResource("Resource_2qeob")])
 
 [resource]
 script = ExtResource("2_vqpms")
