@@ -304,8 +304,9 @@ func effect_slide():
 
 func effect_walljump():
 	var walljump: Node2D = effects[3].instantiate()
-	walljump.set_side(side)
-	walljump.set_offset(Vector2(2,0) if not side else Vector2(-3,0))
+	var effect_side := wall_jump_dir > 0 if wall_jump_dir != 0 else not side
+	walljump.set_side(effect_side)
+	walljump.set_offset(Vector2(2,0) if not effect_side else Vector2(-3,0))
 	walljump.global_position = global_position
 	get_tree().current_scene.add_child(walljump)
 

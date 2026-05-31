@@ -6,6 +6,7 @@
 /android/
 
 # Godot/editor temporary files
+.codex_tmp/
 *.tmp
 *.temp
 *.bak

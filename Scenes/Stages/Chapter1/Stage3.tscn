@@ -12,16 +12,7 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAA
 [node name="UI" parent="Content" index="6"]
 visible = false
 
-[node name="PauseMenu" parent="Content" index="7"]
-visible = false
-
 [node name="Buttons" parent="Content" index="8"]
-visible = false
-
-[node name="PosGameUI" parent="Content" index="9"]
-visible = false
-
-[node name="AdContinue" parent="Content" index="10"]
 visible = false
 
 [editable path="Content"]

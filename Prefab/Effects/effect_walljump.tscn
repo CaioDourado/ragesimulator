@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5snp0fh22wxj"]
+[gd_scene format=3 uid="uid://b5snp0fh22wxj"]
 
 [ext_resource type="Texture2D" uid="uid://dfwr1frwvpbl7" path="res://Assets/Sprites/Holo dust.png" id="1_oq7e1"]
-[ext_resource type="Script" path="res://Scripts/effect.gd" id="1_qa77a"]
+[ext_resource type="Script" uid="uid://b1gwlw1yi4cgy" path="res://Scripts/effect.gd" id="1_qa77a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfhjw"]
 atlas = ExtResource("1_oq7e1")
@@ -39,10 +39,10 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="EffectWalljump" type="Node2D"]
+[node name="EffectWalljump" type="Node2D" unique_id=1080490924]
 script = ExtResource("1_qa77a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=202260432]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_wnfs4")
 autoplay = "default"

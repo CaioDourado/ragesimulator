@@ -5,22 +5,26 @@
 class_name ConsentRequestParameters extends RefCounted
 
 enum DebugGeography {
-	DEBUG_GEOGRAPHY_DISABLED = 0,
-	DEBUG_GEOGRAPHY_EEA = 1,
-	DEBUG_GEOGRAPHY_NOT_EEA = 2
+	NOT_SET = -1, ## Don't specify location. (Actual location will be used.)
+	DISABLED = 0, ## Use actual location.
+	EEA = 1, ## Use European Economic Area.
+	NOT_EEA = 2, ## Deprecated.
+	REGULATED_US_STATE = 3, ## Use a regulated state of USA. (ie. California)
+	OTHER = 4 ## Use any non-regulated location.
 }
 
 const IS_REAL_PROPERTY: String = "is_real"
 const TAG_FOR_UNDER_AGE_OF_CONSENT_PROPERTY: String = "tag_for_under_age_of_consent"
 const DEBUG_GEOGRAPHY_PROPERTY: String = "debug_geography"
+const TEST_DEVICE_HASHED_IDS_PROPERTY: String = "test_device_hashed_ids"
 
 var _data: Dictionary
-var _device_ids: Array
 
 
 func _init():
-	_data = {}
-	_device_ids = []
+	_data = {
+		TEST_DEVICE_HASHED_IDS_PROPERTY: []
+	}
 
 
 func set_is_real(a_value: bool) -> ConsentRequestParameters:
@@ -29,8 +33,12 @@ func set_is_real(a_value: bool) -> ConsentRequestParameters:
 	return self
 
 
-func set_tag_for_under_age_of_consent(a_value: bool) -> ConsentRequestParameters:
-	_data[TAG_FOR_UNDER_AGE_OF_CONSENT_PROPERTY] = a_value
+func set_tag_for_under_age_of_consent(a_value: AdmobConfig.TagForUnderAgeOfConsent) -> ConsentRequestParameters:
+	match a_value:
+		AdmobConfig.TagForChildDirectedTreatment.TRUE:
+			_data[TAG_FOR_UNDER_AGE_OF_CONSENT_PROPERTY] = true
+		AdmobConfig.TagForChildDirectedTreatment.FALSE:
+			_data[TAG_FOR_UNDER_AGE_OF_CONSENT_PROPERTY] = false
 
 	return self
 
@@ -42,14 +50,14 @@ func set_debug_geography(a_value: DebugGeography) -> ConsentRequestParameters:
 
 
 func add_test_device_hashed_id(a_value: String) -> ConsentRequestParameters:
-	_device_ids.append(a_value)
+	_data[TEST_DEVICE_HASHED_IDS_PROPERTY].append(a_value)
 
 	return self
 
 
+func get_device_ids() -> Array:
+	return _data[TEST_DEVICE_HASHED_IDS_PROPERTY]
+
+
 func get_raw_data() -> Dictionary:
 	return _data
-
-
-func get_device_ids() -> Array:
-	return _device_ids

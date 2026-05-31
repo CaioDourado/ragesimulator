@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://3w58tkt80j6n"]
+[gd_scene format=4 uid="uid://3w58tkt80j6n"]
 
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="1_gc8qm"]
+[ext_resource type="Script" uid="uid://daxrv7hbg6brt" path="res://Scripts/camera_2d.gd" id="1_gc8qm"]
 [ext_resource type="PackedScene" uid="uid://de48a3xgv6d6b" path="res://Prefab/end_point.tscn" id="1_s0vq5"]
 [ext_resource type="Texture2D" uid="uid://xqo5633lokea" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetBase.png" id="2_3mt5u"]
 [ext_resource type="PackedScene" uid="uid://dw8ai7i8jawp3" path="res://Prefab/start_point.tscn" id="2_8qi1r"]
@@ -8,11 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://6nriql7i7jto" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetDanger.png" id="3_f3rn3"]
 [ext_resource type="PackedScene" uid="uid://cl03eetjjdi4p" path="res://Prefab/UI/stage_ui.tscn" id="4_6orxu"]
 [ext_resource type="Texture2D" uid="uid://7i74km86sx3b" path="res://Assets/Tileset/Tileset32/Chapter_1/TilesetVigas.png" id="4_vkig0"]
-[ext_resource type="PackedScene" uid="uid://0kljeeoqbjqs" path="res://Prefab/UI/pause_menu.tscn" id="5_o5bql"]
 [ext_resource type="PackedScene" uid="uid://dipgs1b44d5lr" path="res://Prefab/UI/buttons_ui.tscn" id="6_61xaw"]
-[ext_resource type="Script" path="res://Scripts/hologram_effect.gd" id="6_cel8g"]
-[ext_resource type="PackedScene" uid="uid://c7u6cc2igai50" path="res://Prefab/UI/pos_game_ui.tscn" id="7_hjeoo"]
-[ext_resource type="PackedScene" uid="uid://bvs38xsly8s" path="res://Prefab/UI/ad_continue.tscn" id="8_cjpld"]
+[ext_resource type="Script" uid="uid://2lxi0wfa3q1y" path="res://Scripts/hologram_effect.gd" id="6_cel8g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5xjf"]
 texture = ExtResource("2_3mt5u")
@@ -161,18 +158,18 @@ sources/0 = SubResource("TileSetAtlasSource_u5xjf")
 sources/1 = SubResource("TileSetAtlasSource_q1ljm")
 sources/2 = SubResource("TileSetAtlasSource_wf4fj")
 
-[node name="Content" type="Node2D"]
+[node name="Content" type="Node2D" unique_id=793373342]
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=608840843]
 zoom = Vector2(2.85, 2.85)
 limit_top = -470
 limit_bottom = 30
 script = ExtResource("1_gc8qm")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_h4fb1")]
+[node name="ParallaxBackground" parent="." unique_id=627518984 instance=ExtResource("2_h4fb1")]
 script = ExtResource("6_cel8g")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["Parede"]]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1222168396 groups=["Parede"]]
 z_index = 1
 tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAHAAAAAAACAAAAAAAGAAAAAAABAAAAAAD9/wEAAAAAAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAACAAEAAAD9/wIAAAAAAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAHAAIAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_yegtp")
@@ -181,25 +178,19 @@ async = true
 self_object = true
 start_delay = 1.8
 
-[node name="InteractMap" type="Node2D" parent="."]
+[node name="InteractMap" type="Node2D" parent="." unique_id=509928020]
 script = ExtResource("6_cel8g")
 async = true
 start_delay = 1.8
 
-[node name="StartPoint" parent="." instance=ExtResource("2_8qi1r")]
+[node name="StartPoint" parent="." unique_id=1493503155 instance=ExtResource("2_8qi1r")]
 start_delay = 2.1
 
-[node name="EndPoint" parent="." instance=ExtResource("1_s0vq5")]
+[node name="EndPoint" parent="." unique_id=2134137947 instance=ExtResource("1_s0vq5")]
 position = Vector2(192, -8)
 
-[node name="UI" parent="." instance=ExtResource("4_6orxu")]
+[node name="UI" parent="." unique_id=658738693 instance=ExtResource("4_6orxu")]
 timeout = 2.3
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_o5bql")]
-
-[node name="Buttons" parent="." instance=ExtResource("6_61xaw")]
+[node name="Buttons" parent="." unique_id=1890186627 instance=ExtResource("6_61xaw")]
 timeout = 2.3
-
-[node name="PosGameUI" parent="." instance=ExtResource("7_hjeoo")]
-
-[node name="AdContinue" parent="." instance=ExtResource("8_cjpld")]

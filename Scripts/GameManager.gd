@@ -16,6 +16,9 @@ var home_scene : PackedScene = preload("res://Scenes/Home.tscn")
 var settings_scene : PackedScene = preload("res://Scenes/Settings.tscn")
 var stages_select : PackedScene = preload("res://Scenes/Stages.tscn")
 var stages : StageSelectLibrary = preload("res://Rescources/stage_select_library.tres")
+var pause_menu_scene : PackedScene = preload("res://Prefab/UI/pause_menu.tscn")
+var pos_game_ui_scene : PackedScene = preload("res://Prefab/UI/pos_game_ui.tscn")
+var ad_continue_scene : PackedScene = preload("res://Prefab/UI/ad_continue.tscn")
 
 var respawn_obj : StaticBody2D = null
 var ending_obj : Area2D = null
@@ -119,20 +122,28 @@ func respawn():
 func openAdContinue():
 	player_lifes = 0
 	get_node(stage_path("UI")).att_label_lifes()
-	get_node(stage_path("AdContinue")).open()
+	var ad_continue = get_ad_continue()
+	if ad_continue != null:
+		ad_continue.open()
 	
 func adContinue():
 	player_lifes += 5
 	get_node(stage_path("UI")).att_label_lifes()
 	get_tree().paused = false
-	get_node(stage_path("AdContinue")).close()
+	var ad_continue = get_ad_continue()
+	if ad_continue != null:
+		ad_continue.close()
 	respawn()
 
 func adContinueFail():
-	get_node(stage_path("AdContinue")).open()
+	var ad_continue = get_ad_continue()
+	if ad_continue != null:
+		ad_continue.open()
 
 func adContinueGameOver():
-	get_node(stage_path("AdContinue")).gameover()
+	var ad_continue = get_ad_continue()
+	if ad_continue != null:
+		ad_continue.gameover()
 
 func setCamPlayer(pl: Node2D):
 	camera.set_target(pl)
@@ -212,7 +223,9 @@ func end_stage():
 		else:
 			next_stage_no_trans()
 	else:
-		get_node(stage_path("PosGameUI")).finish_stage(timer_now, player_gears, player_deaths, stage_now)
+		var pos_game_ui = get_pos_game_ui()
+		if pos_game_ui != null:
+			pos_game_ui.finish_stage(timer_now, player_gears, player_deaths, stage_now)
 
 func unlock_next_stage():
 	var unlock_chap = chapter_now
@@ -252,7 +265,9 @@ func pause_game():
 	var pause_node = get_node_or_null(stage_path("UI"))
 	if pause_node != null:
 		get_node(stage_path("UI")).pause_timer()
-		get_node(stage_path("PauseMenu")).pause_game()
+		var pause_menu = get_pause_menu()
+		if pause_menu != null:
+			pause_menu.pause_game()
 
 func next_stage():
 	stage_now += 1
@@ -276,6 +291,30 @@ func finish_stage():
 
 func stage_path(path : String) -> String:
 	return str(base_path_stage,"/",path)
+
+func get_pause_menu():
+	return get_or_create_stage_ui("PauseMenu", pause_menu_scene)
+
+func get_pos_game_ui():
+	return get_or_create_stage_ui("PosGameUI", pos_game_ui_scene)
+
+func get_ad_continue():
+	return get_or_create_stage_ui("AdContinue", ad_continue_scene)
+
+func get_or_create_stage_ui(node_name: String, scene: PackedScene):
+	var node = get_node_or_null(stage_path(node_name))
+	if node != null:
+		return node
+	
+	var stage_content = get_node_or_null(base_path_stage)
+	if stage_content == null:
+		push_warning(str("Stage content not found while creating UI: ", node_name))
+		return null
+	
+	node = scene.instantiate()
+	node.name = node_name
+	stage_content.add_child(node)
+	return node
 
 func time_converter(tempo_decorrido: float) -> String:
 	var minutos = int(tempo_decorrido) / 60
