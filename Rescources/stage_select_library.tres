@@ -35,22 +35,10 @@ scene = ExtResource("6_b7qm3")
 open = true
 tutorial = true
 
-[sub_resource type="Resource" id="Resource_d1vxu"]
-script = ExtResource("2_a63bn")
-
-[sub_resource type="Resource" id="Resource_e6hoq"]
-script = ExtResource("2_a63bn")
-
-[sub_resource type="Resource" id="Resource_58evb"]
-script = ExtResource("2_a63bn")
-
-[sub_resource type="Resource" id="Resource_1bhk4"]
-script = ExtResource("2_a63bn")
-
 [sub_resource type="Resource" id="Resource_b2x16"]
 script = ExtResource("1_uftco")
 name = "help_tutorial"
-stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_0500a"), SubResource("Resource_swixy"), SubResource("Resource_r80xc"), SubResource("Resource_timy3"), SubResource("Resource_d1vxu"), SubResource("Resource_e6hoq"), SubResource("Resource_58evb"), SubResource("Resource_1bhk4")])
+stages = Array[ExtResource("2_a63bn")]([SubResource("Resource_0500a"), SubResource("Resource_swixy"), SubResource("Resource_r80xc"), SubResource("Resource_timy3")])
 
 [sub_resource type="Resource" id="Resource_iowrr"]
 script = ExtResource("2_a63bn")

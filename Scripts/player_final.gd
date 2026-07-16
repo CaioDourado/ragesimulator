@@ -35,6 +35,10 @@ var dead: bool = false
 
 @export var GRAVITY: float = 1200.0
 @export var FALL_GRAVITY_MULT: float = 2.0
+@export var PUSHABLE_CONTACT_GRACE_TIME: float = 0.12
+@export var PUSHABLE_DETECT_DISTANCE: float = 14.0
+@export var WALK_ANIM_MIN_SPEED: float = 5.0
+@export var FRONT_FLIP_LOOP_COUNT: int = 2
 
 # ------------------
 # Nodes
@@ -64,10 +68,17 @@ var wall_jump_control_lock_timer: float = 0.0
 var wall_jump_hold_timer: float = 0.0
 var wall_jump_hold_active: bool = false
 var wall_jump_coyote_lock_timer: float = 0.0
+var touching_pushable: bool = false
+var pushable_contact_timer: float = 0.0
+var current_pushable: Node = null
 
 # Pulo variável
 var jump_held_time: float = 0.0
 var is_jumping: bool = false
+var use_front_flip_next: bool = false
+var front_flip_active: bool = false
+var front_flip_loop_timer: float = 0.0
+var front_flip_loop_started: bool = false
 
 # ------------------
 # Ready
@@ -162,10 +173,12 @@ func _physics_process(delta: float) -> void:
 			start_wall_jump(wall_dir)
 		elif on_floor:
 			# Pulo normal
+			play_sound(preload("res://Assets/Audio/SFX/jump5.mp3"))
 			velocity.y = JUMP_VELOCITY
 			is_jumping = true
 			jump_held_time = 0.0
 			#coyote_timer.stop()
+			start_normal_jump_animation()
 
 	# ------------------
 	# Movimento horizontal
@@ -181,8 +194,11 @@ func _physics_process(delta: float) -> void:
 	# ------------------
 	# Animations e movimento
 	# ------------------
-	animate()
 	move_and_slide()
+	update_pushable_contact(delta)
+	apply_pushable_push()
+	update_front_flip_animation(delta)
+	animate()
 	check_fall_die()
 
 # ------------------
@@ -190,13 +206,18 @@ func _physics_process(delta: float) -> void:
 # ------------------
 func animate():
 	sprite_render.flip_h = side
+	var real_horizontal_speed: float = abs(get_real_velocity().x)
+	var own_horizontal_speed: float = abs(velocity.x)
 	if is_on_floor():
-		if velocity.x != 0:
+		if touching_pushable:
 			grounding = false
-			if input_dir == 0:
-				animator.play("break")
-			else:
-				animator.play("walk")
+			animator.play("push_loop")
+		elif input_dir != 0 and real_horizontal_speed > WALK_ANIM_MIN_SPEED:
+			grounding = false
+			animator.play("walk")
+		elif input_dir == 0 and own_horizontal_speed > WALK_ANIM_MIN_SPEED:
+			grounding = false
+			animator.play("break")
 		else:
 			if not grounding:
 				animator.play("idle")
@@ -204,6 +225,8 @@ func animate():
 				animator.play("ground")
 	else:
 		if not slide_jumping:
+			if front_flip_active:
+				return
 			if rc_wall_left.is_colliding() or rc_wall_right.is_colliding():
 				face_wall()
 				animator.play("slide")
@@ -235,8 +258,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		"slide_jump":
 			slide_jumping = false
 			is_wall_jumping = false
+			start_front_flip_animation()
 		"ground":
 			grounding = false
+		"jump_front_2":
+			front_flip_loop_started = true
+			front_flip_loop_timer = get_front_flip_loop_duration()
+			animator.play("jump_front_2_loop")
 
 func get_wall_jump_dir() -> int:
 	if rc_wall_right.is_colliding():
@@ -252,6 +280,92 @@ func face_wall():
 		side = false
 	sprite_render.flip_h = side
 
+func start_normal_jump_animation():
+	if input_dir == 0:
+		front_flip_active = false
+		return
+
+	if use_front_flip_next:
+		start_front_flip_animation()
+	else:
+		front_flip_active = false
+		animator.play("jump_front")
+	use_front_flip_next = not use_front_flip_next
+
+func start_front_flip_animation():
+	front_flip_active = true
+	front_flip_loop_started = false
+	front_flip_loop_timer = 0.0
+	animator.play("jump_front_2")
+
+func update_front_flip_animation(delta: float):
+	if is_on_floor():
+		front_flip_active = false
+		front_flip_loop_started = false
+		front_flip_loop_timer = 0.0
+		return
+
+	if not front_flip_active or slide_jumping:
+		return
+
+	if front_flip_loop_started:
+		front_flip_loop_timer = max(front_flip_loop_timer - delta, 0.0)
+		if front_flip_loop_timer <= 0.0 and velocity.y > 0:
+			front_flip_active = false
+			animator.play("fall_front")
+
+func update_pushable_contact(delta: float):
+	var pushable_ahead := get_pushable_ahead() if is_on_floor() and input_dir != 0 else null
+	var found_pushable := pushable_ahead != null
+
+	if found_pushable:
+		current_pushable = pushable_ahead
+		pushable_contact_timer = PUSHABLE_CONTACT_GRACE_TIME
+	elif not is_on_floor() or input_dir == 0:
+		current_pushable = null
+		pushable_contact_timer = 0.0
+	else:
+		pushable_contact_timer = max(pushable_contact_timer - delta, 0.0)
+		if pushable_contact_timer <= 0.0:
+			current_pushable = null
+
+	touching_pushable = pushable_contact_timer > 0.0
+
+func apply_pushable_push():
+	if touching_pushable and current_pushable != null and current_pushable.has_method("push"):
+		current_pushable.push(input_dir)
+
+func get_pushable_ahead() -> Node:
+	var space_state := get_world_2d().direct_space_state
+	var ray_offsets := [0.0, 6.0]
+	for offset_y in ray_offsets:
+		var origin := global_position + Vector2(input_dir * 6.0, offset_y)
+		var target := origin + Vector2(input_dir * PUSHABLE_DETECT_DISTANCE, 0.0)
+		var query := PhysicsRayQueryParameters2D.create(origin, target)
+		query.exclude = [self]
+		var result := space_state.intersect_ray(query)
+		if result.has("collider"):
+			var collider_node := result["collider"] as Node
+			if collider_node != null and is_pushable(collider_node):
+				return get_pushable_node(collider_node)
+	return null
+
+func get_pushable_node(node: Node) -> Node:
+	if node.is_in_group("Pushable"):
+		return node
+	if node.get_parent() != null and node.get_parent().is_in_group("Pushable"):
+		return node.get_parent()
+	return null
+
+func is_pushable(node: Node) -> bool:
+	return get_pushable_node(node) != null
+
+func get_front_flip_loop_duration() -> float:
+	var animation: Animation = animator.get_animation("jump_front_2_loop")
+	if animation == null:
+		return 0.25
+	return animation.length * FRONT_FLIP_LOOP_COUNT
+
 func start_wall_jump(direction: int):
 	slide_jumping = true
 	is_wall_jumping = true
@@ -262,6 +376,7 @@ func start_wall_jump(direction: int):
 	wall_jump_coyote_lock_timer = WALL_JUMP_COYOTE_LOCK_TIME
 	is_jumping = false
 	#coyote_timer.stop()
+	play_sound(preload("res://Assets/Audio/SFX/jump5.mp3"))
 	animator.play("slide_jump_trans")
 	side = direction < 0
 	velocity.x = WALL_JUMP_START_FORCE.x * direction

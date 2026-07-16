@@ -16,21 +16,6 @@ position = Vector2(-80, -104)
 [node name="EndPoint" parent="Content" index="4"]
 position = Vector2(2592, -168)
 
-[node name="AdContinue" parent="Content" index="5"]
-visible = true
-
-[node name="Buttons" parent="Content" index="6"]
-visible = true
-
-[node name="PauseMenu" parent="Content" index="7"]
-visible = true
-
-[node name="PosGameUI" parent="Content" index="8"]
-visible = true
-
-[node name="UI" parent="Content" index="9"]
-visible = true
-
 [node name="check_point" parent="Content" instance=ExtResource("2_jouba")]
 position = Vector2(1344, -320)
 

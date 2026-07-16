@@ -1,6 +1,6 @@
-[gd_scene load_steps=46 format=3 uid="uid://0kljeeoqbjqs"]
+[gd_scene format=3 uid="uid://0kljeeoqbjqs"]
 
-[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_hx8xv"]
+[ext_resource type="Script" uid="uid://byynctl7g21np" path="res://Scripts/pause_menu.gd" id="1_hx8xv"]
 [ext_resource type="Texture2D" uid="uid://bg4t8exw7r4eq" path="res://Assets/UI/Prancha/base.png" id="3_gc6i4"]
 [ext_resource type="Texture2D" uid="uid://cphxgnlvrlay0" path="res://Assets/UI/Prancha/bt_play.png" id="4_0gg12"]
 [ext_resource type="Texture2D" uid="uid://cc0k0mdmbvpal" path="res://Assets/UI/Prancha/bt_replay.png" id="5_ku7lc"]
@@ -767,18 +767,18 @@ tracks/17/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nhoqb"]
 _data = {
-"RESET": SubResource("Animation_5oedq"),
-"close": SubResource("Animation_fv6i4"),
-"idle": SubResource("Animation_eqx2o"),
-"open": SubResource("Animation_gy1kh")
+&"RESET": SubResource("Animation_5oedq"),
+&"close": SubResource("Animation_fv6i4"),
+&"idle": SubResource("Animation_eqx2o"),
+&"open": SubResource("Animation_gy1kh")
 }
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" unique_id=295149879]
 process_mode = 3
 layer = 10
 script = ExtResource("1_hx8xv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1392170714]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -786,7 +786,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="ClipBoard" type="TextureRect" parent="ColorRect"]
+[node name="ClipBoard" type="TextureRect" parent="ColorRect" unique_id=1146523572]
 z_index = 3
 z_as_relative = false
 layout_mode = 1
@@ -795,15 +795,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -273.5
-offset_right = 187.0
-offset_bottom = 273.5
+offset_left = -168.0
+offset_top = -245.5
+offset_right = 206.0
+offset_bottom = 301.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gc6i4")
 
-[node name="BtResume" type="TextureButton" parent="ColorRect/ClipBoard"]
+[node name="BtResume" type="TextureButton" parent="ColorRect/ClipBoard" unique_id=992919397]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -820,7 +820,7 @@ texture_normal = SubResource("AtlasTexture_ixmb0")
 texture_pressed = SubResource("AtlasTexture_hxlrq")
 stretch_mode = 5
 
-[node name="BtRestart" type="TextureButton" parent="ColorRect/ClipBoard"]
+[node name="BtRestart" type="TextureButton" parent="ColorRect/ClipBoard" unique_id=242578809]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -837,7 +837,7 @@ texture_normal = SubResource("AtlasTexture_vjgtx")
 texture_pressed = SubResource("AtlasTexture_xbtgy")
 stretch_mode = 5
 
-[node name="BtQuit" type="TextureButton" parent="ColorRect/ClipBoard"]
+[node name="BtQuit" type="TextureButton" parent="ColorRect/ClipBoard" unique_id=2125854008]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -854,7 +854,7 @@ texture_normal = SubResource("AtlasTexture_83b5f")
 texture_pressed = SubResource("AtlasTexture_6psne")
 stretch_mode = 5
 
-[node name="Title" type="TextureRect" parent="ColorRect/ClipBoard"]
+[node name="Title" type="TextureRect" parent="ColorRect/ClipBoard" unique_id=1341963951]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -866,7 +866,7 @@ offset_bottom = 74.0
 grow_horizontal = 2
 texture = ExtResource("6_4au53")
 
-[node name="Text" type="Label" parent="ColorRect/ClipBoard/Title"]
+[node name="Text" type="Label" parent="ColorRect/ClipBoard/Title" unique_id=2131116076]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -882,7 +882,7 @@ label_settings = SubResource("LabelSettings_33r51")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Screen" type="Control" parent="ColorRect/ClipBoard"]
+[node name="Screen" type="Control" parent="ColorRect/ClipBoard" unique_id=2144732272]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -894,7 +894,7 @@ offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleScreen" type="Label" parent="ColorRect/ClipBoard/Screen"]
+[node name="TitleScreen" type="Label" parent="ColorRect/ClipBoard/Screen" unique_id=2066449384]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 10
@@ -906,7 +906,7 @@ label_settings = SubResource("LabelSettings_yrarl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect/ClipBoard/Screen"]
+[node name="GridContainer" type="GridContainer" parent="ColorRect/ClipBoard/Screen" unique_id=548136784]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -922,14 +922,14 @@ grow_vertical = 2
 theme_override_constants/h_separation = 40
 columns = 3
 
-[node name="ClockIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+[node name="ClockIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer" unique_id=480679705]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("8_ki212")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon"]
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon" unique_id=698391991]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -948,7 +948,7 @@ label_settings = SubResource("LabelSettings_fev7v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon"]
+[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/ClockIcon" unique_id=1398586744]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -964,14 +964,14 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("10_nb2ul")
 
-[node name="GearIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+[node name="GearIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer" unique_id=27697321]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("9_qsh5h")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon"]
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon" unique_id=1514405889]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -990,7 +990,7 @@ label_settings = SubResource("LabelSettings_uyo6l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon"]
+[node name="Checkbox" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/GearIcon" unique_id=108242788]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -1006,14 +1006,14 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("10_nb2ul")
 
-[node name="DeathIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer"]
+[node name="DeathIcon" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer" unique_id=493706355]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("10_ttbja")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon"]
+[node name="Label" type="Label" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon" unique_id=1950559938]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -1032,7 +1032,7 @@ label_settings = SubResource("LabelSettings_h7r4o")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/Screen/GridContainer/DeathIcon" unique_id=579456419]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -1048,7 +1048,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("10_nb2ul")
 
-[node name="Loading" type="TextureRect" parent="ColorRect/ClipBoard/Screen"]
+[node name="Loading" type="TextureRect" parent="ColorRect/ClipBoard/Screen" unique_id=1438707291]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1063,7 +1063,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AnimatedTexture_siafj")
 
-[node name="ConfigRect" type="TextureRect" parent="ColorRect/ClipBoard"]
+[node name="ConfigRect" type="TextureRect" parent="ColorRect/ClipBoard" unique_id=812620529]
 z_index = 1
 z_as_relative = false
 layout_mode = 1
@@ -1080,7 +1080,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("11_itxfl")
 
-[node name="ConfigButton" type="TextureButton" parent="ColorRect/ClipBoard/ConfigRect"]
+[node name="ConfigButton" type="TextureButton" parent="ColorRect/ClipBoard/ConfigRect" unique_id=1981613673]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1097,7 +1097,7 @@ texture_normal = SubResource("AtlasTexture_p5rja")
 texture_pressed = SubResource("AtlasTexture_eh2wa")
 stretch_mode = 4
 
-[node name="SliderSFX" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect"]
+[node name="SliderSFX" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect" unique_id=863111339]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -1114,7 +1114,7 @@ min_value = -10.0
 max_value = 6.0
 value = 6.0
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderSFX"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderSFX" unique_id=133363441]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1126,7 +1126,7 @@ offset_bottom = -11.5
 grow_horizontal = 2
 texture = ExtResource("23_ly26p")
 
-[node name="SliderMusic" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect"]
+[node name="SliderMusic" type="VSlider" parent="ColorRect/ClipBoard/ConfigRect" unique_id=682378821]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -1142,7 +1142,7 @@ theme = ExtResource("23_unigh")
 min_value = -10.0
 max_value = 6.0
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderMusic"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ClipBoard/ConfigRect/SliderMusic" unique_id=90071501]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1154,7 +1154,7 @@ offset_bottom = -12.5
 grow_horizontal = 2
 texture = ExtResource("24_jy42h")
 
-[node name="Pen" type="TextureRect" parent="ColorRect/ClipBoard"]
+[node name="Pen" type="TextureRect" parent="ColorRect/ClipBoard" unique_id=690358439]
 z_index = 1
 z_as_relative = false
 layout_mode = 1
@@ -1169,10 +1169,8 @@ grow_vertical = 2
 texture = ExtResource("12_ddw83")
 stretch_mode = 5
 
-[node name="Animator" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_nhoqb")
-}
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=1717257522]
+libraries/ = SubResource("AnimationLibrary_nhoqb")
 
 [connection signal="pressed" from="ColorRect/ClipBoard/BtResume" to="." method="_on_bt_resume_pressed"]
 [connection signal="pressed" from="ColorRect/ClipBoard/BtRestart" to="." method="_on_bt_restart_pressed"]

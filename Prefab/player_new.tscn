@@ -546,7 +546,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_h1m1r"]
 resource_name = "jump_front_2"
-length = 0.26666668
+length = 0.035
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -554,10 +554,10 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Rect2(3488, 0, 32, 32), Rect2(3520, 0, 32, 32), Rect2(3552, 0, 32, 32), Rect2(3584, 0, 32, 32), Rect2(3616, 0, 32, 32), Rect2(3648, 0, 32, 32), Rect2(3680, 0, 32, 32), Rect2(3712, 0, 32, 32)]
+"values": [Rect2(3488, 0, 32, 32), Rect2(3520, 0, 32, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -581,12 +581,13 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.40000000000000036]
+"values": [0.4000000000000003]
 }
 
 [sub_resource type="Animation" id="Animation_6r8um"]
 resource_name = "jump_front_2_loop"
 length = 0.13333334
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -621,7 +622,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.40000000000000036]
+"values": [0.4000000000000003]
 }
 
 [sub_resource type="Animation" id="Animation_hq2hb"]
@@ -679,7 +680,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_j456m"]
 resource_name = "push_loop"
 length = 0.26667002
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

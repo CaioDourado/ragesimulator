@@ -46,6 +46,7 @@ enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/P
 [global_group]
 
 Parede="Parede e Chão no cenario"
+Pushable=""
 
 [input]
 

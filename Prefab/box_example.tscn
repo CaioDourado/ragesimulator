@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3ar8cixbb5eo"]
+
+[ext_resource type="Script" uid="uid://bsagsi46pswdx" path="res://Scripts/box_pushable.gd" id="1_t6w2c"]
+[ext_resource type="Texture2D" uid="uid://cck0ctnrxhfjk" path="res://Assets/Tileset/Tileset32/Objects/box.png" id="2_t6w2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckb4l"]
+size = Vector2(30, 30)
+
+[node name="CaixaExemplo" type="CharacterBody2D" unique_id=355286726 groups=["Pushable"]]
+script = ExtResource("1_t6w2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955283068 groups=["Pushable"]]
+shape = SubResource("RectangleShape2D_ckb4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=628003909]
+texture = ExtResource("2_t6w2c")

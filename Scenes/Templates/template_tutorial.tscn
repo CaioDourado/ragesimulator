@@ -1,63 +1,49 @@
-[gd_scene load_steps=14 format=4 uid="uid://c7nj4m636vue8"]
+[gd_scene format=4 uid="uid://c7nj4m636vue8"]
 
 [ext_resource type="PackedScene" uid="uid://brc237ptb86bb" path="res://Prefab/parallax_background_tutorial.tscn" id="1_pawlf"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_c0ba7"]
-[ext_resource type="Script" path="res://Scripts/hologram_effect.gd" id="2_tnns5"]
+[ext_resource type="Script" uid="uid://daxrv7hbg6brt" path="res://Scripts/camera_2d.gd" id="2_c0ba7"]
+[ext_resource type="Script" uid="uid://2lxi0wfa3q1y" path="res://Scripts/hologram_effect.gd" id="2_tnns5"]
 [ext_resource type="TileSet" uid="uid://bv3geml8dviof" path="res://Tilesets/Chapter_0/background.tres" id="3_vks1t"]
 [ext_resource type="TileSet" uid="uid://bw138n8jwq02x" path="res://Tilesets/Chapter_0/collision.tres" id="4_i6jwe"]
 [ext_resource type="TileSet" uid="uid://by33ph07xye2s" path="res://Tilesets/Chapter_0/foreground.tres" id="5_djii5"]
 [ext_resource type="PackedScene" uid="uid://dw8ai7i8jawp3" path="res://Prefab/start_point.tscn" id="6_hbhb0"]
 [ext_resource type="PackedScene" uid="uid://de48a3xgv6d6b" path="res://Prefab/end_point.tscn" id="7_g61i2"]
-[ext_resource type="PackedScene" uid="uid://bvs38xsly8s" path="res://Prefab/UI/ad_continue.tscn" id="8_8l1x8"]
 [ext_resource type="PackedScene" uid="uid://dipgs1b44d5lr" path="res://Prefab/UI/buttons_ui.tscn" id="9_xbhkg"]
-[ext_resource type="PackedScene" uid="uid://0kljeeoqbjqs" path="res://Prefab/UI/pause_menu.tscn" id="10_xah1s"]
-[ext_resource type="PackedScene" uid="uid://c7u6cc2igai50" path="res://Prefab/UI/pos_game_ui.tscn" id="11_qvjdr"]
 [ext_resource type="PackedScene" uid="uid://cl03eetjjdi4p" path="res://Prefab/UI/stage_ui.tscn" id="12_7hdsy"]
 
-[node name="Content" type="Node2D"]
+[node name="Content" type="Node2D" unique_id=193891467]
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_pawlf")]
+[node name="ParallaxBackground" parent="." unique_id=132426385 instance=ExtResource("1_pawlf")]
 script = ExtResource("2_tnns5")
-async = true
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=264136690]
 zoom = Vector2(2.85, 2.85)
 limit_top = -1000
 limit_bottom = 20
 script = ExtResource("2_c0ba7")
 
-[node name="TileMaps" type="Node2D" parent="."]
+[node name="TileMaps" type="Node2D" parent="." unique_id=282745048]
 
-[node name="background" type="TileMapLayer" parent="TileMaps"]
+[node name="background" type="TileMapLayer" parent="TileMaps" unique_id=1511820969]
 tile_set = ExtResource("3_vks1t")
 
-[node name="collision" type="TileMapLayer" parent="TileMaps"]
+[node name="collision" type="TileMapLayer" parent="TileMaps" unique_id=1947895369]
+z_index = 1
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAAKAAEAAQABAAEAAAAJAAEAAQABAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAD//wEAAQABAAEAAAD+/wEAAQABAAEAAAD9/wEAAQABAAEAAAD8/wEAAQABAAEAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAEAAAALAAEAAQABAAEAAAAMAAEAAQABAAEAAAANAAEAAQABAAEAAAAOAAEAAQABAAEAAAAPAAEAAQABAAEAAAAQAAEAAQABAAEAAAARAAEAAQABAAEAAAASAAEAAQABAAEAAAATAAEAAQABAAEAAAAUAAEAAQABAAEAAAAVAAEAAQABAAEAAAAWAAEAAQABAAEAAAAXAAEAAQABAAEAAAAYAAEAAQABAAEAAAAZAAEAAQACAAEAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAATAAAAAQABAAAAAAAUAAAAAQABAAAAAAAVAAAAAQABAAAAAAAWAAAAAQABAAAAAAAXAAAAAQABAAAAAAAYAAAAAQABAAAAAAAZAAAAAQACAAAAAAA=")
 tile_set = ExtResource("4_i6jwe")
 
-[node name="foreground" type="TileMapLayer" parent="TileMaps"]
+[node name="foreground" type="TileMapLayer" parent="TileMaps" unique_id=1665734775]
 tile_set = ExtResource("5_djii5")
 
-[node name="StartPoint" parent="." instance=ExtResource("6_hbhb0")]
+[node name="StartPoint" parent="." unique_id=1720108297 instance=ExtResource("6_hbhb0")]
 position = Vector2(-112, -8)
 
-[node name="EndPoint" parent="." instance=ExtResource("7_g61i2")]
+[node name="EndPoint" parent="." unique_id=851897715 instance=ExtResource("7_g61i2")]
 position = Vector2(784, -8)
 
-[node name="AdContinue" parent="." instance=ExtResource("8_8l1x8")]
-visible = false
+[node name="Buttons" parent="." unique_id=625032045 instance=ExtResource("9_xbhkg")]
 
-[node name="Buttons" parent="." instance=ExtResource("9_xbhkg")]
-visible = false
+[node name="UI" parent="." unique_id=774550507 instance=ExtResource("12_7hdsy")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("10_xah1s")]
-visible = false
-
-[node name="PosGameUI" parent="." instance=ExtResource("11_qvjdr")]
-visible = false
-
-[node name="UI" parent="." instance=ExtResource("12_7hdsy")]
-visible = false
-
-[node name="InteractMap" type="Node2D" parent="."]
+[node name="InteractMap" type="Node2D" parent="." unique_id=1413416192]
