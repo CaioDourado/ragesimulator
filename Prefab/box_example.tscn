@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckb4l"]
 size = Vector2(30, 30)
 
-[node name="CaixaExemplo" type="CharacterBody2D" unique_id=355286726 groups=["Pushable"]]
+[node name="CaixaExemplo" type="CharacterBody2D" unique_id=610421797 groups=["Pushable"]]
 script = ExtResource("1_t6w2c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955283068 groups=["Pushable"]]

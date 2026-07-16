@@ -225,11 +225,12 @@ func animate():
 				animator.play("ground")
 	else:
 		if not slide_jumping:
-			if front_flip_active:
-				return
 			if rc_wall_left.is_colliding() or rc_wall_right.is_colliding():
+				stop_front_flip_animation()
 				face_wall()
 				animator.play("slide")
+			elif front_flip_active:
+				return
 			else:
 				if velocity.y > 0:
 					animator.play("fall_front" if velocity.x != 0 else "fall")
@@ -297,6 +298,11 @@ func start_front_flip_animation():
 	front_flip_loop_started = false
 	front_flip_loop_timer = 0.0
 	animator.play("jump_front_2")
+
+func stop_front_flip_animation():
+	front_flip_active = false
+	front_flip_loop_started = false
+	front_flip_loop_timer = 0.0
 
 func update_front_flip_animation(delta: float):
 	if is_on_floor():
